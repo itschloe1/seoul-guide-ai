@@ -17,6 +17,16 @@ Discord 채널에서 메시지를 받으면 반드시 이 순서를 따를 것:
 3. **중간 업데이트**: 30초 이상 걸리는 작업은 `edit_message`로 진행 상황을 업데이트한다
 4. **완료 시 새 메시지**: 작업이 끝나면 반드시 새 `reply`로 결과를 보낸다 (edit은 알림이 안 가므로)
 
+## Context Management
+
+컨텍스트 사용량이 높아지면 (시스템이 auto-compress 경고를 보내거나, 응답이 느려지는 것을 감지하면):
+
+1. 즉시 디스코드에 알림: "컨텍스트가 많이 쌓였어요. 세션 정리할게요. 중요한 내용은 session-log에 저장됩니다."
+2. `/session-close` 실행 — `outputs/session-logs/`에 전체 세션 요약 저장
+3. `git add outputs/session-logs/ && git commit -m "auto: session-close" && git push` (session-log 보존)
+4. `/clear` 실행하여 컨텍스트 리셋
+5. 디스코드에 완료 알림: "세션 정리 완료. 이어서 말씀하세요."
+
 ## Channel Routing
 
 | Channel | chat_id | Mode |
