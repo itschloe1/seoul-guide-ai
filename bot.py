@@ -9,9 +9,10 @@ from pathlib import Path
 import anthropic
 from PIL import Image
 from dotenv import load_dotenv
-from telegram import Update
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (
     Application,
+    CallbackQueryHandler,
     CommandHandler,
     MessageHandler,
     filters,
@@ -34,6 +35,58 @@ COMMUNITY_GROUP_LINK = os.environ.get("COMMUNITY_GROUP_LINK", "")
 SYSTEM_PROMPT = Path(__file__).parent.joinpath("system_prompt.md").read_text()
 FEEDBACK_DIR = Path(__file__).parent / "feedback"
 FEEDBACK_DIR.mkdir(exist_ok=True)
+LOGS_DIR = Path(__file__).parent / "logs"
+LOGS_DIR.mkdir(exist_ok=True)
+
+# Pain signal keywords — used to tag high-intensity queries
+PAIN_SIGNALS: dict[str, list[str]] = {
+    "urgency": ["emergency", "urgent", "asap", "right now", "today", "help me", "stuck",
+                 "deadline", "leaving in", "expiring", "last day"],
+    "financial": ["deposit", "refund", "scam", "fraud", "won't pay", "lost money",
+                   "보증금", "사기", "jeonse", "전세"],
+    "legal": ["police", "lawyer", "court", "immigration", "fine", "penalty", "arrested",
+              "contract", "sued", "violation", "overstay"],
+    "medical": ["hospital", "emergency room", "ambulance", "injury", "sick", "pain",
+                "doctor", "pharmacy", "insurance claim", "병원", "응급"],
+    "bureaucratic": ["rejected", "denied", "won't accept", "expired", "missed deadline",
+                      "wrong document", "application failed", "거부"],
+    "distress": ["don't know what to do", "no one to ask", "alone", "scared", "desperate",
+                  "please help", "confused", "lost", "stranded"],
+}
+
+
+def detect_pain_signals(text: str) -> list[str]:
+    """Return list of matched pain signal categories."""
+    text_lower = text.lower()
+    return [category for category, keywords in PAIN_SIGNALS.items()
+            if any(kw in text_lower for kw in keywords)]
+
+
+def log_query(
+    user_id: int,
+    chat_type: str,
+    msg_type: str,
+    user_text: str,
+    response_text: str,
+    has_photo: bool = False,
+):
+    """Append a query log entry to today's JSONL file."""
+    entry = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        "user_id": user_id,
+        "chat_type": chat_type,
+        "msg_type": msg_type,
+        "user_text": user_text,
+        "has_photo": has_photo,
+        "pain_signals": detect_pain_signals(user_text),
+        "response_excerpt": response_text[:200],
+    }
+    log_file = LOGS_DIR / f"queries_{datetime.now(timezone.utc).strftime('%Y%m%d')}.jsonl"
+    try:
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    except Exception as e:
+        logger.error(f"Failed to write query log: {e}")
 
 BOT_USERNAME = None  # Set on startup
 
@@ -42,6 +95,9 @@ client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 # Per-user conversation history (in-memory, resets on restart)
 conversations: dict[int, list[dict]] = {}
 MAX_HISTORY = 20
+
+# Per-user profile (stage selection, metadata)
+user_profiles: dict[int, dict] = {}
 
 
 def get_history(user_id: int) -> list[dict]:
@@ -90,19 +146,89 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     conversations.pop(user_id, None)
 
+    keyboard = [
+        [InlineKeyboardButton("Planning to move to Korea", callback_data="stage_planning")],
+        [InlineKeyboardButton("Just arrived (first 2 months)", callback_data="stage_arrived")],
+        [InlineKeyboardButton("Already living here", callback_data="stage_living")],
+        [InlineKeyboardButton("Leaving Korea soon", callback_data="stage_leaving")],
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.message.reply_text(
+        "Hey! I'm Seoul Guide AI -- think of me as your Korean friend "
+        "who knows how everything works here.\n\n"
+        "To give you the best help, tell me where you're at:",
+        reply_markup=reply_markup,
+    )
+
+
+async def handle_stage_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    user_id = query.from_user.id
+    stage = query.data  # e.g. "stage_planning"
+
+    user_profiles[user_id] = {
+        "stage": stage,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    }
+
     group_line = ""
     if COMMUNITY_GROUP_LINK:
         group_line = f"\nJoin our community: {COMMUNITY_GROUP_LINK}\n"
 
-    await update.message.reply_text(
-        "Hey! I'm Seoul Guide AI.\n\n"
-        "Ask me anything about living in Korea, or send me a photo "
-        "of something you can't read (bills, menus, signs, contracts).\n\n"
-        "I'll tell you what it is and what to do about it.\n"
-        f"{group_line}\n"
-        "Commands:\n"
+    welcome_messages = {
+        "stage_planning": (
+            "Nice, so you're thinking about moving to Korea! Great choice.\n\n"
+            "I can help you with:\n"
+            "- Visa types and what documents to prepare\n"
+            "- Finding housing from abroad (tips that actually work)\n"
+            "- What to bring vs. what to buy here\n\n"
+            "Got a document you're not sure about? Snap a photo and send it "
+            "to me -- I'll translate and explain it."
+        ),
+        "stage_arrived": (
+            "Welcome to Korea! The first weeks are a whirlwind, "
+            "but I've got you.\n\n"
+            "Here's the critical sequence you need to nail:\n"
+            "SIM card -> ARC (Alien Registration Card) -> Bank account -> Phone plan\n\n"
+            "Want me to walk you through it step by step? Just ask.\n\n"
+            "And whenever you see something you can't read -- a sign, a bill, "
+            "a form at the office -- just take a photo and send it here. "
+            "I'll tell you exactly what it says and what to do."
+        ),
+        "stage_living": (
+            "Hey, fellow Korea resident! You know the basics, "
+            "so let's make daily life easier.\n\n"
+            "I'm here for:\n"
+            "- Translating anything you photograph (bills, notices, menus, mail)\n"
+            "- Answering random \"how does this work in Korea\" questions\n"
+            "- Navigating bureaucracy when things get confusing\n\n"
+            "Just text me a question or send a photo anytime."
+        ),
+        "stage_leaving": (
+            "Leaving Korea? There's more to wrap up than you'd think. "
+            "Let me help you not leave money on the table.\n\n"
+            "Key things to handle:\n"
+            "- National pension refund (you can get it back!)\n"
+            "- Deposit (보증금) recovery\n"
+            "- Insurance cancellation\n"
+            "- Bank account closure / overseas transfer\n\n"
+            "Ask me about any of these, or send a photo of paperwork "
+            "you need help with. I also have a departure checklist if you want it."
+        ),
+    }
+
+    message = welcome_messages.get(stage, "Welcome!")
+    commands = (
+        "\n\nCommands:\n"
         "/reset - Start a new conversation\n"
         "/feedback - Submit a correction or tip"
+    )
+
+    await query.edit_message_text(
+        text=message + group_line + commands + share_link()
     )
 
 
@@ -132,6 +258,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         reply = response.content[0].text
         add_to_history(user_id, "assistant", reply)
+        log_query(user_id, update.effective_chat.type, "text", user_text, reply)
         await update.message.reply_text(reply + share_link())
     except Exception as e:
         logger.error(f"Claude API error: {e}")
@@ -183,6 +310,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         reply = response.content[0].text
         add_to_history(user_id, "assistant", reply)
+        log_query(user_id, update.effective_chat.type, "photo", caption, reply, has_photo=True)
         await update.message.reply_text(reply + share_link())
     except Exception as e:
         logger.error(f"Claude Vision API error: {e}")
@@ -234,6 +362,25 @@ async def feedback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+async def export_logs(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Send today's query log to admin as a file."""
+    if update.effective_user.id != ADMIN_CHAT_ID:
+        return
+
+    today = datetime.now(timezone.utc).strftime("%Y%m%d")
+    log_file = LOGS_DIR / f"queries_{today}.jsonl"
+
+    if not log_file.exists() or log_file.stat().st_size == 0:
+        await update.message.reply_text("No logs for today yet.")
+        return
+
+    await update.message.reply_document(
+        document=open(log_file, "rb"),
+        filename=f"queries_{today}.jsonl",
+        caption=f"Query logs for {today}",
+    )
+
+
 async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     conversations.pop(user_id, None)
@@ -254,6 +401,8 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("reset", reset))
     app.add_handler(CommandHandler("feedback", feedback))
+    app.add_handler(CommandHandler("export", export_logs))
+    app.add_handler(CallbackQueryHandler(handle_stage_selection))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
