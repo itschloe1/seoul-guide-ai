@@ -1,4 +1,6 @@
 ---
+import Logo from '../components/Logo.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -23,28 +25,29 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={ogTitle || title} />
     <meta property="og:description" content={ogDescription || description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:site_name" content="Seoul Guide AI" />
+    <meta property="og:site_name" content="Living in Korea" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle || title} />
     <meta name="twitter:description" content={ogDescription || description} />
 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <slot name="head" />
     <!-- Analytics: replace data-domain with your actual domain when live -->
-    <script defer data-domain="seoulguide.ai" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="livinginkorea.co" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <header>
       <nav>
         <div class="nav-inner">
-          <a href="/" class="logo">Seoul Guide AI</a>
+          <Logo />
           <ul class="nav-links">
             <li><a href="/guides/">Guides</a></li>
             <li><a href="/about/">About</a></li>
-            <li><a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="cta-link">Try the Bot</a></li>
+            <li><a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="cta-link">Try the Bot</a></li>
           </ul>
         </div>
       </nav>
@@ -58,13 +61,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div class="footer-inner">
         <div class="footer-cta">
           <p>Need personalized help navigating life in Korea?</p>
-          <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">Chat with Seoul Guide AI on Telegram</a>
+          <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">Chat with Living in Korea on Telegram</a>
         </div>
         <div class="footer-links">
           <a href="/guides/">Guides</a>
           <a href="/about/">About</a>
         </div>
-        <p class="footer-copy">&copy; {new Date().getFullYear()} Seoul Guide AI. Helping foreigners thrive in Korea.</p>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Living in Korea. Helping foreigners thrive in Korea.</p>
       </div>
     </footer>
 
@@ -145,6 +148,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         height: 60px;
       }
       .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
         font-weight: 700;
         font-size: 1.15rem;
         color: var(--color-primary);

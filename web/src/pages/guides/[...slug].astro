@@ -43,8 +43,8 @@ const articleSchema = {
   headline: guide.data.title,
   description: guide.data.description,
   ...(lastUpdated && { dateModified: lastUpdated }),
-  author: { '@type': 'Organization', name: 'Seoul Guide AI' },
-  publisher: { '@type': 'Organization', name: 'Seoul Guide AI', url: siteUrl },
+  author: { '@type': 'Organization', name: 'Living in Korea' },
+  publisher: { '@type': 'Organization', name: 'Living in Korea', url: siteUrl },
   mainEntityOfPage: pageUrl,
 };
 
@@ -61,7 +61,7 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title={`${guide.data.title} | Seoul Guide AI`}
+  title={`${guide.data.title} | Living in Korea`}
   description={guide.data.description}
   ogTitle={guide.data.title}
   ogDescription={guide.data.description}
@@ -107,8 +107,8 @@ const breadcrumbSchema = {
           <div class="guide-cta">
             <p><strong>Need personalized help?</strong></p>
             <p>Get instant answers about life in Korea from our AI assistant on Telegram.</p>
-            <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
-              Chat with Seoul Guide AI
+            <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">
+              Chat with Living in Korea
             </a>
           </div>
         </article>

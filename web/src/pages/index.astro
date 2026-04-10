@@ -5,7 +5,7 @@ import StructuredData from '../components/StructuredData.astro';
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Seoul Guide AI',
+  name: 'Living in Korea',
   url: 'https://seoulguide.ai',
   description: 'Free guides and AI assistant helping foreigners navigate life in Korea',
 };
@@ -57,12 +57,13 @@ const categories = [
 ---
 
 <BaseLayout
-  title="Seoul Guide AI - Helping Foreigners Thrive in Korea"
+  title="Living in Korea - Helping Foreigners Thrive in Korea"
   description="Free, comprehensive guides for foreigners living in Korea. Banking, housing, healthcare, visas, transportation, and more. Plus an AI-powered Telegram bot for instant answers."
 >
   <StructuredData slot="head" data={orgSchema} />
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-accent" aria-hidden="true"></div>
     <div class="hero-inner">
       <h1>Your Korean friend, powered by AI</h1>
       <p class="hero-subtitle">
@@ -70,7 +71,7 @@ const categories = [
         healthcare, visas, and daily life in Korea.
       </p>
       <div class="hero-actions">
-        <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">
           Get help on Telegram
         </a>
         <a href="/guides/" class="btn btn-outline">Browse guides</a>
@@ -81,27 +82,34 @@ const categories = [
   <!-- What is this -->
   <section class="what-section">
     <div class="what-inner">
-      <h2>What is Seoul Guide AI?</h2>
+      <h2>What is Living in Korea?</h2>
       <div class="what-grid">
         <div class="what-card">
-          <h3>15 detailed guides</h3>
+          <h3>Comprehensive knowledge base</h3>
           <p>
-            Step-by-step guides covering everything from opening a bank account to finding
-            an English-speaking doctor. Written by people who have been through it, updated regularly.
+            16 free guides on this site, plus the bot's AI can answer questions beyond
+            what's written here -- from niche visa cases to reading your specific gas bill.
           </p>
         </div>
         <div class="what-card">
-          <h3>AI-powered Telegram bot</h3>
+          <h3>AI bot that speaks your language</h3>
           <p>
-            Ask anything about life in Korea and get an instant, personalized answer.
-            The bot draws from our verified knowledge base to give you accurate, up-to-date information.
+            Ask in English, Vietnamese, Chinese, Japanese, Thai, or any language you speak.
+            The bot understands and replies in your language -- no translation needed.
           </p>
         </div>
         <div class="what-card">
-          <h3>Built for foreigners</h3>
+          <h3>Photo interpretation</h3>
           <p>
-            No more Google searches that lead to outdated blog posts. We verify every fact,
-            cite sources, and update guides as policies change.
+            Send a photo of any Korean document -- bills, contracts, signs, menus, government
+            letters -- and get an instant explanation of what it says and what to do.
+          </p>
+        </div>
+        <div class="what-card">
+          <h3>Built by a Korean, for foreigners</h3>
+          <p>
+            Not another outdated blog. Verified information from someone who knows the Korean
+            system inside out, because his girlfriend went through it all.
           </p>
         </div>
       </div>
@@ -133,7 +141,7 @@ const categories = [
         These guides cover the basics. For your specific situation -- visa questions, neighborhood
         recommendations, step-by-step help with paperwork -- chat with our AI assistant.
       </p>
-      <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
+      <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">
         Start chatting on Telegram
       </a>
     </div>
@@ -141,11 +149,23 @@ const categories = [
 
   <style>
     .hero {
+      position: relative;
       background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
       padding: 4rem 1.5rem 3.5rem;
       text-align: center;
+      overflow: hidden;
+    }
+    .hero-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #C60C30 0%, #C60C30 50%, #003478 50%, #003478 100%);
+      opacity: 0.85;
     }
     .hero-inner {
+      position: relative;
       max-width: 680px;
       margin: 0 auto;
     }

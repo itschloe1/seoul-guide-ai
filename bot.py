@@ -155,7 +155,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        "Hey! I'm Seoul Guide AI -- think of me as your Korean friend "
+        "Hey! I'm Living in Korea -- think of me as your Korean friend "
         "who knows how everything works here.\n\n"
         "To give you the best help, tell me where you're at:",
         reply_markup=reply_markup,
@@ -406,7 +406,7 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
-    logger.info("Seoul Guide AI bot starting...")
+    logger.info("Living in Korea bot starting...")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 

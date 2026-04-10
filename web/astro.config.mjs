@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://seoulguide.ai',
+  site: 'https://livinginkorea.co',
   output: 'static',
   integrations: [mdx(), sitemap()],
 });
