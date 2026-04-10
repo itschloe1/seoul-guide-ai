@@ -49,6 +49,15 @@
     debounceTimer = setTimeout(() => doSearch(query), 150);
   });
 
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      clearTimeout(debounceTimer);
+      var query = input.value.trim();
+      if (query) doSearch(query);
+    }
+  });
+
   input?.addEventListener('focus', () => {
     if (input.value.trim() && resultsEl.innerHTML) {
       resultsEl.classList.add('is-open');
