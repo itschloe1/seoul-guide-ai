@@ -1,0 +1,87 @@
+---
+// No props needed - pure client-side component
+---
+
+<div class="feedback">
+  <p class="feedback-prompt">Was this guide helpful?</p>
+  <div class="feedback-buttons">
+    <button class="feedback-btn" data-helpful="yes" aria-label="Yes, this was helpful">
+      Yes
+    </button>
+    <button class="feedback-btn" data-helpful="no" aria-label="No, this was not helpful">
+      No
+    </button>
+  </div>
+  <p class="feedback-thanks" hidden>Thanks for your feedback!</p>
+</div>
+
+<style>
+  .feedback {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--color-bg-alt);
+    border-radius: 10px;
+  }
+  .feedback-prompt {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+  .feedback-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .feedback-btn {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.4rem 1.25rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .feedback-btn:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+  }
+  .feedback-thanks {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+</style>
+
+<script>
+  function initFeedback() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.feedback-btn');
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const helpful = btn.dataset.helpful;
+        const container = btn.closest('.feedback');
+        if (!container) return;
+
+        const buttonsDiv = container.querySelector('.feedback-buttons') as HTMLElement;
+        const prompt = container.querySelector('.feedback-prompt') as HTMLElement;
+        const thanks = container.querySelector('.feedback-thanks') as HTMLElement;
+
+        if (buttonsDiv) buttonsDiv.hidden = true;
+        if (prompt) prompt.hidden = true;
+        if (thanks) thanks.hidden = false;
+
+        // Log to analytics if available
+        if (typeof window !== 'undefined' && (window as any).plausible) {
+          (window as any).plausible('Feedback', { props: { helpful } });
+        }
+      });
+    });
+  }
+
+  initFeedback();
+  document.addEventListener('astro:after-swap', initFeedback);
+</script>

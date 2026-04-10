@@ -1,5 +1,8 @@
 # build output
 dist/
+
+# generated content (synced from context-library at build time)
+src/content/guides/
 # generated types
 .astro/
 

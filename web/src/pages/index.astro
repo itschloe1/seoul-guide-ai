@@ -1,5 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import StructuredData from '../components/StructuredData.astro';
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Seoul Guide AI',
+  url: 'https://seoulguide.ai',
+  description: 'Free guides and AI assistant helping foreigners navigate life in Korea',
+};
 
 const categories = [
   {
@@ -51,6 +60,7 @@ const categories = [
   title="Seoul Guide AI - Helping Foreigners Thrive in Korea"
   description="Free, comprehensive guides for foreigners living in Korea. Banking, housing, healthcare, visas, transportation, and more. Plus an AI-powered Telegram bot for instant answers."
 >
+  <StructuredData slot="head" data={orgSchema} />
   <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">

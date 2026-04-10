@@ -32,6 +32,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
+    <slot name="head" />
+    <!-- Analytics: replace data-domain with your actual domain when live -->
+    <script defer data-domain="seoulguide.ai" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <header>
@@ -96,6 +99,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         color: var(--color-text);
         background: var(--color-bg);
         -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
       }
 
       body {

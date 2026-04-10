@@ -1,6 +1,11 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
+import Feedback from '../../components/Feedback.astro';
+import StructuredData from '../../components/StructuredData.astro';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -11,7 +16,48 @@ export async function getStaticPaths() {
 }
 
 const { guide } = Astro.props;
-const { Content } = await render(guide);
+const { Content, headings } = await render(guide);
+
+// Reading time: 238 wpm average
+const wordCount = guide.body ? guide.body.split(/\s+/).length : 0;
+const readingTime = Math.ceil(wordCount / 238);
+
+// Breadcrumb items
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Guides', href: '/guides/' },
+  { label: guide.data.category, href: `/guides/#${guide.data.categorySlug}` },
+  { label: guide.data.title },
+];
+
+// Last updated (if available in data)
+const lastUpdated = (guide.data as any).lastUpdated as string | undefined;
+
+// JSON-LD Structured Data
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://seoulguide.ai';
+const pageUrl = `${siteUrl}/guides/${guide.id}/`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: guide.data.title,
+  description: guide.data.description,
+  ...(lastUpdated && { dateModified: lastUpdated }),
+  author: { '@type': 'Organization', name: 'Seoul Guide AI' },
+  publisher: { '@type': 'Organization', name: 'Seoul Guide AI', url: siteUrl },
+  mainEntityOfPage: pageUrl,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: `${siteUrl}/guides/` },
+    { '@type': 'ListItem', position: 3, name: guide.data.category, item: `${siteUrl}/guides/#${guide.data.categorySlug}` },
+    { '@type': 'ListItem', position: 4, name: guide.data.title },
+  ],
+};
 ---
 
 <BaseLayout
@@ -20,16 +66,146 @@ const { Content } = await render(guide);
   ogTitle={guide.data.title}
   ogDescription={guide.data.description}
 >
-  <article class="article-content">
-    <p class="guide-meta">{guide.data.category} Guide</p>
-    <h1>{guide.data.title}</h1>
-    <Content />
-    <div class="guide-cta">
-      <p><strong>Need personalized help?</strong></p>
-      <p>Get instant answers about life in Korea from our AI assistant on Telegram.</p>
-      <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
-        Chat with Seoul Guide AI
-      </a>
+  <StructuredData slot="head" data={[articleSchema, breadcrumbSchema]} />
+  <div class="guide-page">
+    <div class="guide-header">
+      <Breadcrumbs items={breadcrumbs} />
+
+      <div class="guide-meta">
+        <span>{guide.data.category}</span>
+        {readingTime > 0 && (
+          <>
+            <span class="meta-sep" aria-hidden="true">|</span>
+            <span>{readingTime} min read</span>
+          </>
+        )}
+        {lastUpdated && (
+          <>
+            <span class="meta-sep" aria-hidden="true">|</span>
+            <span>Updated {lastUpdated}</span>
+          </>
+        )}
+      </div>
+
+      <h1>{guide.data.title}</h1>
     </div>
-  </article>
+
+    <!-- Mobile Table of Contents -->
+    <div class="guide-content-wrapper">
+      <div class="toc-mobile-wrapper">
+        <TableOfContents headings={headings} />
+      </div>
+
+      <div class="guide-layout">
+        <article class="article-content">
+          <Content />
+
+          <RelatedGuides currentId={guide.id} categorySlug={guide.data.categorySlug} />
+
+          <Feedback />
+
+          <div class="guide-cta">
+            <p><strong>Need personalized help?</strong></p>
+            <p>Get instant answers about life in Korea from our AI assistant on Telegram.</p>
+            <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
+              Chat with Seoul Guide AI
+            </a>
+          </div>
+        </article>
+
+        <!-- Desktop Table of Contents (sidebar) -->
+        <div class="toc-sidebar-wrapper">
+          <TableOfContents headings={headings} />
+        </div>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
+
+<style>
+  .guide-page {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-header {
+    max-width: var(--max-width);
+    padding-top: 2rem;
+  }
+
+  .guide-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .meta-sep {
+    margin: 0 0.5rem;
+    opacity: 0.5;
+  }
+
+  .guide-header h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Mobile ToC wrapper: only show on small screens */
+  .toc-mobile-wrapper {
+    display: block;
+    max-width: var(--max-width);
+    margin-top: 1.5rem;
+  }
+
+  /* Sidebar ToC wrapper: only show on desktop */
+  .toc-sidebar-wrapper {
+    display: none;
+  }
+
+  .guide-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Override global .article-content spacing since layout is managed by the grid */
+  .guide-layout :global(.article-content) {
+    max-width: none;
+    padding: 0 0 2rem;
+  }
+
+  .guide-cta {
+    background: var(--color-primary-light);
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+  .guide-cta p {
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  @media (min-width: 1024px) {
+    .toc-mobile-wrapper {
+      display: none;
+    }
+    .toc-sidebar-wrapper {
+      display: block;
+    }
+    .guide-layout {
+      grid-template-columns: 1fr 250px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .guide-header h1 {
+      font-size: 1.6rem;
+    }
+  }
+</style>

@@ -1,0 +1,232 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+
+// Filter to only h2 and h3
+const filtered = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+// Build nested structure: each h2 owns subsequent h3s until next h2
+type TocItem = { heading: Heading; children: Heading[] };
+const tocItems: TocItem[] = [];
+
+for (const h of filtered) {
+  if (h.depth === 2) {
+    tocItems.push({ heading: h, children: [] });
+  } else if (h.depth === 3 && tocItems.length > 0) {
+    tocItems[tocItems.length - 1].children.push(h);
+  }
+}
+---
+
+{tocItems.length > 0 && (
+  <!-- Mobile: collapsible -->
+  <div class="toc-mobile">
+    <details>
+      <summary>On this page</summary>
+      <nav aria-label="Table of contents">
+        <ul class="toc-list">
+          {tocItems.map((item) => (
+            <li>
+              <a href={`#${item.heading.slug}`} class="toc-link" data-slug={item.heading.slug}>
+                {item.heading.text}
+              </a>
+              {item.children.length > 0 && (
+                <ul class="toc-sublist">
+                  {item.children.map((child) => (
+                    <li>
+                      <a href={`#${child.slug}`} class="toc-link toc-link-sub" data-slug={child.slug}>
+                        {child.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </details>
+  </div>
+
+  <!-- Desktop: sidebar -->
+  <aside class="toc-desktop">
+    <nav aria-label="Table of contents">
+      <p class="toc-title">On this page</p>
+      <ul class="toc-list">
+        {tocItems.map((item) => (
+          <li>
+            <a href={`#${item.heading.slug}`} class="toc-link" data-slug={item.heading.slug}>
+              {item.heading.text}
+            </a>
+            {item.children.length > 0 && (
+              <ul class="toc-sublist">
+                {item.children.map((child) => (
+                  <li>
+                    <a href={`#${child.slug}`} class="toc-link toc-link-sub" data-slug={child.slug}>
+                      {child.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </aside>
+)}
+
+<style>
+  /* Mobile TOC */
+  .toc-mobile {
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0;
+  }
+  .toc-mobile details {
+    padding: 0;
+  }
+  .toc-mobile summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.75rem 1rem;
+    color: var(--color-text);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .toc-mobile summary::before {
+    content: '\25B6';
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+  }
+  .toc-mobile details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .toc-mobile summary::-webkit-details-marker {
+    display: none;
+  }
+  .toc-mobile .toc-list {
+    padding: 0 1rem 0.75rem;
+  }
+
+  /* Desktop TOC */
+  .toc-desktop {
+    display: none;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+  .toc-desktop::-webkit-scrollbar {
+    width: 3px;
+  }
+  .toc-desktop::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+    margin-bottom: 0.75rem;
+  }
+
+  /* Shared list styles */
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .toc-sublist {
+    list-style: none;
+    padding-left: 0.85rem;
+    margin: 0;
+  }
+  .toc-link {
+    display: block;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    font-size: 0.84rem;
+    line-height: 1.4;
+    color: var(--color-text-light);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .toc-link:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .toc-link-sub {
+    font-size: 0.8rem;
+  }
+
+  /* Active state */
+  .toc-link.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  @media (min-width: 1024px) {
+    .toc-mobile {
+      display: none;
+    }
+    .toc-desktop {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  function initToc() {
+    const links = document.querySelectorAll<HTMLAnchorElement>('.toc-link');
+    if (links.length === 0) return;
+
+    const slugs = Array.from(links).map((link) => link.dataset.slug!);
+    const uniqueSlugs = [...new Set(slugs)];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((link) => {
+              link.classList.toggle('active', link.dataset.slug === id);
+            });
+          }
+        }
+      },
+      {
+        rootMargin: '-80px 0px -70% 0px',
+        threshold: 0,
+      }
+    );
+
+    for (const slug of uniqueSlugs) {
+      const el = document.getElementById(slug);
+      if (el) observer.observe(el);
+    }
+  }
+
+  // Run on initial load and on Astro page transitions
+  initToc();
+  document.addEventListener('astro:after-swap', initToc);
+</script>

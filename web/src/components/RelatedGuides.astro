@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentId: string;
+  categorySlug: string;
+}
+
+const { currentId, categorySlug } = Astro.props;
+
+const allGuides = await getCollection('guides');
+const related = allGuides
+  .filter((g) => g.data.categorySlug === categorySlug && g.id !== currentId)
+  .sort((a, b) => (a.data.order || 99) - (b.data.order || 99))
+  .slice(0, 3);
+---
+
+{related.length > 0 && (
+  <section class="related-guides">
+    <h2>Related Guides</h2>
+    <div class="related-grid">
+      {related.map((guide) => {
+        const snippet =
+          guide.data.description.length > 100
+            ? guide.data.description.slice(0, 100) + '...'
+            : guide.data.description;
+        return (
+          <a href={`/guides/${guide.id}/`} class="related-card">
+            <h3>{guide.data.title}</h3>
+            <p>{snippet}</p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+)}
+
+<style>
+  .related-guides {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .related-guides h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .related-card {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .related-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(26, 86, 219, 0.08);
+    text-decoration: none;
+  }
+  .related-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-primary);
+  }
+  .related-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>
