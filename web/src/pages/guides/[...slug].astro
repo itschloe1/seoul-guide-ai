@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+---
+
+<BaseLayout
+  title={`${guide.data.title} | Seoul Guide AI`}
+  description={guide.data.description}
+  ogTitle={guide.data.title}
+  ogDescription={guide.data.description}
+>
+  <article class="article-content">
+    <p class="guide-meta">{guide.data.category} Guide</p>
+    <h1>{guide.data.title}</h1>
+    <Content />
+    <div class="guide-cta">
+      <p><strong>Need personalized help?</strong></p>
+      <p>Get instant answers about life in Korea from our AI assistant on Telegram.</p>
+      <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
+        Chat with Seoul Guide AI
+      </a>
+    </div>
+  </article>
+</BaseLayout>

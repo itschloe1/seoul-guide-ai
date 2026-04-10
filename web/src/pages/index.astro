@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    name: 'Getting Started',
+    slug: 'onboarding',
+    description: 'Arrival checklist, departure checklist, and the first 60 days',
+    icon: '1',
+  },
+  {
+    name: 'Visa & Immigration',
+    slug: 'visa',
+    description: 'ARC registration, visa types, and critical deadlines',
+    icon: '2',
+  },
+  {
+    name: 'Banking',
+    slug: 'banking',
+    description: 'Opening accounts, cards, payments, and money transfers',
+    icon: '3',
+  },
+  {
+    name: 'Housing',
+    slug: 'housing',
+    description: 'Finding apartments, jeonse vs wolse, and avoiding scams',
+    icon: '4',
+  },
+  {
+    name: 'Healthcare',
+    slug: 'healthcare',
+    description: 'English-speaking doctors, hospitals, and health insurance',
+    icon: '5',
+  },
+  {
+    name: 'Daily Life',
+    slug: 'daily-life',
+    description: 'Transportation, food delivery, utilities, and phone setup',
+    icon: '6',
+  },
+  {
+    name: 'Workplace',
+    slug: 'workplace',
+    description: 'Korean work culture, communication, and your legal rights',
+    icon: '7',
+  },
+];
+---
+
+<BaseLayout
+  title="Seoul Guide AI - Helping Foreigners Thrive in Korea"
+  description="Free, comprehensive guides for foreigners living in Korea. Banking, housing, healthcare, visas, transportation, and more. Plus an AI-powered Telegram bot for instant answers."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Your Korean friend, powered by AI</h1>
+      <p class="hero-subtitle">
+        Free guides and an AI assistant to help foreigners navigate banking, housing,
+        healthcare, visas, and daily life in Korea.
+      </p>
+      <div class="hero-actions">
+        <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
+          Get help on Telegram
+        </a>
+        <a href="/guides/" class="btn btn-outline">Browse guides</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is this -->
+  <section class="what-section">
+    <div class="what-inner">
+      <h2>What is Seoul Guide AI?</h2>
+      <div class="what-grid">
+        <div class="what-card">
+          <h3>15 detailed guides</h3>
+          <p>
+            Step-by-step guides covering everything from opening a bank account to finding
+            an English-speaking doctor. Written by people who have been through it, updated regularly.
+          </p>
+        </div>
+        <div class="what-card">
+          <h3>AI-powered Telegram bot</h3>
+          <p>
+            Ask anything about life in Korea and get an instant, personalized answer.
+            The bot draws from our verified knowledge base to give you accurate, up-to-date information.
+          </p>
+        </div>
+        <div class="what-card">
+          <h3>Built for foreigners</h3>
+          <p>
+            No more Google searches that lead to outdated blog posts. We verify every fact,
+            cite sources, and update guides as policies change.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-section">
+    <div class="categories-inner">
+      <h2>Guide Categories</h2>
+      <p class="categories-sub">Everything you need to navigate life in Korea</p>
+      <div class="categories-grid">
+        {categories.map((cat) => (
+          <a href={`/guides/#${cat.slug}`} class="category-card">
+            <span class="category-num">{cat.icon}</span>
+            <h3>{cat.name}</h3>
+            <p>{cat.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bottom-cta">
+    <div class="bottom-cta-inner">
+      <h2>Get personalized help on Telegram</h2>
+      <p>
+        These guides cover the basics. For your specific situation -- visa questions, neighborhood
+        recommendations, step-by-step help with paperwork -- chat with our AI assistant.
+      </p>
+      <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">
+        Start chatting on Telegram
+      </a>
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .what-section {
+      padding: 3.5rem 1.5rem;
+    }
+    .what-inner {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+    }
+    .what-inner h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .what-card {
+      background: var(--color-bg-alt);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .what-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .what-card p {
+      font-size: 0.93rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    .categories-section {
+      padding: 3rem 1.5rem;
+      background: var(--color-bg-alt);
+    }
+    .categories-inner {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+    }
+    .categories-inner h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 0.25rem;
+    }
+    .categories-sub {
+      text-align: center;
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+    }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .category-card {
+      display: block;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .category-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 8px rgba(26, 86, 219, 0.08);
+      text-decoration: none;
+    }
+    .category-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .category-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+    .category-card p {
+      font-size: 0.88rem;
+      color: var(--color-text-light);
+      line-height: 1.5;
+    }
+
+    .bottom-cta {
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+    .bottom-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .bottom-cta h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+    .bottom-cta p {
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</BaseLayout>

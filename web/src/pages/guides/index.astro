@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const guides = await getCollection('guides');
+
+const categories = [
+  {
+    name: 'Getting Started',
+    slug: 'onboarding',
+    description: 'Essential checklists for arriving in and departing from Korea.',
+  },
+  {
+    name: 'Visa & Immigration',
+    slug: 'visa',
+    description: 'ARC registration, visa types, and immigration deadlines.',
+  },
+  {
+    name: 'Banking',
+    slug: 'banking',
+    description: 'Opening accounts, cards, payments, and money transfers.',
+  },
+  {
+    name: 'Housing',
+    slug: 'housing',
+    description: 'Finding apartments, understanding jeonse vs wolse, and contracts.',
+  },
+  {
+    name: 'Healthcare',
+    slug: 'healthcare',
+    description: 'Finding doctors, hospitals, and understanding Korean health insurance.',
+  },
+  {
+    name: 'Daily Life',
+    slug: 'daily-life',
+    description: 'Transportation, delivery, utilities, and phone setup.',
+  },
+  {
+    name: 'Workplace',
+    slug: 'workplace',
+    description: 'Korean work culture, communication, and your legal rights.',
+  },
+];
+
+function getGuidesForCategory(slug: string) {
+  return guides
+    .filter((g) => g.data.categorySlug === slug)
+    .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+}
+---
+
+<BaseLayout
+  title="Guides for Foreigners in Korea | Seoul Guide AI"
+  description="Comprehensive guides for foreigners living in Korea. Banking, housing, healthcare, visas, transportation, and daily life — everything you need to thrive."
+>
+  <div class="guides-page">
+    <div class="guides-hero">
+      <h1>Guides for Foreigners in Korea</h1>
+      <p>Everything you need to navigate life in Korea, written for foreigners by people who've been through it.</p>
+    </div>
+
+    <div class="categories">
+      {categories.map((cat) => {
+        const catGuides = getGuidesForCategory(cat.slug);
+        return (
+          <section class="category-section" id={cat.slug}>
+            <h2>{cat.name}</h2>
+            <p class="category-desc">{cat.description}</p>
+            <div class="guide-list">
+              {catGuides.map((guide) => (
+                <a href={`/guides/${guide.id}/`} class="guide-card">
+                  <h3>{guide.data.title}</h3>
+                  <p>{guide.data.description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </div>
+
+  <style>
+    .guides-page {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .guides-hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .guides-hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .guides-hero p {
+      color: var(--color-text-light);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .categories {
+      padding-bottom: 3rem;
+    }
+    .category-section {
+      margin-top: 2.5rem;
+    }
+    .category-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .category-desc {
+      color: var(--color-text-light);
+      font-size: 0.93rem;
+      margin-bottom: 1rem;
+    }
+    .guide-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+    .guide-card {
+      display: block;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .guide-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 8px rgba(26, 86, 219, 0.08);
+      text-decoration: none;
+    }
+    .guide-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: var(--color-primary);
+    }
+    .guide-card p {
+      font-size: 0.88rem;
+      color: var(--color-text-light);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .guide-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,366 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const { title, description, ogTitle, ogDescription } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle || title} />
+    <meta property="og:description" content={ogDescription || description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Seoul Guide AI" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle || title} />
+    <meta name="twitter:description" content={ogDescription || description} />
+
+    <link rel="canonical" href={canonicalURL} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-inner">
+          <a href="/" class="logo">Seoul Guide AI</a>
+          <ul class="nav-links">
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="cta-link">Try the Bot</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-cta">
+          <p>Need personalized help navigating life in Korea?</p>
+          <a href="https://t.me/SeoulGuideAIBot" target="_blank" rel="noopener" class="btn btn-primary">Chat with Seoul Guide AI on Telegram</a>
+        </div>
+        <div class="footer-links">
+          <a href="/guides/">Guides</a>
+          <a href="/about/">About</a>
+        </div>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Seoul Guide AI. Helping foreigners thrive in Korea.</p>
+      </div>
+    </footer>
+
+    <style is:global>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --color-primary: #1a56db;
+        --color-primary-dark: #1444b0;
+        --color-primary-light: #e8f0fe;
+        --color-text: #1f2937;
+        --color-text-light: #6b7280;
+        --color-bg: #ffffff;
+        --color-bg-alt: #f8fafc;
+        --color-border: #e5e7eb;
+        --color-accent: #0ea5e9;
+        --max-width: 780px;
+        --max-width-wide: 1100px;
+      }
+
+      html {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Header */
+      header {
+        border-bottom: 1px solid var(--color-border);
+        background: var(--color-bg);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      nav {
+        max-width: var(--max-width-wide);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--color-text);
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+      .cta-link {
+        background: var(--color-primary);
+        color: #fff !important;
+        padding: 0.4rem 1rem;
+        border-radius: 6px;
+        font-size: 0.88rem !important;
+      }
+      .cta-link:hover {
+        background: var(--color-primary-dark);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--color-bg-alt);
+        border-top: 1px solid var(--color-border);
+        margin-top: 4rem;
+        padding: 3rem 1.5rem;
+      }
+      .footer-inner {
+        max-width: var(--max-width-wide);
+        margin: 0 auto;
+        text-align: center;
+      }
+      .footer-cta {
+        margin-bottom: 2rem;
+      }
+      .footer-cta p {
+        margin-bottom: 0.75rem;
+        color: var(--color-text-light);
+      }
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .footer-links a {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+      }
+      .footer-copy {
+        color: var(--color-text-light);
+        font-size: 0.82rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 0.65rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+      .btn-primary {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--color-primary-dark);
+        text-decoration: none;
+      }
+      .btn-outline {
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+      }
+      .btn-outline:hover {
+        background: var(--color-primary-light);
+        text-decoration: none;
+      }
+
+      /* Article content typography */
+      .article-content {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+      .article-content h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+      .article-content h2 {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .article-content h3 {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .article-content h4 {
+        font-size: 1.05rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.4rem;
+      }
+      .article-content p {
+        margin-bottom: 1rem;
+      }
+      .article-content ul,
+      .article-content ol {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+      .article-content li {
+        margin-bottom: 0.35rem;
+      }
+      .article-content blockquote {
+        border-left: 4px solid var(--color-primary);
+        padding: 0.75rem 1rem;
+        margin: 1.5rem 0;
+        background: var(--color-primary-light);
+        border-radius: 0 6px 6px 0;
+        font-style: italic;
+      }
+      .article-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 0.92rem;
+        overflow-x: auto;
+        display: block;
+      }
+      .article-content th,
+      .article-content td {
+        border: 1px solid var(--color-border);
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+      }
+      .article-content th {
+        background: var(--color-bg-alt);
+        font-weight: 600;
+      }
+      .article-content code {
+        background: var(--color-bg-alt);
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+      .article-content pre {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+      .article-content pre code {
+        background: none;
+        padding: 0;
+        color: inherit;
+      }
+      .article-content hr {
+        border: none;
+        border-top: 1px solid var(--color-border);
+        margin: 2rem 0;
+      }
+      .article-content strong {
+        font-weight: 600;
+      }
+
+      /* Guide meta */
+      .guide-meta {
+        color: var(--color-text-light);
+        font-size: 0.88rem;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Guide CTA */
+      .guide-cta {
+        background: var(--color-primary-light);
+        border: 1px solid #bfdbfe;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-top: 3rem;
+        text-align: center;
+      }
+      .guide-cta p {
+        margin-bottom: 0.75rem;
+        color: var(--color-text);
+      }
+
+      @media (max-width: 640px) {
+        html {
+          font-size: 16px;
+        }
+        .nav-links {
+          gap: 1rem;
+        }
+        .article-content h1 {
+          font-size: 1.6rem;
+        }
+        .article-content h2 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </body>
+</html>
