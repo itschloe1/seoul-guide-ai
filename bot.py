@@ -3,7 +3,7 @@ import io
 import json
 import base64
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import anthropic
@@ -219,6 +219,116 @@ def share_link() -> str:
     return ""
 
 
+# --- Proactive timeline reminders per stage ---
+
+STAGE_REMINDERS: dict[str, list[tuple[timedelta, str]]] = {
+    "stage_arrived": [
+        (
+            timedelta(days=1),
+            "Hey! Have you gotten a SIM card yet? That's step 1. "
+            "If you need help, just ask or send me a photo of whatever you're looking at.",
+        ),
+        (
+            timedelta(days=3),
+            "Quick check — have you booked your ARC appointment on HiKorea? "
+            "The sooner you book, the sooner you get your bank account and phone plan sorted. "
+            "Need help? Just ask.",
+        ),
+        (
+            timedelta(days=7),
+            "It's been a week! By now you should have: "
+            "\u2705 SIM card, \u2705 ARC appointment booked. "
+            "Next up: bank account (once ARC arrives). "
+            "Send me a photo of any document you can't read.",
+        ),
+        (
+            timedelta(days=14),
+            "Two weeks in! Your ARC should be arriving soon. "
+            "Once you have it, I can walk you through opening a bank account. "
+            "Which bank are you thinking?",
+        ),
+        (
+            timedelta(days=30),
+            "One month in Korea! How's it going? "
+            "If you haven't set up NHIS (health insurance) yet, now's the time. "
+            "Ask me about it.",
+        ),
+    ],
+    "stage_planning": [
+        (
+            timedelta(days=1),
+            "Getting ready for Korea? The most important thing to sort out first is your visa. "
+            "Tell me your situation and I'll help figure out which visa type fits.",
+        ),
+        (
+            timedelta(days=7),
+            "One week into planning! Have you checked out our arrival checklist? "
+            "It covers everything you need to do in your first 60 days. "
+            "Just ask 'arrival checklist' and I'll walk you through it.",
+        ),
+    ],
+    "stage_leaving": [
+        (
+            timedelta(days=1),
+            "Starting your departure prep? The #1 thing people forget: "
+            "national pension refund (\uad6d\ubbfc\uc5f0\uae08). "
+            "You can get ALL your contributions back. Ask me how.",
+        ),
+        (
+            timedelta(days=7),
+            "Reminder: give your landlord written notice (\ub0b4\uc6a9\uc99d\uba85) "
+            "for deposit return. The earlier the better. "
+            "Need help with the process? Just ask.",
+        ),
+    ],
+    "stage_living": [
+        (
+            timedelta(days=1),
+            "Remember — anytime you see something in Korean you can't read, "
+            "just snap a photo and send it here. Bills, letters, signs, menus — "
+            "I'll explain what it says and what to do.",
+        ),
+    ],
+}
+
+
+async def send_reminder(context: ContextTypes.DEFAULT_TYPE):
+    """Job callback that sends a scheduled reminder message."""
+    job = context.job
+    await context.bot.send_message(
+        chat_id=job.data["chat_id"],
+        text=job.data["message"] + share_link(),
+    )
+
+
+def cancel_user_reminders(user_id: int, job_queue) -> int:
+    """Cancel all pending reminder jobs for a user. Returns count of cancelled jobs."""
+    prefix = f"reminder_{user_id}_"
+    cancelled = 0
+    for job in job_queue.jobs():
+        if job.name and job.name.startswith(prefix):
+            job.schedule_removal()
+            cancelled += 1
+    return cancelled
+
+
+def schedule_stage_reminders(user_id: int, chat_id: int, stage: str, job_queue):
+    """Schedule all reminders for a given stage."""
+    reminders = STAGE_REMINDERS.get(stage, [])
+    for delay, message in reminders:
+        job_name = f"reminder_{user_id}_{int(delay.total_seconds())}"
+        job_queue.run_once(
+            send_reminder,
+            when=delay,
+            data={"chat_id": chat_id, "message": message},
+            name=job_name,
+        )
+    if reminders:
+        logger.info(
+            f"Scheduled {len(reminders)} reminders for user {user_id} (stage={stage})"
+        )
+
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     conversations.pop(user_id, None)
@@ -250,6 +360,11 @@ async def handle_stage_selection(update: Update, context: ContextTypes.DEFAULT_T
         "stage": stage,
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
+
+    # Cancel any existing reminders, then schedule new ones for selected stage
+    cancel_user_reminders(user_id, context.job_queue)
+    chat_id = query.message.chat_id
+    schedule_stage_reminders(user_id, chat_id, stage, context.job_queue)
 
     group_line = ""
     if COMMUNITY_GROUP_LINK:
@@ -473,6 +588,9 @@ async def export_logs(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     conversations.pop(user_id, None)
+    cancelled = cancel_user_reminders(user_id, context.job_queue)
+    if cancelled:
+        logger.info(f"Cancelled {cancelled} pending reminders for user {user_id}")
     await update.message.reply_text("Conversation reset. Ask me anything!")
 
 
