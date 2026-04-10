@@ -1,6 +1,5 @@
 ---
 import Logo from '../components/Logo.astro';
-import Search from '../components/Search.astro';
 
 interface Props {
   title: string;
@@ -45,14 +44,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <nav>
         <div class="nav-inner">
           <Logo />
-          <div class="nav-right">
-            <Search />
-            <ul class="nav-links">
-              <li><a href="/guides/">Guides</a></li>
-              <li><a href="/about/">About</a></li>
-              <li><a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="cta-link">Try the Bot</a></li>
-            </ul>
-          </div>
+          <ul class="nav-links">
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="cta-link">Try the Bot</a></li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -159,11 +155,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         font-size: 1.15rem;
         color: var(--color-primary);
         text-decoration: none;
-      }
-      .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
       }
       .nav-links {
         list-style: none;
