@@ -70,6 +70,13 @@ export const GUIDE_META: Record<string, GuideMeta> = {
     categorySlug: 'healthcare',
     order: 2,
   },
+  'healthcare/pharmacy-essentials': {
+    title: 'Korean Pharmacy Guide: Essential Medicines & OTC Products for Foreigners',
+    description: 'What to buy at Korean pharmacies and convenience stores. Product names in Korean, prices, symptom phrases, 24-hour pharmacy locations, and an emergency kit shopping list under 25,000 KRW.',
+    category: 'Healthcare',
+    categorySlug: 'healthcare',
+    order: 3,
+  },
   'housing/find-apartment': {
     title: 'How to Find an Apartment in Korea: Apps, Agents & Prices (2026)',
     description: 'Finding housing in Korea as a foreigner. Best apps (Zigbang, Dabang), English-friendly platforms (Ziptoss, FOHO), real estate agents, costs by neighborhood, and viewing checklist.',
@@ -111,6 +118,20 @@ export const GUIDE_META: Record<string, GuideMeta> = {
     category: 'Visa & Immigration',
     categorySlug: 'visa',
     order: 2,
+  },
+  'entertainment/kpop-concerts-tickets': {
+    title: 'How to Buy K-Pop Concert Tickets in Korea as a Foreigner (2026)',
+    description: 'Step-by-step guide to buying K-pop concert tickets on Interpark, Melon Ticket, YES24. Fan club presale, music show attendance, fansign lottery, and the 2AM cancelled ticket trick.',
+    category: 'Entertainment',
+    categorySlug: 'entertainment',
+    order: 1,
+  },
+  'shopping/oliveyoung-guide': {
+    title: 'Olive Young Shopping Guide 2026: Best K-Beauty Products for Foreigners',
+    description: 'What to buy at Olive Young in Korea. Best sellers, steady sellers, trending ingredients (PDRN, exosomes), sunscreen rankings, tax refund tips, and price guide by category.',
+    category: 'Shopping & K-Culture',
+    categorySlug: 'shopping',
+    order: 1,
   },
   'workplace/culture-communication': {
     title: 'Korean Workplace Culture: Nunchi, Hierarchy & Your Rights',
