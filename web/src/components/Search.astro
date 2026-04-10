@@ -1,0 +1,181 @@
+---
+// Pagefind search component
+// CSS and JS are loaded from the pagefind bundle generated at build time
+---
+
+<div class="search-wrapper" id="search-wrapper">
+  <button class="search-trigger" id="search-trigger" aria-label="Search guides">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <span class="search-label">Search</span>
+  </button>
+
+  <div class="search-modal" id="search-modal" role="dialog" aria-label="Search guides" hidden>
+    <div class="search-backdrop" id="search-backdrop"></div>
+    <div class="search-dialog">
+      <div id="search-container"></div>
+      <button class="search-close" id="search-close" aria-label="Close search">ESC</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Initialize Pagefind UI when modal opens
+  let pagefindLoaded = false;
+
+  function openSearch() {
+    const modal = document.getElementById('search-modal');
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+
+    if (!pagefindLoaded) {
+      pagefindLoaded = true;
+      // Load Pagefind CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+      // @ts-ignore - pagefind is loaded from the built bundle at runtime
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = () => {
+        // @ts-ignore
+        new window.PagefindUI({
+          element: '#search-container',
+          showSubResults: true,
+          showImages: false,
+          translations: {
+            placeholder: 'Search guides (e.g. "bank account", "visa", "jeonse")',
+            zero_results: 'No guides found for "[SEARCH_TERM]"',
+          },
+        });
+        // Focus the search input
+        setTimeout(() => {
+          const input = document.querySelector('#search-container input') as HTMLInputElement;
+          if (input) input.focus();
+        }, 100);
+      };
+      document.head.appendChild(script);
+    } else {
+      setTimeout(() => {
+        const input = document.querySelector('#search-container input') as HTMLInputElement;
+        if (input) { input.focus(); input.select(); }
+      }, 50);
+    }
+  }
+
+  function closeSearch() {
+    const modal = document.getElementById('search-modal');
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  // Trigger button
+  document.getElementById('search-trigger')?.addEventListener('click', openSearch);
+  // Backdrop click
+  document.getElementById('search-backdrop')?.addEventListener('click', closeSearch);
+  // Close button
+  document.getElementById('search-close')?.addEventListener('click', closeSearch);
+  // ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSearch();
+    // Cmd/Ctrl+K to open search
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+</script>
+
+<style>
+  .search-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .search-trigger:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  .search-label {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .search-label { display: inline; }
+  }
+
+  .search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+  }
+  .search-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .search-dialog {
+    position: relative;
+    width: 90%;
+    max-width: 640px;
+    max-height: 70vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .search-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.7rem;
+    color: #6b7280;
+    cursor: pointer;
+  }
+
+  /* Pagefind UI overrides */
+  #search-container {
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 70vh;
+  }
+</style>
+
+<style is:global>
+  /* Pagefind UI style overrides — CSS loaded at runtime via JS */
+  .pagefind-ui__search-input {
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+  .pagefind-ui__result-link {
+    color: var(--color-primary) !important;
+    font-weight: 600 !important;
+  }
+  .pagefind-ui__result-excerpt {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+</style>
