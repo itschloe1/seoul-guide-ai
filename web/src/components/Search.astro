@@ -1,184 +1,225 @@
 ---
-// Pagefind search component
-// CSS and JS are loaded from the pagefind bundle generated at build time
+// Inline search component — search bar in nav with dropdown results
 ---
 
 <div class="search-wrapper" id="search-wrapper">
-  <button class="search-trigger" id="search-trigger" aria-label="Search guides">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <div class="search-input-wrapper">
+    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
-    <span class="search-label">Search</span>
-  </button>
-
-  <div class="search-modal" id="search-modal" role="dialog" aria-label="Search guides" hidden>
-    <div class="search-backdrop" id="search-backdrop"></div>
-    <div class="search-dialog">
-      <div id="search-container"></div>
-      <button class="search-close" id="search-close" aria-label="Close search">ESC</button>
-    </div>
+    <input
+      type="text"
+      class="search-input"
+      id="search-input"
+      placeholder="Search..."
+      autocomplete="off"
+    />
   </div>
+  <div class="search-results" id="search-results"></div>
 </div>
 
 <script>
-  // Initialize Pagefind UI when modal opens
-  let pagefindLoaded = false;
+  let pagefind: any = null;
 
-  function openSearch() {
-    const modal = document.getElementById('search-modal');
-    if (!modal) return;
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-
-    if (!pagefindLoaded) {
-      pagefindLoaded = true;
-      // Load Pagefind CSS
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '/pagefind/pagefind-ui.css';
-      document.head.appendChild(link);
-      // @ts-ignore - pagefind is loaded from the built bundle at runtime
+  function initPagefind(): Promise<any> {
+    if (pagefind) return Promise.resolve(pagefind);
+    return new Promise((resolve) => {
       const script = document.createElement('script');
-      script.src = '/pagefind/pagefind-ui.js';
-      script.onload = () => {
+      script.src = '/pagefind/pagefind.js';
+      script.onload = async () => {
         // @ts-ignore
-        new window.PagefindUI({
-          element: '#search-container',
-          showSubResults: true,
-          showImages: false,
-          translations: {
-            placeholder: 'Search guides (e.g. "bank account", "visa", "jeonse")',
-            zero_results: 'No guides found for "[SEARCH_TERM]"',
-          },
-        });
-        // Focus the search input
-        setTimeout(() => {
-          const input = document.querySelector('#search-container input') as HTMLInputElement;
-          if (input) input.focus();
-        }, 100);
+        pagefind = window.pagefind;
+        if (pagefind?.init) await pagefind.init();
+        resolve(pagefind);
+      };
+      script.onerror = () => {
+        console.warn('Pagefind not available. Run a full build to enable search.');
+        resolve(null);
       };
       document.head.appendChild(script);
-    } else {
-      setTimeout(() => {
-        const input = document.querySelector('#search-container input') as HTMLInputElement;
-        if (input) { input.focus(); input.select(); }
-      }, 50);
+    });
+  }
+
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsEl = document.getElementById('search-results') as HTMLDivElement;
+  let debounceTimer: ReturnType<typeof setTimeout>;
+
+  input?.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    const query = input.value.trim();
+    if (!query) {
+      resultsEl.innerHTML = '';
+      resultsEl.classList.remove('is-open');
+      return;
     }
-  }
+    debounceTimer = setTimeout(() => doSearch(query), 150);
+  });
 
-  function closeSearch() {
-    const modal = document.getElementById('search-modal');
-    if (!modal) return;
-    modal.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
-
-  // Trigger button
-  document.getElementById('search-trigger')?.addEventListener('click', openSearch);
-  // Backdrop click
-  document.getElementById('search-backdrop')?.addEventListener('click', closeSearch);
-  // Close button
-  document.getElementById('search-close')?.addEventListener('click', closeSearch);
-  // ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeSearch();
-    // Cmd/Ctrl+K to open search
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      openSearch();
+  input?.addEventListener('focus', () => {
+    if (input.value.trim() && resultsEl.innerHTML) {
+      resultsEl.classList.add('is-open');
     }
   });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    const wrapper = document.getElementById('search-wrapper');
+    if (wrapper && !wrapper.contains(e.target as Node)) {
+      resultsEl.classList.remove('is-open');
+    }
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      resultsEl.classList.remove('is-open');
+      input?.blur();
+    }
+    // Cmd/Ctrl+K to focus search
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      input?.focus();
+    }
+  });
+
+  async function doSearch(query: string) {
+    const pf = await initPagefind();
+    if (!pf) {
+      resultsEl.innerHTML = '<div class="search-no-results">Search available after build</div>';
+      resultsEl.classList.add('is-open');
+      return;
+    }
+
+    const search = await pf.search(query);
+    const results = await Promise.all(
+      search.results.slice(0, 6).map((r: any) => r.data())
+    );
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = `<div class="search-no-results">No results for "${query}"</div>`;
+    } else {
+      resultsEl.innerHTML = results.map((r: any) => `
+        <a class="search-result-item" href="${r.url}">
+          <span class="search-result-title">${r.meta?.title || r.url}</span>
+          <span class="search-result-excerpt">${r.excerpt}</span>
+        </a>
+      `).join('');
+    }
+    resultsEl.classList.add('is-open');
+  }
 </script>
 
 <style>
-  .search-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: none;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 0.35rem 0.7rem;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .search-trigger:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-  .search-label {
-    display: none;
-  }
-  @media (min-width: 640px) {
-    .search-label { display: inline; }
-  }
-
-  .search-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: none;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 10vh;
-  }
-  .search-modal.is-open {
-    display: flex;
-  }
-  .search-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  .search-dialog {
+  .search-wrapper {
     position: relative;
-    width: 90%;
-    max-width: 640px;
-    max-height: 70vh;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
   }
-  .search-close {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
     background: #f3f4f6;
     border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    padding: 0.15rem 0.5rem;
-    font-size: 0.7rem;
-    color: #6b7280;
-    cursor: pointer;
+    border-radius: 8px;
+    padding: 0.3rem 0.6rem;
+    gap: 0.4rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .search-input-wrapper:focus-within {
+    background: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(26, 86, 219, 0.1);
+  }
+  .search-icon {
+    color: #9ca3af;
+    flex-shrink: 0;
+  }
+  .search-input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    width: 140px;
+    transition: width 0.2s;
+  }
+  .search-input::placeholder {
+    color: #9ca3af;
+  }
+  .search-input:focus {
+    width: 220px;
   }
 
-  /* Pagefind UI overrides */
-  #search-container {
-    padding: 1rem;
+  /* Dropdown results */
+  .search-results {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 380px;
+    max-height: 420px;
     overflow-y: auto;
-    max-height: 70vh;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
+  .search-results.is-open {
+    display: block;
+  }
+
+  .search-no-results {
+    padding: 1rem;
+    color: #6b7280;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .search-input {
+      width: 100px;
+    }
+    .search-input:focus {
+      width: 150px;
+    }
+    .search-results {
+      width: calc(100vw - 2rem);
+      right: -1rem;
+    }
   }
 </style>
 
 <style is:global>
-  /* Pagefind UI style overrides — CSS loaded at runtime via JS */
-  .pagefind-ui__search-input {
-    border-radius: 8px !important;
-    font-size: 1rem !important;
-    padding: 0.75rem 1rem !important;
+  .search-result-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.15s;
   }
-  .pagefind-ui__result-link {
-    color: var(--color-primary) !important;
-    font-weight: 600 !important;
+  .search-result-item:last-child {
+    border-bottom: none;
   }
-  .pagefind-ui__result-excerpt {
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
+  .search-result-item:hover {
+    background: #f9fafb;
+  }
+  .search-result-title {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+  }
+  .search-result-excerpt {
+    display: block;
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+  .search-result-excerpt mark {
+    background: #fef3c7;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
   }
 </style>
