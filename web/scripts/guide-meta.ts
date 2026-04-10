@@ -42,6 +42,13 @@ export const GUIDE_META: Record<string, GuideMeta> = {
     categorySlug: 'daily-life',
     order: 3,
   },
+  'daily-life/cost-of-living': {
+    title: 'Cost of Living in Korea: Foreigner\'s Guide',
+    description: 'Detailed monthly budget breakdown for foreigners in Korea. Housing, food, transport, utilities costs. Three budget tiers, Seoul vs other cities, salary expectations.',
+    category: 'Daily Life',
+    categorySlug: 'daily-life',
+    order: 5,
+  },
   'daily-life/phone-verification': {
     title: 'Phone & Identity Verification Guide for Foreigners',
     description: 'Korean identity verification (본인인증), SIM card registration, phone number options, and how to get past the verification wall as a foreigner.',
