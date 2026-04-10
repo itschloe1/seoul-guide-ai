@@ -19,31 +19,24 @@
   <div class="search-results" id="search-results"></div>
 </div>
 
-<script>
-  let pagefind: any = null;
+<script is:inline>
+  var pagefind = null;
 
-  function initPagefind(): Promise<any> {
-    if (pagefind) return Promise.resolve(pagefind);
-    return new Promise((resolve) => {
-      const script = document.createElement('script');
-      script.src = '/pagefind/pagefind.js';
-      script.onload = async () => {
-        // @ts-ignore
-        pagefind = window.pagefind;
-        if (pagefind?.init) await pagefind.init();
-        resolve(pagefind);
-      };
-      script.onerror = () => {
-        console.warn('Pagefind not available. Run a full build to enable search.');
-        resolve(null);
-      };
-      document.head.appendChild(script);
-    });
+  async function initPagefind() {
+    if (pagefind) return pagefind;
+    try {
+      pagefind = await import('/pagefind/pagefind.js');
+      await pagefind.init();
+    } catch (e) {
+      console.warn('Pagefind not available. Run a full build to enable search.');
+      return null;
+    }
+    return pagefind;
   }
 
-  const input = document.getElementById('search-input') as HTMLInputElement;
-  const resultsEl = document.getElementById('search-results') as HTMLDivElement;
-  let debounceTimer: ReturnType<typeof setTimeout>;
+  var input = document.getElementById('search-input');
+  var resultsEl = document.getElementById('search-results');
+  var debounceTimer;
 
   input?.addEventListener('input', () => {
     clearTimeout(debounceTimer);
@@ -65,7 +58,7 @@
   // Close on click outside
   document.addEventListener('click', (e) => {
     const wrapper = document.getElementById('search-wrapper');
-    if (wrapper && !wrapper.contains(e.target as Node)) {
+    if (wrapper && !wrapper.contains(e.target)) {
       resultsEl.classList.remove('is-open');
     }
   });
@@ -93,13 +86,13 @@
 
     const search = await pf.search(query);
     const results = await Promise.all(
-      search.results.slice(0, 6).map((r: any) => r.data())
+      search.results.slice(0, 6).map((r) => r.data())
     );
 
     if (results.length === 0) {
       resultsEl.innerHTML = `<div class="search-no-results">No results for "${query}"</div>`;
     } else {
-      resultsEl.innerHTML = results.map((r: any) => `
+      resultsEl.innerHTML = results.map((r) => `
         <a class="search-result-item" href="${r.url}">
           <span class="search-result-title">${r.meta?.title || r.url}</span>
           <span class="search-result-excerpt">${r.excerpt}</span>
