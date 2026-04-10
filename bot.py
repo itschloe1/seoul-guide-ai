@@ -33,6 +33,7 @@ ADMIN_CHAT_ID = int(os.environ.get("ADMIN_CHAT_ID", "0"))
 COMMUNITY_GROUP_LINK = os.environ.get("COMMUNITY_GROUP_LINK", "")
 
 SYSTEM_PROMPT = Path(__file__).parent.joinpath("system_prompt.md").read_text()
+CONTEXT_LIB = Path(__file__).parent / "context-library"
 FEEDBACK_DIR = Path(__file__).parent / "feedback"
 FEEDBACK_DIR.mkdir(exist_ok=True)
 LOGS_DIR = Path(__file__).parent / "logs"
@@ -60,6 +61,82 @@ def detect_pain_signals(text: str) -> list[str]:
     text_lower = text.lower()
     return [category for category, keywords in PAIN_SIGNALS.items()
             if any(kw in text_lower for kw in keywords)]
+
+
+# --- Context-library retrieval ---
+
+# Guide index: keyword triggers → file path
+GUIDE_INDEX: list[tuple[list[str], str]] = [
+    (["bank", "account", "계좌", "atm", "shinhan", "hana", "woori", "kb"],
+     "banking/open-account.md"),
+    (["card", "payment", "kakao pay", "naver pay", "wowpass", "credit card", "remittance", "send money", "wise", "송금"],
+     "banking/cards-payments.md"),
+    (["subway", "bus", "taxi", "ktx", "train", "t-money", "transportation", "transport", "교통"],
+     "daily-life/transportation.md"),
+    (["delivery", "baemin", "coupang eats", "배달", "package", "택배"],
+     "daily-life/delivery.md"),
+    (["utility", "utilities", "gas bill", "electricity", "water bill", "garbage", "recycling", "trash", "internet", "분리수거", "공과금"],
+     "daily-life/utilities.md"),
+    (["cost of living", "budget", "how much", "expensive", "salary", "생활비", "monthly cost", "rent price"],
+     "daily-life/cost-of-living.md"),
+    (["phone", "sim", "verification", "본인인증", "identity", "인증", "esim"],
+     "daily-life/phone-verification.md"),
+    (["hospital", "doctor", "clinic", "emergency", "ambulance", "sick", "injury", "병원", "english speaking doctor"],
+     "healthcare/find-hospital.md"),
+    (["insurance", "nhis", "health insurance", "보험", "national health"],
+     "healthcare/insurance.md"),
+    (["pharmacy", "medicine", "drug", "약국", "tylenol", "cold medicine", "fever", "pain relief", "상비약", "편의점 약"],
+     "healthcare/pharmacy-essentials.md"),
+    (["apartment", "housing", "rent", "studio", "officetel", "goshiwon", "집", "방", "zigbang", "dabang", "부동산"],
+     "housing/find-apartment.md"),
+    (["jeonse", "wolse", "전세", "월세", "deposit", "보증금", "lease", "landlord", "contract"],
+     "housing/jeonse-wolse.md"),
+    (["arrival", "first week", "just arrived", "moving to korea", "checklist", "what to do first"],
+     "onboarding/arrival-checklist.md"),
+    (["leaving korea", "departure", "pension refund", "퇴직", "severance", "연금", "going home", "last month"],
+     "onboarding/departure-checklist.md"),
+    (["arc", "alien registration", "residence card", "외국인등록"],
+     "visa/arc-guide.md"),
+    (["visa", "비자", "e-2", "e-7", "d-2", "f-1", "f-2", "f-5", "f-6", "d-10", "digital nomad", "overstay", "address report", "주소"],
+     "visa/visa-types.md"),
+    (["workplace", "office", "nunchi", "눈치", "hierarchy", "hoesik", "회식", "bullying", "hagwon", "teacher", "epik", "contract"],
+     "workplace/culture-communication.md"),
+    (["concert", "ticket", "kpop", "k-pop", "interpark", "melon ticket", "fansign", "music show", "music bank", "inkigayo", "idol"],
+     "entertainment/kpop-concerts-tickets.md"),
+    (["olive young", "oliveyoung", "올리브영", "k-beauty", "skincare", "sunscreen", "serum", "mask", "cosmetic", "makeup"],
+     "shopping/oliveyoung-guide.md"),
+]
+
+# Pre-load all guide contents at startup
+_guide_cache: dict[str, str] = {}
+
+def _load_guide(path: str) -> str:
+    if path not in _guide_cache:
+        full = CONTEXT_LIB / path
+        if full.exists():
+            _guide_cache[path] = full.read_text()
+        else:
+            _guide_cache[path] = ""
+    return _guide_cache[path]
+
+def find_relevant_guides(text: str, max_guides: int = 2) -> str:
+    """Match user text against guide index and return content of top matches."""
+    text_lower = text.lower()
+    scored: list[tuple[int, str]] = []
+    for keywords, path in GUIDE_INDEX:
+        hits = sum(1 for kw in keywords if kw in text_lower)
+        if hits > 0:
+            scored.append((hits, path))
+    scored.sort(key=lambda x: x[0], reverse=True)
+    top = scored[:max_guides]
+    if not top:
+        return ""
+    parts = []
+    for _, path in top:
+        content = _load_guide(path)
+        if content:
+            parts.append(f"\n--- Reference: {path} ---\n{content}")
+    return "\n".join(parts)
 
 
 def log_query(
@@ -249,11 +326,17 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     add_to_history(user_id, "user", user_text)
 
+    # Retrieve relevant guides based on user query
+    guides_context = find_relevant_guides(user_text)
+    system = SYSTEM_PROMPT
+    if guides_context:
+        system = SYSTEM_PROMPT + "\n\n## Reference Guides (use this info to answer)\n" + guides_context
+
     try:
         response = client.messages.create(
             model="claude-3-haiku-20240307",
             max_tokens=1024,
-            system=SYSTEM_PROMPT,
+            system=system,
             messages=get_history(user_id),
         )
         reply = response.content[0].text
@@ -301,11 +384,17 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     add_to_history(user_id, "user", user_content)
     await update.message.reply_text("Looking at your photo...")
 
+    # Retrieve relevant guides based on caption
+    guides_context = find_relevant_guides(caption)
+    system = SYSTEM_PROMPT
+    if guides_context:
+        system = SYSTEM_PROMPT + "\n\n## Reference Guides (use this info to answer)\n" + guides_context
+
     try:
         response = client.messages.create(
             model="claude-3-haiku-20240307",
             max_tokens=1024,
-            system=SYSTEM_PROMPT,
+            system=system,
             messages=get_history(user_id),
         )
         reply = response.content[0].text
