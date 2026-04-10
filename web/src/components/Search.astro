@@ -28,7 +28,7 @@
   function openSearch() {
     const modal = document.getElementById('search-modal');
     if (!modal) return;
-    modal.hidden = false;
+    modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
 
     if (!pagefindLoaded) {
@@ -70,7 +70,7 @@
   function closeSearch() {
     const modal = document.getElementById('search-modal');
     if (!modal) return;
-    modal.hidden = true;
+    modal.classList.remove('is-open');
     document.body.style.overflow = '';
   }
 
@@ -120,10 +120,13 @@
     position: fixed;
     inset: 0;
     z-index: 1000;
-    display: flex;
+    display: none;
     align-items: flex-start;
     justify-content: center;
     padding-top: 10vh;
+  }
+  .search-modal.is-open {
+    display: flex;
   }
   .search-backdrop {
     position: fixed;
