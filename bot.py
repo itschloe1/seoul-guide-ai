@@ -157,6 +157,10 @@ def log_query(
         "pain_signals": detect_pain_signals(user_text),
         "response_excerpt": response_text[:200],
     }
+    # Structured log to stdout (Railway captures this)
+    logger.info(f"QUERY {json.dumps(entry, ensure_ascii=False)}")
+
+    # Also write to file (for /export, ephemeral on Railway)
     log_file = LOGS_DIR / f"queries_{datetime.now(timezone.utc).strftime('%Y%m%d')}.jsonl"
     try:
         with open(log_file, "a", encoding="utf-8") as f:
