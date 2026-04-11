@@ -218,7 +218,7 @@ def share_link() -> str:
         return (
             f"\n\n---\n"
             f"Know someone in Korea? Share this bot: https://t.me/{BOT_USERNAME}\n"
-            f"Something wrong or missing? /feedback"
+            f"Got a tip or know something better? /feedback -- your experience helps everyone."
         )
     return ""
 
@@ -344,9 +344,12 @@ async def feedback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if not text:
         await update.message.reply_text(
-            "Usage: /feedback <your correction or tip>\n\n"
-            "Example: /feedback The gas bill payment info is outdated. "
-            "You can now pay through Kakao Pay directly."
+            "Share what you know! Your tips make this bot better for everyone.\n\n"
+            "Usage: /feedback <your tip, correction, or experience>\n\n"
+            "Examples:\n"
+            "- /feedback You can pay gas bills through Kakao Pay now\n"
+            "- /feedback Shinhan bank was the easiest to open without ARC\n"
+            "- /feedback The pharmacy near Gangnam station has English-speaking staff"
         )
         return
 
@@ -377,7 +380,8 @@ async def feedback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             logger.error(f"Failed to notify admin: {e}")
 
     await update.message.reply_text(
-        "Thanks for the feedback! We'll review it and update our knowledge base."
+        "Thanks for sharing! This gets reviewed and added to the knowledge base "
+        "so the next person with the same question gets a better answer."
     )
 
 
