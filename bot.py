@@ -442,24 +442,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not user_text:
         return
 
-    # Auto-onboarding: if user has no profile, show stage selection first
-    if user_id not in user_profiles and not is_group_chat(update):
-        keyboard = [
-            [InlineKeyboardButton("Planning to move to Korea", callback_data="stage_planning")],
-            [InlineKeyboardButton("Just arrived (first 2 months)", callback_data="stage_arrived")],
-            [InlineKeyboardButton("Already living here", callback_data="stage_living")],
-            [InlineKeyboardButton("Leaving Korea soon", callback_data="stage_leaving")],
-        ]
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text(
-            "Hey! Before I help you, let me know where you're at "
-            "so I can give you the best advice:",
-            reply_markup=reply_markup,
-        )
-        # Still save their message — we'll answer after stage selection
-        add_to_history(user_id, "user", user_text)
-        return
-
     add_to_history(user_id, "user", user_text)
 
     # Retrieve relevant guides based on user query
@@ -479,6 +461,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         add_to_history(user_id, "assistant", reply)
         log_query(user_id, update.effective_chat.type, "text", user_text, reply)
         await update.message.reply_text(reply + share_link())
+
+        # After answering, nudge stage selection if no profile yet
+        if user_id not in user_profiles and not is_group_chat(update):
+            keyboard = [
+                [InlineKeyboardButton("Planning to move", callback_data="stage_planning")],
+                [InlineKeyboardButton("Just arrived", callback_data="stage_arrived")],
+                [InlineKeyboardButton("Living here", callback_data="stage_living")],
+                [InlineKeyboardButton("Leaving soon", callback_data="stage_leaving")],
+            ]
+            await update.message.reply_text(
+                "By the way -- tell me your situation and I can give you even better advice:",
+                reply_markup=InlineKeyboardMarkup(keyboard),
+            )
     except Exception as e:
         logger.error(f"Claude API error: {e}")
         await update.message.reply_text(
