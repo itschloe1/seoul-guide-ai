@@ -362,9 +362,12 @@ async def handle_stage_selection(update: Update, context: ContextTypes.DEFAULT_T
     }
 
     # Cancel any existing reminders, then schedule new ones for selected stage
-    cancel_user_reminders(user_id, context.job_queue)
-    chat_id = query.message.chat_id
-    schedule_stage_reminders(user_id, chat_id, stage, context.job_queue)
+    try:
+        cancel_user_reminders(user_id, context.job_queue)
+        chat_id = query.message.chat_id
+        schedule_stage_reminders(user_id, chat_id, stage, context.job_queue)
+    except Exception as e:
+        logger.error(f"Failed to schedule reminders for user {user_id}: {e}")
 
     group_line = ""
     if COMMUNITY_GROUP_LINK:
