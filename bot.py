@@ -213,9 +213,13 @@ def is_bot_mentioned(update: Update) -> bool:
 
 
 def share_link() -> str:
-    """Generate a share deep link for the bot."""
+    """Generate a share deep link + feedback hint for the bot."""
     if BOT_USERNAME:
-        return f"\n\n---\nKnow someone in Korea? Share this bot: https://t.me/{BOT_USERNAME}"
+        return (
+            f"\n\n---\n"
+            f"Know someone in Korea? Share this bot: https://t.me/{BOT_USERNAME}\n"
+            f"Something wrong or missing? /feedback"
+        )
     return ""
 
 
