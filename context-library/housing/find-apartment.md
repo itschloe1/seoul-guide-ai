@@ -418,7 +418,7 @@ Deposits outside Seoul are typically 3,000,000 - 15,000,000 KRW for studios.
 - Provider: Korea Electric Power Corporation (single nationwide provider)
 - Registration: Call 123 (24/7, limited English) or register online
 - Required: ARC, name, address, move-in date
-- Cost: 10,000-30,000 KRW/month (summer AC can push this to 50,000+)
+- Cost: 10,000-30,000 KRW/month (summer AC can push this to 50,000+). See our [utilities guide](/guides/daily-life/utilities/) for full setup details and seasonal cost breakdowns.
 - Tip: Check for unpaid bills from the previous tenant before transferring the account to your name
 
 **Gas**
@@ -457,7 +457,7 @@ Bring: passport, ARC, signed lease contract.
 
 ### Payment Setup
 
-- Open a Korean bank account if you have not already (requires ARC for most banks)
+- [Open a Korean bank account](/guides/banking/open-account/) if you have not already (requires ARC for most banks)
 - Set up automatic transfer (자동이체) for rent payments
 - Utility bills can be paid at convenience stores (bring the paper bill with barcode), via mobile banking, or set up auto-debit (0.5% discount at KEPCO)
 - KakaoPay and Toss are widely used for utility payments
@@ -516,10 +516,10 @@ Getting your deposit back while leaving the country is the hardest scenario. Opt
 ## Common Questions
 
 **Do I need an ARC (Alien Registration Card) to rent?**
-For a standard lease, yes. Most landlords require an ARC for the contract, and you need it to register utilities and your address. Some officetels may accept a passport if you show your visa duration. For short-term stays (Enkostay, goshiwon, share houses), a passport is often sufficient.
+For a standard lease, yes. Most landlords require an [ARC](/guides/visa/arc-guide/) for the contract, and you need it to register utilities and your address. Some officetels may accept a passport if you show your visa duration. For short-term stays (Enkostay, goshiwon, share houses), a passport is often sufficient.
 
 **What is jeonse and should I use it?**
-Jeonse (전세) is a large lump-sum deposit (often 50-80% of the property value, typically 100M-500M+ KRW) with no monthly rent. The landlord invests your deposit and returns it after the lease (usually 2 years). It is less common for foreigners because: the deposit is enormous, jeonse fraud cases have increased (landlords failing to return deposits), and most foreigners prefer the flexibility of wolse. If you do consider jeonse, always check the property's mortgage status and consider deposit insurance.
+Jeonse (전세) is a large lump-sum deposit (often 50-80% of the property value, typically 100M-500M+ KRW) with no monthly rent. For a full comparison of rental systems and fraud risks, see our [Jeonse vs Wolse guide](/guides/housing/jeonse-wolse/). The landlord invests your deposit and returns it after the lease (usually 2 years). It is less common for foreigners because: the deposit is enormous, jeonse fraud cases have increased (landlords failing to return deposits), and most foreigners prefer the flexibility of wolse. If you do consider jeonse, always check the property's mortgage status and consider deposit insurance.
 
 **What is ban-jeonse?**
 Ban-jeonse (반전세) is a hybrid: a mid-sized deposit with reduced monthly rent. For example, instead of 10M deposit + 800K/month (pure wolse), you might pay 50M deposit + 300K/month. It is a middle ground that reduces monthly costs if you have more cash upfront.

@@ -299,7 +299,7 @@ Your Residence Card is essentially your life-in-Korea key. Here is what becomes 
 
 | Category | What You Can Do |
 |----------|----------------|
-| **Banking** | Open a full Korean bank account (checking, savings, transfers). KEB Hana Bank has English-language services specifically for foreigners. |
+| **Banking** | [Open a full Korean bank account](/guides/banking/open-account/) (checking, savings, transfers). KEB Hana Bank has English-language services specifically for foreigners. |
 | **Mobile phone** | Sign up for long-term phone plans with SK Telecom, KT, or LG U+ under your name. Keep the same number during extensions. |
 | **Health insurance** | Enroll in National Health Insurance (NHI). Note: foreign residents must reside in Korea for at least 6 months before being added as a dependent, with exceptions for spouses/children of certain visa holders. |
 | **Online services** | Register for Naver, Coupang, Baemin (food delivery), Yogiyo, KakaoTalk (full Korean features), KakaoPay |
@@ -427,9 +427,9 @@ These months coincide with the start of Korean school semesters and English teac
 - Staff are generally helpful but busy; have your documents organized and ready
 
 ### After receiving your card
-- [ ] Open a Korean bank account (KEB Hana, Woori, and Shinhan are foreigner-friendly)
-- [ ] Switch from tourist SIM to a proper phone plan
-- [ ] Register for National Health Insurance through your employer or local NHI office
+- [ ] [Open a Korean bank account](/guides/banking/open-account/) (KEB Hana, Woori, and Shinhan are foreigner-friendly)
+- [ ] Switch from tourist SIM to a [proper phone plan](/guides/daily-life/phone-verification/)
+- [ ] Register for [National Health Insurance](/guides/healthcare/insurance/) through your employer or local NHI office
 - [ ] Upgrade KakaoTalk with your Korean number for KakaoPay and full features
 - [ ] Register on Korean apps: Naver, Coupang, Baemin, etc.
 - [ ] Keep your ARC on you at all times (it is your legal ID in Korea)

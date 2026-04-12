@@ -160,7 +160,7 @@ If you earned income outside of standard employment (프리랜서, 사업소득)
 
 ### 4. Housing Deposit Recovery (보증금 반환)
 
-This is the #1 source of stress for departing foreigners.
+This is the #1 source of stress for departing foreigners. For background on Korea's deposit system and your legal protections, see our [Jeonse vs Wolse guide](/guides/housing/jeonse-wolse/).
 
 **Timeline:**
 - Notify your landlord in writing at least 30-60 days before move-out (check your contract for the exact notice period)
@@ -242,7 +242,7 @@ This happens more than you'd think -- landlord doesn't answer calls, changed num
 ### 5. Bank Account
 
 **Options:**
-- **Keep it open** (recommended if awaiting pension refund, tax refund, or deposit return). Most Korean banks allow accounts to remain open after departure, but some features (online banking, transfers) may stop working without a Korean phone number.
+- **Keep it open** (recommended if awaiting pension refund, tax refund, or deposit return). Most Korean banks allow accounts to remain open after departure, but some features (online banking, transfers) may stop working without a Korean phone number. For details on managing your account, see our [bank account guide](/guides/banking/open-account/).
 - **Close it** if all refunds are settled. Visit your branch with ARC and passport. Transfer remaining balance overseas first via wire transfer or Wise.
 - **Convert to overseas-accessible account:** Some banks (Woori, KEB Hana) offer overseas remittance-friendly setups. Ask at the branch before you leave.
 
@@ -296,7 +296,7 @@ Before closing your account, cancel ALL automatic payments (자동이체) linked
 **At the airport on departure day:**
 - You do NOT need to visit immigration beforehand if leaving permanently
 - At airport immigration, inform the officer you are departing permanently
-- Surrender your ARC (Residence Card) -- they will collect it
+- Surrender your [ARC (Residence Card)](/guides/visa/arc-guide/) -- they will collect it
 - Your departure is recorded, which triggers NPS refund processing
 
 **If you plan to return to Korea later:** You can keep your ARC if your visa is still valid and you're just traveling temporarily. Only surrender if permanently leaving.

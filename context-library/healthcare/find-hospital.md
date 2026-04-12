@@ -31,7 +31,7 @@ Korea has excellent healthcare at prices that shock most Westerners (in a good w
 
 ### Insurance for foreigners
 
-- **Residents (6+ months, with ARC):** Required to enroll in National Health Insurance (NHI). Covers 50-70% of costs. Premiums are roughly 3.5% of monthly income.
+- **Residents (6+ months, with ARC):** Required to enroll in [National Health Insurance (NHI)](/guides/healthcare/insurance/). Covers 50-70% of costs. Premiums are roughly 3.5% of monthly income.
 - **Short-term visitors/tourists:** Pay 100% out of pocket. Get travel insurance before you come.
 - **NHI activation:** Typically 3 months after your Alien Registration Card (ARC) is issued. Some visa types (D-2, E-7, F-4, H-1) qualify.
 
@@ -331,7 +331,7 @@ Growing expat area with increasing English-friendly options.
 
 ### What to bring
 
-- **Passport** (tourists) or **Alien Registration Card / ARC** (residents)
+- **Passport** (tourists) or **[Alien Registration Card / ARC](/guides/visa/arc-guide/)** (residents)
 - **NHI insurance card** (if enrolled)
 - **Private/travel insurance card** (if applicable)
 - **Medical history or current prescriptions in English** (if relevant)
@@ -447,7 +447,7 @@ Common OTC items available without prescription:
 - Antihistamines
 - Basic first aid supplies
 
-For anything beyond basic OTC, you need a doctor's prescription. This includes antibiotics, birth control pills, and most specialized medications.
+For anything beyond basic OTC, you need a doctor's prescription. This includes antibiotics, birth control pills, and most specialized medications. See our [pharmacy essentials guide](/guides/healthcare/pharmacy-essentials/) for a list of common medicines with their Korean names and prices.
 
 ### Pharmacy hours
 

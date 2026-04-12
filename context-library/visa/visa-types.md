@@ -90,7 +90,7 @@ This is the newest visa type (launched January 2025) and generates the most ques
 
 4. **Receive visa sticker** in passport or e-visa confirmation
 
-5. **Enter Korea** and apply for ARC at immigration within 90 days of arrival
+5. **Enter Korea** and apply for ARC at immigration within 90 days of arrival. See our [step-by-step ARC guide](/guides/visa/arc-guide/) for the full application process.
 
 ### Income Proof Methods
 
@@ -182,7 +182,7 @@ NHIS enrollment is **not automatic** for F-1-D holders. You need private/interna
 
 ### Address Reporting (주소지 신고/변경)
 
-**When you move, you must report your new address within 14 days.** This is one of the most commonly missed deadlines.
+**When you move, you must report your new address within 14 days.** This is one of the most commonly missed deadlines. If you are searching for housing, our [apartment-finding guide](/guides/housing/find-apartment/) covers the full process from listing apps to contract signing.
 
 #### Online Reporting via HiKorea (Step-by-Step)
 
@@ -370,7 +370,7 @@ A: You have a grace period to find new employment or change visa status. Typical
 A: KIIP (Korea Immigration & Integration Program, 사회통합프로그램) is a free government program offering Korean language classes and Korean society orientation. Completing it gives you bonus points for F-2 (resident) and F-5 (permanent residence) applications. Highly recommended if you plan to stay long-term. Register at social-integration.go.kr.
 
 **Q: Can I get a Korean driver's license on my visa?**
-A: Yes, most visa holders (except short-term tourists) can get a Korean driver's license. You can convert a foreign license (from select countries) or take the Korean driving test. Visit a 운전면허시험장 (driver's license center) with your ARC and passport.
+A: Yes, most visa holders (except short-term tourists) can get a Korean driver's license. For general transportation options including subway, bus, and taxi, see our [transportation guide](/guides/daily-life/transportation/). You can convert a foreign license (from select countries) or take the Korean driving test. Visit a 운전면허시험장 (driver's license center) with your ARC and passport.
 
 **Q: My visa is expiring in 2 weeks and I can't get an immigration appointment. What do I do?**
 A: Call 1345 immediately. They can sometimes arrange emergency appointments. You can also visit immigration without an appointment (long wait but they won't turn you away for urgent visa matters). Do NOT let your visa expire -- even a 1-day overstay is recorded.

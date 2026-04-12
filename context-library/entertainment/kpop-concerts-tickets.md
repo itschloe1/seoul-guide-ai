@@ -29,12 +29,12 @@ Buying K-pop concert tickets in Korea as a foreigner is possible but challenging
 1. Go to ticket.interpark.com
 2. Click 회원가입 (Sign up) → Select 외국인 (Foreigner)
 3. Enter your passport name EXACTLY as it appears on your passport (this is checked at venue entry)
-4. Verify with either: Korean phone number OR email verification (for international accounts)
+4. Verify with either: Korean phone number OR email verification (for international accounts). If you need a Korean number, see our [phone verification guide](/guides/daily-life/phone-verification/) for prepaid SIM options that work from day one.
 5. Add your payment method in advance (Visa/Mastercard accepted on Global Interpark; domestic Interpark may require Korean card)
 6. **Critical:** Do a test purchase of a cheap ticket to verify your payment works BEFORE the actual sale
 
 **Melon Ticket:**
-1. Create a Melon account (melon.com) → requires Korean phone number for full features
+1. Create a Melon account (melon.com) → requires [Korean phone number](/guides/daily-life/phone-verification/) for full features
 2. Without Korean phone: use Melon Global or wait for Weverse/Global Interpark allocation
 3. Link your fan club membership if you have one (this is done SEPARATELY from account creation)
 
@@ -83,7 +83,7 @@ Buying K-pop concert tickets in Korea as a foreigner is possible but challenging
 
 **Pro tip:** If your foreign card is declined on the domestic site, try Global Interpark (global.interpark.com) — same events, foreigner-friendly payment.
 
-**Warning:** Some banks flag Korean ticketing sites as suspicious transactions. Call your bank before sale day and whitelist the platform.
+**Warning:** Some banks flag Korean ticketing sites as suspicious transactions. Call your bank before sale day and whitelist the platform. For more on payment methods in Korea, see our [cards and payments guide](/guides/banking/cards-payments/).
 
 ---
 

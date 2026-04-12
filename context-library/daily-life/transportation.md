@@ -89,7 +89,7 @@ Seoul's subway system has 23 lines, 700+ stations, and covers the entire Seoul-I
 | 7-Day | 20,000 won | Subway + bus |
 | 30-Day | 65,000 won | Subway + bus + Ttareungi bikes |
 
-Available at subway station machines or the Climate Card website. Worth it if you take 4+ rides per day.
+Available at subway station machines or the Climate Card website. Worth it if you take 4+ rides per day. For a full breakdown of monthly transit costs, see our [cost of living guide](/guides/daily-life/cost-of-living/).
 
 ### Apps with English Support
 
@@ -421,7 +421,7 @@ Gimpo is much closer to central Seoul. The subway is the obvious choice for most
 ## Common Questions
 
 **Q: Can I use my credit card directly on the subway/bus?**
-A: Seoul introduced open-loop payments for international tourists in 2025, accepting Visa/Mastercard tap-to-pay at some subway gates. Coverage is expanding but not universal yet. A T-money card remains more reliable.
+A: Seoul introduced open-loop payments for international tourists in 2025, accepting Visa/Mastercard tap-to-pay at some subway gates. Coverage is expanding but not universal yet. A T-money card remains more reliable. For more on payment options in Korea, see our [cards and payments guide](/guides/banking/cards-payments/).
 
 **Q: Is Uber available in Korea?**
 A: Yes, but with a very limited fleet. Kakao T or K-RIDE are far more reliable for getting a ride.

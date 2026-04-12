@@ -128,7 +128,7 @@ These give you a real Korean number for calls, SMS, and app verification.
 
 ## How to Get a Korean Phone Number Without ARC
 
-If you have not yet received your Alien Registration Card (typically takes 2-3 weeks after applying at immigration), you still have options:
+If you have not yet received your [Alien Registration Card](/guides/visa/arc-guide/) (typically takes 2-3 weeks after applying at immigration), you still have options:
 
 1. **Prepaid SIM at the airport or convenience store** - Passport only. Gets you a Korean 010 number immediately. Works for KakaoTalk, basic app registration, and receiving SMS verification codes.
 
@@ -278,7 +278,7 @@ These require full identity verification (PASS or carrier-based) plus ARC. You c
 
 ### Problem: Cannot open a bank account
 - You need ARC + PASS verification for online-only banks (Toss, KakaoBank)
-- For traditional banks (Shinhan, Hana, KB), you can visit a branch in person with your passport and ARC. Some branches have English-speaking staff.
+- For traditional banks (Shinhan, Hana, KB), you can visit a branch in person with your passport and ARC. Some branches have English-speaking staff. See our [bank account guide](/guides/banking/open-account/) for the full process.
 - If your ARC is not yet issued, some bank branches will open a limited account with your passport only.
 
 ### Problem: App language is only Korean

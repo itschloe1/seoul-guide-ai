@@ -33,7 +33,7 @@ Visa --> Temporary SIM --> ARC appointment --> ARC card --> Bank account --> Pos
 
 #### 1. Secure Your Visa
 
-You need a valid long-term visa before entering Korea. Common visa types:
+You need a valid long-term visa before entering Korea. See our [visa types guide](/guides/visa/visa-types/) for details on each category. Common visa types:
 
 | Visa | For | Duration |
 |------|-----|----------|
@@ -100,7 +100,7 @@ You need a place to land while you sort out permanent housing. Options:
 
 **Step 1: Get a SIM Card or eSIM**
 
-You need a Korean phone number immediately. Almost everything (deliveries, banking OTPs, taxi apps, immigration booking) requires one.
+You need a Korean phone number immediately. Almost everything (deliveries, banking OTPs, taxi apps, immigration booking) requires one. For a detailed breakdown of SIM options and identity verification, see our [phone verification guide](/guides/daily-life/phone-verification/).
 
 | Option | Cost | Where | Notes |
 |--------|------|-------|-------|
@@ -144,7 +144,7 @@ From Incheon Airport to Seoul:
 
 #### 1. Book Your ARC (Residence Card) Appointment
 
-**Do this on Day 1-2.** Appointment slots fill up fast, especially during peak periods (March-April, September-October when students arrive).
+**Do this on Day 1-2.** Appointment slots fill up fast, especially during peak periods (March-April, September-October when students arrive). See our [ARC guide](/guides/visa/arc-guide/) for the full application process and required documents.
 
 **How to book:**
 1. Go to [HiKorea](https://www.hikorea.go.kr/Main.pt?locale=en) (available in English)
@@ -233,7 +233,7 @@ During week 1, while waiting for your ARC appointment:
 
 #### 6. Receive Your ARC and Open a Bank Account
 
-**Once you have your physical ARC card in hand:**
+**Once you have your physical ARC card in hand**, it's time to [open a bank account](/guides/banking/open-account/). Here's a quick comparison:
 
 **Which bank to choose:**
 
@@ -313,7 +313,7 @@ During week 1, while waiting for your ARC appointment:
 
 #### 8. Find Permanent Housing
 
-Now that you have an ARC, bank account, and phone plan, you can sign a proper lease.
+Now that you have an ARC, bank account, and phone plan, you can sign a proper lease. See our [apartment-finding guide](/guides/housing/find-apartment/) for the full process and our [Jeonse vs Wolse guide](/guides/housing/jeonse-wolse/) for rental system details.
 
 **Korea's rental system:**
 
@@ -376,7 +376,7 @@ Now that you have an ARC, bank account, and phone plan, you can sign a proper le
 
 #### 9. Register for National Health Insurance (NHIS)
 
-**Who must enroll:** All foreigners staying over 6 months with a valid ARC are legally required to enroll in NHIS.
+**Who must enroll:** All foreigners staying over 6 months with a valid ARC are legally required to enroll in NHIS. For complete details on premiums, coverage, and the gap period before enrollment, see our [health insurance guide](/guides/healthcare/insurance/).
 
 **Timeline:**
 - Employed: Your employer should register you within 14 days of hire. The cost is split 50/50 (approximately 3.43% of salary each).

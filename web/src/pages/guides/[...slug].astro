@@ -48,6 +48,33 @@ const articleSchema = {
   mainEntityOfPage: pageUrl,
 };
 
+// Parse FAQ from guide body (matches **Q: ...** / A: ... patterns)
+const faqItems: { question: string; answer: string }[] = [];
+if (guide.body) {
+  const faqRegex = /\*\*Q:\s*(.+?)\*\*\s*\n+A:\s*([\s\S]*?)(?=\n\n\*\*Q:|\n\n##|\n\n---|\s*$)/g;
+  let match;
+  while ((match = faqRegex.exec(guide.body)) !== null) {
+    const question = match[1].trim();
+    const answer = match[2].trim().replace(/\n/g, ' ');
+    if (question && answer) {
+      faqItems.push({ question, answer });
+    }
+  }
+}
+
+const faqSchema = faqItems.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+} : null;
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -65,8 +92,9 @@ const breadcrumbSchema = {
   description={guide.data.description}
   ogTitle={guide.data.title}
   ogDescription={guide.data.description}
+  ogImage={`/og/${guide.id}.png`}
 >
-  <StructuredData slot="head" data={[articleSchema, breadcrumbSchema]} />
+  <StructuredData slot="head" data={[articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]} />
   <div class="guide-page">
     <div class="guide-header">
       <Breadcrumbs items={breadcrumbs} />

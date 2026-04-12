@@ -9,7 +9,7 @@
 Korea is roughly 85% cashless. Visa and Mastercard work at most chain stores, hotels, and restaurants, but fail at traditional markets, street vendors, small local shops, and almost all online Korean sites. Your best bet as a foreigner:
 
 - **Tourists (no ARC):** Get a WOWPASS or Namane prepaid card at the airport. Carry 50,000-200,000 KRW cash for markets and street food. Use Samsung Pay if you have a Samsung phone (works with international cards, no ARC needed).
-- **Residents (with ARC):** Open a Korean bank account, get a check (debit) card, set up Kakao Pay and Naver Pay. You now function like a local.
+- **Residents (with ARC):** [Open a Korean bank account](/guides/banking/open-account/), get a check (debit) card, set up Kakao Pay and Naver Pay. You now function like a local.
 - **Online shopping:** Use Gmarket Global (accepts foreign cards) or get a Korean check card for Coupang.
 
 ---
@@ -46,8 +46,8 @@ In Korea, a debit card is called a "check card" (체크카드). It draws directl
 
 **Requirements:**
 - Valid passport
-- Alien Registration Card (ARC) with 3-6+ months remaining
-- Korean phone number registered under your name
+- [Alien Registration Card (ARC)](/guides/visa/arc-guide/) with 3-6+ months remaining
+- Korean phone number registered under your name (see our [phone verification guide](/guides/daily-life/phone-verification/))
 - Proof of Korean address (lease contract, utility bill, or employer letter)
 
 **Process:**
@@ -101,7 +101,7 @@ If denied a regular credit card, you can deposit a lump sum (e.g., 1,000,000-3,0
 
 ### The "Golden Triangle" for Full Mobile Payment Access
 
-To use most Korean payment apps, you need all three: **ARC + Korean phone number + Korean bank account**. Without all three, your options are limited.
+To use most Korean payment apps, you need all three: **[ARC](/guides/visa/arc-guide/) + [Korean phone number](/guides/daily-life/phone-verification/) + [Korean bank account](/guides/banking/open-account/)**. Without all three, your options are limited.
 
 ### Kakao Pay (카카오페이)
 

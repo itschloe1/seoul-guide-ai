@@ -70,8 +70,8 @@ Coupang Eats is widely considered the most foreigner-friendly app for residents.
 ### Registration & Access
 - Download from App Store / Google Play
 - Go to Settings and switch language to English
-- **Requires a Korean phone number** (verified via SMS)
-- **Requires an ARC (Alien Registration Card)** for full registration
+- **Requires a [Korean phone number](/guides/daily-life/phone-verification/)** (verified via SMS)
+- **Requires an [ARC (Alien Registration Card)](/guides/visa/arc-guide/)** for full registration
 - Without ARC, you cannot complete signup. Tourists generally cannot use this app independently
 
 ### Payment
@@ -252,7 +252,7 @@ Shuttle Delivery was specifically built for the international community in Korea
 Kakao Pay launched **Global Home** in November 2025, a redesigned interface for foreign residents. Key improvements:
 - Multilingual support: English, Chinese, Vietnamese (auto-detects device language)
 - Simplified card registration, QR payments, and transfers
-- Foreign residents with ARC can register Korean bank accounts
+- Foreign residents with ARC can register Korean bank accounts (see our [bank account guide](/guides/banking/open-account/) for how to open one)
 - Through Alipay+ integration, foreign tourists can pay via their home country's e-wallet at Kakao Pay QR points
 
 To set up: Download KakaoTalk > Open Kakao Pay within the app > Follow the "Global Home" setup flow.

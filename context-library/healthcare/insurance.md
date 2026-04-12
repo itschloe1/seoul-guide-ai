@@ -162,7 +162,7 @@ Cost: roughly 50,000-100,000 KRW/month from Korean insurers like Samsung Fire, M
 Your employer does everything. They must register you within **14 days** of your employment start date.
 
 **What you need to provide:**
-- Alien Registration Card (ARC / 외국인등록증)
+- [Alien Registration Card (ARC / 외국인등록증)](/guides/visa/arc-guide/)
 - Passport
 - Employment contract
 
@@ -317,7 +317,7 @@ Combine travel insurance (for catastrophic coverage) with paying out of pocket f
 - **종합병원 (general hospital):** Higher copay. Complex conditions, specialists
 - **상급종합병원 (tertiary/university hospital):** Highest copay (60% outpatient). Requires referral for lower copay rate. Places like Seoul National University Hospital, Severance, Samsung Medical Center, Asan Medical Center
 
-**Tip:** Start at a local clinic. If you need specialist care, get a referral (의뢰서). Going directly to a large hospital without a referral means higher copays.
+**Tip:** Start at a local clinic. If you need specialist care, get a referral (의뢰서). Going directly to a large hospital without a referral means higher copays. See our [guide to English-speaking hospitals and clinics](/guides/healthcare/find-hospital/) for recommended facilities.
 
 ### Free Health Checkups
 
@@ -413,7 +413,7 @@ A: Possibly. If you can prove equivalent coverage through foreign insurance, you
 A: NHIS offers premium reductions for low-income subscribers. Visit your local branch with proof of income (or lack thereof) to apply. Students on D-2/D-4 visas already receive reduced rates.
 
 **Q: I just arrived and need to see a doctor. What do I do?**
-A: Go to any clinic. Without insurance, you pay 100% out of pocket. Basic clinic visits cost 30,000-50,000 KRW. Keep receipts. If you later enroll in NHIS, you generally cannot claim reimbursement for pre-enrollment expenses.
+A: Go to any clinic -- see our [hospital-finding guide](/guides/healthcare/find-hospital/) for English-speaking options. Without insurance, you pay 100% out of pocket. Basic clinic visits cost 30,000-50,000 KRW. Keep receipts. If you later enroll in NHIS, you generally cannot claim reimbursement for pre-enrollment expenses.
 
 **Q: My employer isn't enrolling me. Is that legal?**
 A: No. Employers are legally required to enroll employees within 14 days. Report non-compliance to NHIS (1577-1000) or the Ministry of Employment and Labor (1350).

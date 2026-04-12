@@ -27,9 +27,9 @@ The biggest variable is **housing**. If your employer provides housing (common f
 Housing is by far the largest expense. Korea uses two main rental systems:
 
 - **Wolse (월세):** Monthly rent + smaller deposit (typically 3-10M KRW deposit)
-- **Jeonse (전세):** Large lump-sum deposit (50-80% of property value), zero or minimal monthly rent
+- **Jeonse (전세):** Large lump-sum deposit (50-80% of property value), zero or minimal monthly rent. See our [Jeonse vs Wolse guide](/guides/housing/jeonse-wolse/) for a full comparison.
 
-Most foreigners use wolse because they lack the capital for jeonse deposits. The prices below are wolse rates for a single person.
+Most foreigners use wolse because they lack the capital for jeonse deposits. For step-by-step housing search advice, see our [apartment-finding guide](/guides/housing/find-apartment/). The prices below are wolse rates for a single person.
 
 #### Seoul Monthly Rent by Area (Wolse, Studio/One-Room, 2025-2026)
 
@@ -77,7 +77,7 @@ Utility costs vary dramatically by season due to Korea's extreme temperature swi
 | Internet | 25,000-55,000 | 25,000-55,000 | 25,000-55,000 | ~40,000 |
 | **Utility Total** | **~100,000-170,000** | **~150,000-290,000** | **~80,000-140,000** | **~130,000** |
 
-*All prices in KRW/month. See the [utilities guide](utilities.md) for full details on setup, payment, and providers.*
+*All prices in KRW/month. See our [utilities guide](/guides/daily-life/utilities/) for full details on setup, payment, and providers.*
 
 Apartment maintenance fee (관리비) adds 0-150,000 KRW/month depending on housing type. One-rooms and villas often have no maintenance fee; officetels and apartments charge 50,000-200,000 KRW.
 
@@ -158,7 +158,7 @@ Delivery apps: **Baemin (배달의민족)**, **Coupang Eats**, **Yogiyo**. Minim
 | **KakaoT (ride-hailing)** | Same as taxi meter | Convenience fee possible for KakaoT Blue/Black |
 | **KTX (Seoul-Busan)** | 59,800 | Standard seat, ~2.5 hours |
 
-**Monthly transportation budget:** 50,000-100,000 KRW for most people using public transit. The **Climate Card** at 65,000 KRW/month is excellent value for heavy users (break-even around 45-50 rides/month).
+**Monthly transportation budget:** 50,000-100,000 KRW for most people using public transit. The **Climate Card** at 65,000 KRW/month is excellent value for heavy users (break-even around 45-50 rides/month). See our [transportation guide](/guides/daily-life/transportation/) for routes, apps, and tips.
 
 ---
 

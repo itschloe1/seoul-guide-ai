@@ -17,9 +17,9 @@
 | Mobile | 10,000-70,000 KRW | 10,000-70,000 KRW | ~40,000 KRW |
 | **Total** | **~130,000-200,000 KRW/mo** |||
 
-Electricity spikes in summer (air conditioning). Gas spikes in winter (floor heating). Budget 150,000-250,000 KRW/month for all utilities combined.
+Electricity spikes in summer (air conditioning). Gas spikes in winter (floor heating). Budget 150,000-250,000 KRW/month for all utilities combined. For a broader look at monthly expenses, see our [cost of living guide](/guides/daily-life/cost-of-living/).
 
-**How most people pay:** Auto-debit (자동이체) from a Korean bank account. Small discount (~0.5%) on electricity for using auto-debit.
+**How most people pay:** Auto-debit (자동이체) from a Korean bank account. You will need a [Korean bank account](/guides/banking/open-account/) for this. Small discount (~0.5%) on electricity for using auto-debit.
 
 ---
 
@@ -385,7 +385,7 @@ Fines are enforced. District offices review CCTV footage and can trace violation
 | **ATM** | All bills | Use barcode recognition at bank ATMs |
 
 ### Setting Up Auto-Debit (Recommended)
-1. Open a Korean bank account (requires ARC; mobile ARC accepted at major banks since March 2025)
+1. [Open a Korean bank account](/guides/banking/open-account/) (requires [ARC](/guides/visa/arc-guide/); mobile ARC accepted at major banks since March 2025)
 2. Visit the bank app or branch
 3. Register each bill for automatic payment (전기 = electricity, 가스 = gas, 수도 = water)
 4. Choose payment date (usually the bill's due date)

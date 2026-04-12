@@ -125,7 +125,7 @@ Every year, Olive Young holds its official awards ceremony and marks winning pro
 
 ### Tax Refund (세금 환급)
 
-Purchases over **15,000 KRW** at a single Olive Young store qualify for VAT refund (~10% back).
+Purchases over **15,000 KRW** at a single Olive Young store qualify for VAT refund (~10% back). You can pay with international Visa/Mastercard or a [Korean debit card](/guides/banking/cards-payments/) if you have one.
 
 **How:**
 1. At checkout, show your passport
@@ -178,7 +178,7 @@ If you're new to K-beauty, start simple. The full "10-step routine" is marketing
 | 3. Moisturizer | Light cream or gel | COSRX Oil-Free Moisturizing Lotion (~14,000 KRW) | Lightweight |
 | 4. Sunscreen | SPF 50+ PA++++ | Beauty of Joseon Sun (~12,000 KRW) | Must-have |
 
-**Total: ~55,000 KRW (~$40 USD)** for a complete routine. In Western countries, equivalent quality products would cost $100-150.
+**Total: ~55,000 KRW (~$40 USD)** for a complete routine. In Western countries, equivalent quality products would cost $100-150. For context on how beauty spending fits into overall expenses, see our [cost of living guide](/guides/daily-life/cost-of-living/).
 
 ---
 

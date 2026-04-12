@@ -156,7 +156,7 @@ Some medicines that are OTC in Western countries require a **prescription (처�
 - **ADHD medication** (Adderall, Ritalin) — strictly controlled, requires Korean psychiatrist prescription
 
 **How to get a prescription:**
-1. Visit a clinic (의원) or hospital (병원) — no appointment needed at most clinics
+1. Visit a clinic (의원) or hospital (병원) — no appointment needed at most clinics. See our [guide to English-speaking hospitals](/guides/healthcare/find-hospital/) for recommended facilities.
 2. Doctor examines you, writes prescription
 3. Take the prescription to any pharmacy (약국)
 4. Pharmacy fills it (usually 5-10 minutes)
@@ -220,7 +220,7 @@ A: Yes. Korea has strict pharmaceutical regulations (MFDS, equivalent to FDA). D
 A: Call **119** (ambulance/fire). For non-emergency medical questions at night, call **1339** (medical emergency info, available 24/7, English available). Nearest ER: search "응급실" on Naver/Kakao Map.
 
 **Q: Can I use my NHIS insurance at the pharmacy?**
-A: For prescription medicines, yes — NHIS covers roughly 50-70% of the cost. For OTC medicines (no prescription), you pay full price. Convenience store OTC is never covered by insurance.
+A: For prescription medicines, yes — NHIS covers roughly 50-70% of the cost. For OTC medicines (no prescription), you pay full price. Convenience store OTC is never covered by insurance. See our [health insurance guide](/guides/healthcare/insurance/) for details on enrollment and coverage.
 
 **Q: Where can I find familiar Western brands?**
 A: iHerb delivers to Korea (3-7 days). Coupang also carries some international health products. For prescription equivalents, ask the pharmacist for the Korean version of your medicine — show them the generic name (active ingredient).

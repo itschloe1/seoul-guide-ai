@@ -130,7 +130,7 @@ All figures are for wolse (deposit + monthly rent) for a studio/one-room, as of 
 ### Additional Costs to Budget
 
 - **Maintenance fee (관리비):** 50,000-300,000 won/month (covers cleaning, security, elevator, shared utilities). Higher in winter due to heating.
-- **Utilities (separate):** Gas, electricity, water, internet: 100,000-200,000 won/month
+- **Utilities (separate):** Gas, electricity, water, internet: 100,000-200,000 won/month. For a full breakdown of utility costs and setup, see our [utilities guide](/guides/daily-life/utilities/).
 - **Agent fee (중개수수료):** 0.3-0.8% of the transaction amount (deposit + rent). For wolse, typically 200,000-500,000 won.
 - **Subway proximity premium:** Living within 5 minutes of a station adds ~50,000-100,000 won/month
 - **Furnished premium:** +100,000-200,000 won/month
@@ -272,7 +272,7 @@ Housing discrimination against foreigners is common and largely unaddressed lega
 - **Higher deposits demanded:** Some landlords ask foreigners for larger deposits than Korean tenants. This is not legally mandated.
 - **Extra documentation:** Foreigners are sometimes asked for employer letters, bank statements, or other proof not required of Korean tenants.
 
-**What helps:** Using foreigner-friendly platforms (Enkostay, ForeignerHome, Ziptoss international services), university housing offices, or employer relocation services.
+**What helps:** Using foreigner-friendly platforms (Enkostay, ForeignerHome, Ziptoss international services), university housing offices, or employer relocation services. See our [apartment-finding guide](/guides/housing/find-apartment/) for a full walkthrough of platforms, agents, and the viewing process.
 
 ### Language Barrier
 
@@ -299,7 +299,7 @@ Housing discrimination against foreigners is common and largely unaddressed lega
 
 - Your visa status can affect your ability to rent. Landlords may hesitate if your visa expires before the lease ends.
 - The change-of-address report (외국인 거소변경신고 or 체류지변경신고) is mandatory within 14 days of moving. Failure to report can affect your visa status.
-- If you leave Korea before the lease ends, deposit recovery from abroad is extremely difficult.
+- If you leave Korea before the lease ends, deposit recovery from abroad is extremely difficult. See our [departure checklist](/guides/onboarding/departure-checklist/) for step-by-step deposit recovery guidance, including the small claims court process.
 
 ---
 

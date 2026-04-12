@@ -6,9 +6,9 @@
 
 ## Quick Answer
 
-You need a **Korean phone number** and an **Alien Registration Card (ARC)** to open a full bank account. Without an ARC, some banks will open a **restricted account** using just your passport, but expect low transfer limits and limited features.
+You need a **Korean phone number** and an **[Alien Registration Card (ARC)](/guides/visa/arc-guide/)** to open a full bank account. Without an ARC, some banks will open a **restricted account** using just your passport, but expect low transfer limits and limited features.
 
-**Fastest path:** Buy a prepaid SIM (no ARC needed) at the airport or online, then visit a foreigner-friendly bank branch with your passport and ARC. The whole process takes 30-60 minutes. Walk out with an account number, a debit (check) card, and mobile banking set up.
+**Fastest path:** Buy a prepaid SIM (no ARC needed) at the airport or online -- see our [phone and SIM card guide](/guides/daily-life/phone-verification/) for options -- then visit a foreigner-friendly bank branch with your passport and ARC. The whole process takes 30-60 minutes. Walk out with an account number, a debit (check) card, and mobile banking set up.
 
 If you don't have an ARC yet, Woori Bank and Hana Bank have historically been the most willing to open limited passport-only accounts.
 
@@ -50,7 +50,7 @@ Bring your passport, ARC (physical or mobile), prepaid phone number, and proof o
 
 **Step 4: Switch to a postpaid phone plan (Optional)**
 
-Once you have a bank account, you can upgrade to a full postpaid plan with SK Telecom, KT, or LG U+ using your bank account for billing.
+Once you have a bank account, you can upgrade to a full postpaid plan with SK Telecom, KT, or LG U+ using your bank account for billing. For a detailed breakdown of carriers and plans, see our [phone verification guide](/guides/daily-life/phone-verification/).
 
 ---
 
@@ -266,7 +266,7 @@ Korean online banking is notoriously complex compared to Western countries. Here
 ### Tips
 
 - The **PASS app** (by Korea's telecom carriers) can serve as an additional authentication method at some banks. Useful backup.
-- **Kakao Bank** and **Toss Bank** are mobile-only banks with simpler setup. Once you have a main bank account, you can open these as secondary accounts for easier peer-to-peer transfers. Toss has an English UI option.
+- **Kakao Bank** and **Toss Bank** are mobile-only banks with simpler setup. Once you have a main bank account, you can open these as secondary accounts for easier peer-to-peer transfers. See our [cards and payments guide](/guides/banking/cards-payments/) for details on mobile payments like Kakao Pay and Naver Pay. Toss has an English UI option.
 - If the app asks for a "공동인증서" and you don't have one, the app can usually guide you through creating it on the spot.
 - Security certificates expire annually and need renewal. Set a reminder.
 

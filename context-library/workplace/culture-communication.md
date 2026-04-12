@@ -204,7 +204,7 @@ Every foreigner should review these items in their Korean employment contract (�
 |------|-----------------|----------|
 | 근무시간 (Working hours) | Start/end time, weekly hours, overtime policy | No mention of overtime pay |
 | 급여 (Salary) | Monthly amount, payment date, deductions | "Inclusive salary" (포괄임금제) without clear terms |
-| 4대보험 (4 Major Insurances) | NPS, NHIS, Employment, Industrial Accident | Employer says "we don't do that for foreigners" |
+| 4대보험 (4 Major Insurances) | NPS, [NHIS](/guides/healthcare/insurance/), Employment, Industrial Accident | Employer says "we don't do that for foreigners" |
 | 연차 (Annual leave) | 15 days/year after 1 year (or 1 day/month in first year) | Less than legal minimum |
 | 퇴직금 (Severance) | 1 month per year of service | Not mentioned (it's legally required after 1 year) |
 | 계약기간 (Contract period) | Start date, end date, renewal terms | No end date on fixed-term contract |
@@ -295,7 +295,7 @@ This happens more often than you'd think, especially with hagwons.
 
 1. **Your visa remains valid** until its expiration date. You are NOT immediately illegal
 2. You have **14 days** to report the change in employment status to immigration
-3. You can apply for a **D-10 (job seeker)** visa to give you time to find a new position
+3. You can apply for a **D-10 (job seeker)** visa to give you time to find a new position. See our [visa types guide](/guides/visa/visa-types/) for details on switching between visa types.
 4. **Unpaid wages and severance:** File immediately at 고용노동부 (1350). The government's Wage Claim Guarantee system (체불임금 대지급금) can pay you if the employer is bankrupt
 5. Contact EPIK or recruiters immediately -- mid-year positions do open up
 
