@@ -404,6 +404,70 @@ async def export_logs(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show bot usage stats. Admin only."""
+    if update.effective_user.id != ADMIN_CHAT_ID:
+        return
+
+    # Count log files and today's queries
+    log_files = sorted(LOGS_DIR.glob("queries_*.jsonl"))
+    total_days = len(log_files)
+    total_queries = 0
+    today_queries = 0
+    unique_users: set[int] = set()
+    today_users: set[int] = set()
+    pain_counts: dict[str, int] = {}
+    photo_count = 0
+
+    today_str = datetime.now(timezone.utc).strftime("%Y%m%d")
+
+    for lf in log_files:
+        for line in lf.read_text().splitlines():
+            if not line.strip():
+                continue
+            try:
+                entry = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            total_queries += 1
+            uid = entry.get("user_id", 0)
+            unique_users.add(uid)
+            if entry.get("has_photo"):
+                photo_count += 1
+            for sig in entry.get("pain_signals", []):
+                pain_counts[sig] = pain_counts.get(sig, 0) + 1
+            if lf.name == f"queries_{today_str}.jsonl":
+                today_queries += 1
+                today_users.add(uid)
+
+    # Active profiles (in memory)
+    profiles_count = len(user_profiles)
+    stage_counts: dict[str, int] = {}
+    for p in user_profiles.values():
+        s = p.get("stage", "unknown")
+        stage_counts[s] = stage_counts.get(s, 0) + 1
+
+    # Top pain signals
+    top_pain = sorted(pain_counts.items(), key=lambda x: x[1], reverse=True)[:5]
+    pain_text = "\n".join(f"  {k}: {v}" for k, v in top_pain) if top_pain else "  (none)"
+
+    stage_text = "\n".join(f"  {k.replace('stage_', '')}: {v}" for k, v in stage_counts.items()) if stage_counts else "  (none)"
+
+    msg = (
+        f"--- Bot Stats ---\n\n"
+        f"Today: {today_queries} queries from {len(today_users)} users\n"
+        f"All time: {total_queries} queries from {len(unique_users)} users\n"
+        f"Active days: {total_days}\n"
+        f"Photos interpreted: {photo_count}\n\n"
+        f"Onboarding profiles (in memory): {profiles_count}\n"
+        f"{stage_text}\n\n"
+        f"Top pain signals:\n"
+        f"{pain_text}"
+    )
+
+    await update.message.reply_text(msg)
+
+
 async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     conversations.pop(user_id, None)
@@ -425,6 +489,7 @@ def main():
     app.add_handler(CommandHandler("reset", reset))
     app.add_handler(CommandHandler("feedback", feedback))
     app.add_handler(CommandHandler("export", export_logs))
+    app.add_handler(CommandHandler("stats", stats))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
