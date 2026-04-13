@@ -45,10 +45,7 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
     <title>{title}</title>
     <slot name="head" />
     <!-- Vercel Analytics -->
-    <script>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
+    <script is:inline defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <header>
