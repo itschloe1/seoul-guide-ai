@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://livinginkorea.co/sitemap-index.xml
+Sitemap: https://www.livinginkorea.co/sitemap-index.xml

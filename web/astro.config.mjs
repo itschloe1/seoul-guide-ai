@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://livinginkorea.vercel.app',
+  site: 'https://www.livinginkorea.co',
   output: 'static',
   integrations: [mdx(), sitemap()],
 });

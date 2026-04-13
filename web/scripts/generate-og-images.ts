@@ -26,7 +26,7 @@ const LIGHT_GRAY = '#f0f4f8';
 const TEXT_DARK = '#1a1a2e';
 const TEXT_LIGHT = '#6b7280';
 const BRAND_NAME = 'Living in Korea';
-const SITE_URL = 'livinginkorea.vercel.app';
+const SITE_URL = 'www.livinginkorea.co';
 
 // ─── SVG Helpers ────────────────────────────────────────────────────
 
