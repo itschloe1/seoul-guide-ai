@@ -445,7 +445,6 @@ New arrivals often underestimate first-month costs:
 | Translation (KR-EN) | 2,000,000-5,000,000 | Per-project basis |
 | Remote tech worker (foreign salary) | 4,000,000-15,000,000+ | USD/EUR salary in KRW; tax obligations apply |
 | YouTube / content creation | 0-10,000,000+ | Extremely variable |
-| **Ovey app (설문조사)** | 50,000-300,000+ | Foreigner-targeted surveys and in-person research. Sign up and get matched with paid surveys (few thousand KRW) and face-to-face interviews (10,000-50,000+ KRW per session). Higher pay for in-person research |
 
 **Tax note:** Foreigners can choose between the standard progressive tax rate OR a flat 19% rate on gross income (no deductions) for the first 5 years. Consult a tax professional -- the flat rate is often better for higher earners, while lower earners benefit from standard deductions.
 
