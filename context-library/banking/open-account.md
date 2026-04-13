@@ -10,7 +10,7 @@ You need a **Korean phone number** and an **[Alien Registration Card (ARC)](/gui
 
 **Fastest path:** Buy a prepaid SIM (no ARC needed) at the airport or online -- see our [phone and SIM card guide](/guides/daily-life/phone-verification/) for options -- then visit a foreigner-friendly bank branch with your passport and ARC. The whole process takes 30-60 minutes. Walk out with an account number, a debit (check) card, and mobile banking set up.
 
-If you don't have an ARC yet, Woori Bank and Hana Bank have historically been the most willing to open limited passport-only accounts.
+If you don't have an ARC yet, [Woori Bank](https://spot.wooribank.com/pot/Dream?withyou=en) and [Hana Bank](https://www.kebhana.com/cont/english/) have historically been the most willing to open limited passport-only accounts.
 
 ---
 
@@ -42,7 +42,7 @@ Important: Not all prepaid SIMs provide a Korean phone number that banks accept 
 
 **Step 2: Apply for your ARC at Immigration (Week 1)**
 
-Apply as soon as possible. Processing takes roughly 2-3 weeks. Since March 2025, a **mobile ARC** (via the "Mobile Foreigner Residence Card" app) is accepted at major banks, so you may not need to wait for the physical card.
+Apply as soon as possible. Processing takes roughly 2-3 weeks. Since March 2025, a **mobile ARC** (via the "Mobile Foreigner Residence Card" app) is accepted at major banks, so you may not need to wait for the physical card. Book your immigration appointment on [HiKorea](https://www.hikorea.go.kr/) as soon as possible.
 
 **Step 3: Open your bank account (Once you have ARC or mobile ARC)**
 
@@ -67,7 +67,7 @@ Once you have a bank account, you can upgrade to a full postpaid plan with SK Te
 | Branch coverage | Excellent (nationwide) | Excellent (nationwide) | Good (urban focus) | Excellent (nationwide) | Best (rural + nationwide) |
 | Best for | All-around expat banking | Students, Seoul professionals | Frequent remitters, expats | Salary workers | Non-Seoul residents |
 
-### KB Kookmin Bank
+### [KB Kookmin Bank](https://www.kbstar.com/eng/)
 
 **Ask for:** "KB Welcome Account" or "KB Welcome Package"
 
@@ -78,7 +78,7 @@ Once you have a bank account, you can upgrade to a full postpaid plan with SK Te
 - **Restrictions:** New foreign accounts start with conservative transfer limits. Ask what documentation lifts restrictions.
 - **Tip:** Confirm which actions trigger fee-waiver tiers at account opening. The Welcome Package conditions vary by branch.
 
-### Shinhan Bank
+### [Shinhan Bank](https://www.shinhan.com/eng/)
 
 **Ask for:** Standard checking/savings account. Consider the E9pay partnership card for cashback.
 
@@ -300,7 +300,7 @@ Korean online banking is notoriously complex compared to Western countries. Here
 
 **Solutions:**
 - **Use foreigner bank products** with FX discounts: KB Welcome (50% remittance fee discount), Hana Easy-One (preferential FX rates).
-- **Fintech alternatives:** WireBarley (often cheapest from Korea), Wise (most flexible with currencies, ~₩6,600 fee on ₩1,000,000 to USD), Hana Bank's "Easy Remit" service.
+- **Fintech alternatives:** WireBarley (often cheapest from Korea), [Wise](https://wise.com/) (most flexible with currencies, ~₩6,600 fee on ₩1,000,000 to USD), Hana Bank's "Easy Remit" service.
 - **Regulatory context:** As of January 2026, the annual limit for documentation-free overseas remittances is standardized at $100,000 across all financial institutions. The old designated-bank requirement has been abolished. Transfers over $10,000 are reported to the Financial Supervisory Service.
 - **OTP required** for international transfers at most banks.
 

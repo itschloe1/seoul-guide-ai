@@ -74,7 +74,7 @@ Setup takes 30-60 minutes. Ask for English-speaking staff or bring a Korean-spea
 
 MVNOs (알뜰폰) lease network capacity from the big three carriers and offer significantly lower prices. Popular foreigner-friendly MVNOs:
 
-**Chingu Mobile**
+**[Chingu Mobile](https://www.chingumobile.com/)**
 - Stores near major universities and at Incheon Airport
 - Website: chingumobile.com
 - English support available
@@ -324,7 +324,7 @@ These require full identity verification (PASS or carrier-based) plus ARC. You c
 
 ### What is the cheapest path?
 
-For most foreigners staying 3+ months: Start with a Chingu Mobile or Woori Mobile prepaid SIM (~KRW 25,000/month) using your passport. After your ARC arrives, either keep the MVNO plan or switch to a KT M Mobile postpaid plan (under KRW 20,000/month for 7-15 GB). This gives you a Korean number from day one and full verification access once you have your ARC.
+For most foreigners staying 3+ months: Start with a [Chingu Mobile](https://www.chingumobile.com/) or Woori Mobile prepaid SIM (~KRW 25,000/month) using your passport. After your ARC arrives, either keep the MVNO plan or switch to a KT M Mobile postpaid plan (under KRW 20,000/month for 7-15 GB). This gives you a Korean number from day one and full verification access once you have your ARC.
 
 ## Common Questions
 

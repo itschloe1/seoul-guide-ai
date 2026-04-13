@@ -10,7 +10,7 @@ Every foreigner staying in South Korea longer than 90 days must apply for a **Re
 
 **The short version:**
 1. Arrive in Korea
-2. Book an appointment on [hikorea.go.kr](https://www.hikorea.go.kr) immediately
+2. Book an appointment on [HiKorea](https://www.hikorea.go.kr/) immediately
 3. Gather your documents (passport, photo, housing contract, visa-specific docs)
 4. Visit immigration office on your appointment date
 5. Receive your card in 3-6 weeks
@@ -215,7 +215,7 @@ You must visit the office that has jurisdiction over your residential address. B
 
 **All offices operate:** Monday-Friday, 9:00 AM - 6:00 PM (closed weekends and Korean public holidays)
 
-**Official immigration website:** [immigration.go.kr](https://www.immigration.go.kr/immigration_eng/index.do)
+**Official immigration website:** [Korea Immigration Service](https://www.immigration.go.kr/immigration_eng/index.do)
 
 ---
 
@@ -493,8 +493,8 @@ Note: Some sources report the fee increased to **35,000 KRW** as of January 2025
 |----------|---------|
 | Immigration Contact Center | **1345** (within Korea, free, multilingual) |
 | From abroad | +82-2-6908-1345 |
-| HiKorea website | [hikorea.go.kr](https://www.hikorea.go.kr) |
-| Immigration website | [immigration.go.kr](https://www.immigration.go.kr/immigration_eng/index.do) |
+| HiKorea website | [HiKorea](https://www.hikorea.go.kr/) |
+| Immigration website | [Korea Immigration Service](https://www.immigration.go.kr/) |
 
 ---
 

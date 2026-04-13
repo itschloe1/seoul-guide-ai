@@ -32,7 +32,7 @@ You do not need to tip. You do not need to speak Korean. You can get food delive
 
 **The biggest app in Korea. Now foreigner-accessible.**
 
-Baemin is Korea's dominant delivery platform with the widest restaurant selection. In February 2026, operator Woowa Brothers rolled out AI-powered multilingual support using a large language model. You can now search restaurants, browse menus, pay, and track delivery in English, Chinese, or Japanese.
+Baemin is Korea's dominant delivery platform with the widest restaurant selection. In February 2026, operator Woowa Brothers ([Baemin](https://www.baemin.com/)) rolled out AI-powered multilingual support using a large language model. You can now search restaurants, browse menus, pay, and track delivery in English, Chinese, or Japanese.
 
 ### Registration & Access
 - Download from App Store / Google Play
@@ -65,7 +65,7 @@ Baemin is Korea's dominant delivery platform with the widest restaurant selectio
 
 **Fastest delivery. Best English interface. But requires ARC for full access.**
 
-Coupang Eats is widely considered the most foreigner-friendly app for residents. The interface is natively available in English, menus are auto-translated, and delivery is consistently fast (15-20 minutes average). It is part of the Coupang ecosystem (Korea's Amazon equivalent).
+Coupang Eats is widely considered the most foreigner-friendly app for residents. The interface is natively available in English, menus are auto-translated, and delivery is consistently fast (15-20 minutes average). It is part of the [Coupang](https://www.coupang.com/) ecosystem (Korea's Amazon equivalent).
 
 ### Registration & Access
 - Download from App Store / Google Play

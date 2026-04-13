@@ -10,7 +10,7 @@ Korea has universal healthcare through the **National Health Insurance Service (
 
 ## National Health Insurance (NHI) Overview
 
-Korea's NHI is a single-payer system run by the National Health Insurance Service (NHIS / 국민건강보험공단). It covers all legal residents, Korean and foreign alike.
+Korea's NHI is a single-payer system run by the [National Health Insurance Service (NHIS)](https://www.nhis.or.kr/) (국민건강보험공단). It covers all legal residents, Korean and foreign alike.
 
 **Key facts:**
 - Government-run, mandatory for most residents
@@ -182,7 +182,7 @@ You enroll yourself after meeting the 6-month residency requirement (or immediat
    - Bank account details for automatic payment
 
 2. **Visit your local NHIS branch** (국민건강보험공단 지사)
-   - Find your branch: nhis.or.kr or call 1577-1000
+   - Find your branch at [nhis.or.kr](https://www.nhis.or.kr/) or call 1577-1000
    - Request "지역 건강보험 가입" (regional health insurance enrollment)
    - The clerk will look you up by ARC number
 
@@ -210,7 +210,7 @@ Since March 2021, enrollment is **mandatory and automatic** upon alien registrat
 
 ### NHIS Office for Foreign Residents
 
-Seoul operates a dedicated **Foreign Resident Center** with multilingual staff. Other major cities have similar services. Call 1577-1000 (press 7) to find the nearest office with English support.
+The [NHIS](https://www.nhis.or.kr/) Seoul office operates a dedicated **Foreign Resident Center** with multilingual staff. Other major cities have similar services. Call 1577-1000 (press 7) to find the nearest office with English support.
 
 ---
 

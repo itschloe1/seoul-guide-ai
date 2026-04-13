@@ -41,7 +41,7 @@ Korea has excellent healthcare at prices that shock most Westerners (in a good w
 
 These are Seoul's "Big 5" tertiary hospitals. All have dedicated International Healthcare Centers (IHC) with English-speaking doctors, nurses, and coordinators. They handle everything from routine checkups to complex surgeries.
 
-### Severance Hospital (Yonsei University)
+### [Severance Hospital](https://sev.severance.healthcare/) (Yonsei University)
 
 Korea's first international clinic, established 1962. Most visited Korean hospital by foreigners for eight consecutive years.
 
@@ -59,7 +59,7 @@ Korea's first international clinic, established 1962. Most visited Korean hospit
 
 Services include: fast-track appointments, VIP lounges, limousine service, post-return telemedicine follow-up (Smart e-Health System).
 
-### Samsung Medical Center
+### [Samsung Medical Center](https://www.samsunghospital.com/)
 
 | Detail | Info |
 |--------|------|

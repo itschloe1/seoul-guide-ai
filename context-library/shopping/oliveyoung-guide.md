@@ -6,7 +6,7 @@
 
 ## Quick Answer
 
-Olive Young is Korea's #1 beauty and health store — think Sephora meets drugstore, but with K-beauty. **9 out of 10 foreign tourists** shopping for cosmetics in Korea visit Olive Young. The best products to buy: **sunscreen** (Korean sunscreen is globally famous), **serums** (especially hyaluronic acid and snail mucin), and **sheet masks**. Look for the **Olive Young Awards stickers** (gold/silver) on shelves — those are verified best sellers. Foreign tourists get **tax refund** (VAT back) on purchases over 15,000 KRW.
+Olive Young is Korea's #1 beauty and health store — think Sephora meets drugstore, but with K-beauty. **9 out of 10 foreign tourists** shopping for cosmetics in Korea visit [Olive Young](https://global.oliveyoung.com/). The best products to buy: **sunscreen** (Korean sunscreen is globally famous), **serums** (especially hyaluronic acid and snail mucin), and **sheet masks**. Look for the **Olive Young Awards stickers** (gold/silver) on shelves — those are verified best sellers. Foreign tourists get **tax refund** (VAT back) on purchases over 15,000 KRW.
 
 ---
 
@@ -138,7 +138,7 @@ Purchases over **15,000 KRW** at a single Olive Young store qualify for VAT refu
 ### Olive Young Global (Online)
 
 If you want to browse/buy before arriving in Korea or ship internationally:
-- global.oliveyoung.com — English site, international shipping
+- [global.oliveyoung.com](https://global.oliveyoung.com/) — English site, international shipping
 - Prices are slightly higher than in-store but include international shipping options
 - Good for researching products before your trip
 

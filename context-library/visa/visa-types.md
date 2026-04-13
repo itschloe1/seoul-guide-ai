@@ -186,7 +186,7 @@ NHIS enrollment is **not automatic** for F-1-D holders. You need private/interna
 
 #### Online Reporting via HiKorea (Step-by-Step)
 
-1. Go to hikorea.go.kr and log in (or create an account)
+1. Go to [hikorea.go.kr](https://www.hikorea.go.kr/) and log in (or create an account)
 2. Navigate to: 민원신청 > 체류관련 > 체류지변경신고
 3. Enter your new address in Korean (use Naver Map to get the exact 도로명주소)
 4. Upload proof of accommodation (see accepted documents below)
@@ -336,11 +336,11 @@ This is a real and widely reported issue. Different immigration officers may int
 | Resource | Contact | For What |
 |----------|---------|----------|
 | 1345 Helpline | 1345 | All immigration questions, multilingual |
-| HiKorea | hikorea.go.kr | Online booking, applications, status check |
+| HiKorea | [hikorea.go.kr](https://www.hikorea.go.kr/) | Online booking, applications, status check |
 | Seoul Immigration | 02-2650-6212 | Seoul office direct line |
 | Sejongno Immigration | 02-6908-1345 | Central Seoul office |
-| Visa Navigator | visa.go.kr | Check which visa you're eligible for |
-| KIIP (사회통합프로그램) | social-integration.go.kr | Free Korean classes + integration program (helps with F-2/F-5 applications) |
+| Visa Navigator | [visa.go.kr](https://visa.go.kr/) | Check which visa you're eligible for |
+| KIIP (사회통합프로그램) | [socinet.go.kr](https://www.socinet.go.kr/) | Free Korean classes + integration program (helps with F-2/F-5 applications) |
 | Seoul Global Center | 02-2075-4180 | Free legal/visa consultation for foreigners |
 | Korea Immigration Lawyers Assoc. | immigration.or.kr | For complex visa cases |
 
@@ -367,7 +367,7 @@ A: No. Tourist visas (B-1/B-2) cannot be converted to work visas inside Korea. Y
 A: You have a grace period to find new employment or change visa status. Typically you should notify immigration within 14 days of employment termination. Your visa remains valid until its expiration date, but you cannot work for a different employer without updating your visa.
 
 **Q: What is KIIP and should I do it?**
-A: KIIP (Korea Immigration & Integration Program, 사회통합프로그램) is a free government program offering Korean language classes and Korean society orientation. Completing it gives you bonus points for F-2 (resident) and F-5 (permanent residence) applications. Highly recommended if you plan to stay long-term. Register at social-integration.go.kr.
+A: KIIP (Korea Immigration & Integration Program, 사회통합프로그램) is a free government program offering Korean language classes and Korean society orientation. Completing it gives you bonus points for F-2 (resident) and F-5 (permanent residence) applications. Highly recommended if you plan to stay long-term. Register at the [KIIP portal (socinet.go.kr)](https://www.socinet.go.kr/).
 
 **Q: Can I get a Korean driver's license on my visa?**
 A: Yes, most visa holders (except short-term tourists) can get a Korean driver's license. For general transportation options including subway, bus, and taxi, see our [transportation guide](/guides/daily-life/transportation/). You can convert a foreign license (from select countries) or take the Korean driving test. Visit a 운전면허시험장 (driver's license center) with your ARC and passport.

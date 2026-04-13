@@ -14,7 +14,7 @@ Get a **T-money card** at any convenience store (2,500 won), charge it with cash
 
 ## T-money Card
 
-T-money is a rechargeable transit card that works on subways, buses, taxis, convenience stores, and vending machines nationwide. It is the single most useful thing you will buy in Korea.
+[T-money](https://www.t-money.co.kr/) is a rechargeable transit card that works on subways, buses, taxis, convenience stores, and vending machines nationwide. It is the single most useful thing you will buy in Korea.
 
 ### Where to Buy
 
@@ -95,8 +95,8 @@ Available at subway station machines or the Climate Card website. Worth it if yo
 
 | App | Strengths | English | Free |
 |-----|-----------|---------|------|
-| **Kakao Map** | Best overall navigation, real-time transit, walking directions | Yes | Yes |
-| **Naver Map** | Strong transit routing, indoor maps, bus arrival times | Yes | Yes |
+| **[Kakao Map](https://map.kakao.com/)** | Best overall navigation, real-time transit, walking directions | Yes | Yes |
+| **[Naver Map](https://map.naver.com/)** | Strong transit routing, indoor maps, bus arrival times | Yes | Yes |
 | **Seoul Metro (official)** | Wrong-direction alerts, restroom locations, carriage congestion | Yes | Yes |
 | **KakaoMetro** | Clean subway-only interface, transfer info | Yes | Yes |
 
@@ -224,7 +224,7 @@ Korea's bullet train connects Seoul to major cities. Top speed: 305 km/h.
 
 #### Booking in English
 
-1. **Korail website:** [korail.com/global/eng](https://www.korail.com/global/eng) -- English interface, select "Issued overseas" for foreign card payment
+1. **[Korail](https://www.letskorail.com/) website:** [korail.com/global/eng](https://www.korail.com/global/eng) -- English interface, select "Issued overseas" for foreign card payment
 2. **KorailTalk app:** Available in English, Chinese, Japanese. Book up to 1 month in advance.
 3. **Third-party platforms:** Klook and Trip.com accept foreign cards reliably. Klook added real-time booking in March 2026.
 4. **Station ticket counters:** English-speaking staff available at Seoul Station. Arrive 30+ minutes early.

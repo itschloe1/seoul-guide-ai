@@ -176,7 +176,7 @@ If you need to write Korean emails:
 - If you understand Korean, calmly address it: "죄송한데, 한국어 좀 알아들어요" (Sorry, I understand some Korean). This usually stops it immediately
 - If it's persistent and creates a hostile environment, document it (dates, what was said, witnesses)
 - Report to your direct supervisor or HR. In Korea, workplace bullying (직장 내 괴롭힘) has been illegal since 2019
-- For severe cases, file a complaint with the **Ministry of Employment and Labor** (고용노동부, 1350)
+- For severe cases, file a complaint with the **[Ministry of Employment and Labor](https://www.moel.go.kr/)** (고용노동부, 1350)
 
 ### 4. Overwork & Boundary Setting
 
@@ -254,7 +254,7 @@ The law defines workplace bullying as: using **status or relationship superiorit
 1. Call **1350** (Ministry of Employment and Labor)
 2. File a complaint online at minwon.moel.go.kr
 3. Visit your local labor office (고용노동지청) in person
-4. Free legal consultation available at Seoul Global Center (02-2075-4180)
+4. Free legal consultation available at [Seoul Global Center](https://global.seoul.go.kr/) (02-2075-4180)
 
 **Protection from retaliation:** The law prohibits employers from taking adverse action against bullying reporters. If you're fired, demoted, or reassigned negatively after reporting, that's an additional violation.
 

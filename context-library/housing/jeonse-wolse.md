@@ -188,7 +188,7 @@ The registry has three sections:
 
 **Option A: Online via IROS (Internet Registry Office)**
 
-1. Go to [iros.go.kr](http://www.iros.go.kr)
+1. Go to [IROS (Internet Registry Office)](https://www.iros.go.kr/)
 2. The site is primarily in Korean. You will need a Korean phone number and either an ARC (Alien Registration Card) number or Korean digital certificate for full access.
 3. Search by the property's exact address
 4. Request a "등기부등본" (certified copy of the register)

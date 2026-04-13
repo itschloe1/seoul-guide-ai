@@ -91,7 +91,7 @@ Private bedroom in a shared apartment with communal kitchen and living areas.
 
 ## Korean Housing Apps
 
-### Zigbang (직방)
+### [Zigbang](https://www.zigbang.com/) (직방)
 
 The largest housing app in Korea. Covers officetels, one-rooms, apartments, and villas.
 
@@ -113,7 +113,7 @@ The largest housing app in Korea. Covers officetels, one-rooms, apartments, and 
 
 **Tip:** Zigbang runs a fake listing monitoring system that flags completed or misleading listings. Still, cross-check any listing you like on Dabang or Naver before committing.
 
-### Dabang (다방)
+### [Dabang](https://www.dabangapp.com/) (다방)
 
 The second-largest housing app. Strong for studios and officetels.
 
@@ -312,7 +312,7 @@ Deposits outside Seoul are typically 3,000,000 - 15,000,000 KRW for studios.
 
 ### Before the Visit
 
-- [ ] Pull the building registry (등기부등본) from the IROS system (iros.go.kr) or have your agent provide it. This shows ownership and any liens/mortgages
+- [ ] Pull the building registry (등기부등본) from the [IROS system](https://www.iros.go.kr/) or have your agent provide it. This shows ownership and any liens/mortgages
 - [ ] Research the neighborhood: subway proximity, convenience stores, noise sources
 - [ ] Confirm the listing details match what the agent told you
 

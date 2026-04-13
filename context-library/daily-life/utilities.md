@@ -26,7 +26,7 @@ Electricity spikes in summer (air conditioning). Gas spikes in winter (floor hea
 ## Electricity
 
 ### Provider
-**KEPCO (한국전력, Korea Electric Power Corporation)** is the sole residential electricity provider. You cannot choose an alternative.
+**[KEPCO (한국전력, Korea Electric Power Corporation)](https://cyber.kepco.co.kr/)** is the sole residential electricity provider. You cannot choose an alternative.
 
 ### How Billing Works
 - Metered and billed **monthly**
@@ -109,7 +109,7 @@ City gas (도시가스) is supplied by regional monopoly companies. Major provid
 ## Water
 
 ### Provider
-Managed by local waterworks offices. In Seoul, it is **Arisu (아리수)**, the Seoul Metropolitan Government's water service. Seoul's water rate is approximately 567 KRW per cubic meter for residential use, among the cheapest in the world compared to major cities.
+Managed by local waterworks offices. In Seoul, it is **[Arisu (아리수)](https://arisu.seoul.go.kr/)**, the Seoul Metropolitan Government's water service. Seoul's water rate is approximately 567 KRW per cubic meter for residential use, among the cheapest in the world compared to major cities.
 
 ### How Billing Works
 - Metered **every 2 months**

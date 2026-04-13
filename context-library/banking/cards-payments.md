@@ -108,7 +108,7 @@ To use most Korean payment apps, you need all three: **[ARC](/guides/visa/arc-gu
 | Item | Detail |
 |------|--------|
 | Requirements | ARC, Korean phone number, Korean bank account, KakaoTalk app |
-| Registration | Set up through KakaoTalk app > Pay tab > link bank account > identity verification |
+| Registration | Set up through KakaoTalk app > Pay tab > link bank account > identity verification. Visit [Kakao Pay](https://www.kakaopay.com/) for details. |
 | What it does | In-store payments (QR code), peer-to-peer transfers, online payments, bill splitting |
 | Foreigner access | Residents with ARC can use full features. Tourists cannot. |
 | Fees | Free for domestic transfers |
@@ -121,7 +121,7 @@ To use most Korean payment apps, you need all three: **[ARC](/guides/visa/arc-gu
 | Item | Detail |
 |------|--------|
 | Requirements | Naver account, ARC, Korean phone number, Korean bank account or card |
-| Registration | Create Naver account > verify identity (select 외국인/Foreigner) > link payment method |
+| Registration | Create an account at [Naver Pay](https://pay.naver.com/) > verify identity (select 외국인/Foreigner) > link payment method |
 | What it does | Online shopping payments (Naver Shopping, Coupang via Naver), food delivery, movie tickets |
 | Foreigner access | Residents with ARC and Korean phone number |
 | Overseas verification | If overseas without Korean phone, you can verify via passport/ID submission through Naver Help (takes ~24 hours) |
@@ -157,7 +157,7 @@ Samsung Pay is the **most accessible mobile payment for tourists and new residen
 
 ### WOWPASS
 
-The most popular prepaid card for foreign visitors. Combines currency exchange, cashless payments, and T-money transit in one card.
+The most popular prepaid card for foreign visitors. Combines currency exchange, cashless payments, and T-money transit in one card. See the [WOWPASS official site](https://www.wowpass.io/) for kiosk locations and supported currencies.
 
 | Item | Detail |
 |------|--------|
@@ -386,7 +386,7 @@ Identity verification typically completes within 10-30 minutes during business h
 
 ### Recommendation
 
-- **Sending TO Korea from abroad:** Start with Wise for best rates and English UX.
+- **Sending TO Korea from abroad:** Start with [Wise](https://wise.com/) for best rates and English UX.
 - **Sending FROM Korea:** Use SentBe (best for SE Asia) or WireBarley (best for China/Japan). Wise does not support outbound KRW transfers.
 - **First-time transfer:** Check WireBarley's zero-fee promo for first transfer up to $1,000.
 

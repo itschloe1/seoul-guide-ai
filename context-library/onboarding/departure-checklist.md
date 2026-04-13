@@ -31,7 +31,7 @@ Leaving Korea requires unwinding everything you set up: **pension refund, health
 
 ### 1. National Pension Refund (국민연금 반환일시금)
 
-This is often the biggest amount you'll recover. If you've been paying into the National Pension Service (NPS), you're entitled to a **lump-sum refund** when you leave Korea permanently.
+This is often the biggest amount you'll recover. If you've been paying into the [National Pension Service (NPS)](https://www.nps.or.kr/), you're entitled to a **lump-sum refund** when you leave Korea permanently.
 
 **Who qualifies:** Any foreigner who paid into NPS and is leaving Korea (unless your country has a social security agreement with Korea that transfers pension credits -- check the reciprocity table below).
 
@@ -105,7 +105,7 @@ NPS contribution rate: **9% of monthly salary** (4.5% employee + 4.5% employer).
 
 ### 2. Health Insurance (NHIS) Settlement
 
-**If employed:** Your employer handles NHIS cancellation when you officially resign. Your coverage ends on your last day of employment. Verify with HR that this is done.
+**If employed:** Your employer handles [NHIS](https://www.nhis.or.kr/) cancellation when you officially resign. Your coverage ends on your last day of employment. Verify with HR that this is done.
 
 **If self-enrolled:** Visit your local NHIS branch or call 1577-1000 to cancel. Bring your ARC. You may have a small final bill or refund depending on your payment cycle.
 
@@ -253,7 +253,7 @@ When moving money out of Korea, your choice of method significantly affects cost
 | Method | Fee (per transfer) | Exchange Rate | Speed | Max Amount | Best For |
 |--------|-------------------|---------------|-------|------------|----------|
 | Korean bank wire (은행 해외송금) | 10,000-25,000 KRW + intermediary bank fees (~$15-25 total) | Bank rate (1-2% markup over mid-market) | 1-3 business days | No practical limit (over $10,000 reported to FSS) | Large one-time transfers, final balance |
-| Wise (formerly TransferWise) | ~6,600 KRW on 1,000,000 KRW (~0.66%) | Mid-market rate (best available) | 1-2 business days | Up to $1,000,000 per transfer (KYC dependent) | Best overall value for most people |
+| [Wise](https://wise.com/) (formerly TransferWise) | ~6,600 KRW on 1,000,000 KRW (~0.66%) | Mid-market rate (best available) | 1-2 business days | Up to $1,000,000 per transfer (KYC dependent) | Best overall value for most people |
 | WireBarley | ~3,000-5,000 KRW on 1,000,000 KRW | Near mid-market | 1-2 business days | Varies by corridor | Budget option, Korea-specialized |
 | Hana Bank Easy Remit | 5,000-10,000 KRW | Preferential Hana rate | 1-2 business days | Standard bank limits | Already a Hana customer |
 | SentBe | ~4,000-6,000 KRW on 1,000,000 KRW | Near mid-market | 1-3 business days | Varies | Another Korea fintech option |
@@ -296,7 +296,7 @@ Before closing your account, cancel ALL automatic payments (자동이체) linked
 **At the airport on departure day:**
 - You do NOT need to visit immigration beforehand if leaving permanently
 - At airport immigration, inform the officer you are departing permanently
-- Surrender your [ARC (Residence Card)](/guides/visa/arc-guide/) -- they will collect it
+- Surrender your [ARC (Residence Card)](/guides/visa/arc-guide/) at [HiKorea](https://www.hikorea.go.kr/) or at the airport -- they will collect it
 - Your departure is recorded, which triggers NPS refund processing
 
 **If you plan to return to Korea later:** You can keep your ARC if your visa is still valid and you're just traveling temporarily. Only surrender if permanently leaving.

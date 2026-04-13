@@ -6,7 +6,7 @@
 
 ## Quick Answer
 
-Buying K-pop concert tickets in Korea as a foreigner is possible but challenging. The main platforms are **Interpark, Melon Ticket, YES24, and NOL (formerly Naver)**. The biggest obstacles: **Korean identity verification, Korean payment methods, and tickets selling out in literal seconds**. Your best strategy: create accounts in advance, verify your identity as a foreigner, practice the purchase flow, and sync your clock. Fan club presale access dramatically improves your chances.
+Buying K-pop concert tickets in Korea as a foreigner is possible but challenging. The main platforms are **[Interpark](https://ticket.interpark.com/), [Melon Ticket](https://ticket.melon.com/), [YES24](https://ticket.yes24.com/), and NOL (formerly Naver)**. The biggest obstacles: **Korean identity verification, Korean payment methods, and tickets selling out in literal seconds**. Your best strategy: create accounts in advance, verify your identity as a foreigner, practice the purchase flow, and sync your clock. Fan club presale access dramatically improves your chances.
 
 ---
 
@@ -103,7 +103,7 @@ For major acts (BTS, BLACKPINK, Stray Kids, aespa, SEVENTEEN, etc.), **general s
 
 | Agency | Artists | Fan Club Platform |
 |--------|---------|------------------|
-| HYBE | BTS, SVT, TXT, ENHYPEN, LE SSERAFIM | Weverse |
+| HYBE | BTS, SVT, TXT, ENHYPEN, LE SSERAFIM | [Weverse](https://weverse.io/) |
 | SM | aespa, NCT, EXO, Red Velvet | Lysn / Weverse (transitioning) |
 | JYP | Stray Kids, ITZY, TWICE, NMIXX | Weverse |
 | YG | BLACKPINK, TREASURE, BABYMONSTER | Weverse |

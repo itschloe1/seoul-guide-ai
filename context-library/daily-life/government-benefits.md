@@ -62,7 +62,7 @@ In March 2026, the National Assembly passed a 26.2조원 (26.2 trillion KRW) sup
 
 ### How to Apply
 
-1. **Online:** 정부24 (gov.kr) > Search "추경 민생지원금" > Apply with 공동인증서 or 간편인증
+1. **Online:** [정부24](https://www.gov.kr/) (gov.kr) > Search "추경 민생지원금" > Apply with 공동인증서 or 간편인증
 2. **In person:** Visit your local 주민센터 (community service center) with:
    - Alien registration card (외국인등록증)
    - Proof of income (건강보험료 납부확인서 from NHIS, or 소득금액증명원 from NTS)
@@ -104,7 +104,7 @@ For reference, the standard monthly NHIS premiums foreigners pay:
    - Alien registration card
    - Income documentation
    - Family relation certificate (가족관계증명서) if applicable
-3. Or apply online at nhis.or.kr (limited English support; 공동인증서 required)
+3. Or apply online at [nhis.or.kr](https://www.nhis.or.kr/) (limited English support; 공동인증서 required)
 
 **Important:** The subsidy is NOT automatic. You must apply. Many eligible foreigners miss this because they don't know it exists.
 
@@ -149,7 +149,7 @@ Seoul Metropolitan Government announced expanded support starting March 2026:
 | Private daycare (민간 어린이집) | Up to 280,000 KRW/month | 3-5 | F-5, F-6 visa holders |
 | Nuri curriculum (누리과정) | 280,000 KRW/month | 3-5 | All registered foreign children |
 
-**How to apply:** Through 복지로 (bokjiro.go.kr) or at your 주민센터. You will need 아이행복카드 (Child Happiness Card) issued by your bank.
+**How to apply:** Through [복지로](https://www.bokjiro.go.kr/) (bokjiro.go.kr) or at your 주민센터. You will need 아이행복카드 (Child Happiness Card) issued by your bank.
 
 ---
 
@@ -191,7 +191,7 @@ Foreign workers on E-9 (non-professional) and H-2 (working visit) visas are **ma
 | **Foreign Worker Korean Language Training** | Free | 2-6 months | E-9, H-2 visa holders |
 | **내일배움카드 (Tomorrow Learning Card)** | Up to 5,000,000 KRW training voucher | 1-2 years | F-2, F-5, F-6 visa holders; some E-visa holders with 1+ year employment |
 
-**Apply for 내일배움카드:** Visit your local 고용센터 (Employment Center) or apply at hrd.go.kr. This card covers vocational training courses (IT, cooking, beauty, manufacturing, etc.) at designated academies.
+**Apply for 내일배움카드:** Visit your local 고용센터 (Employment Center) or apply at [hrd.go.kr](https://www.hrd.go.kr/). This card covers vocational training courses (IT, cooking, beauty, manufacturing, etc.) at designated academies.
 
 ---
 
@@ -216,7 +216,7 @@ This is the single most valuable free program for foreigners in Korea. KIIP prov
 - All classes are free, including textbooks
 - Classes are available evenings and weekends
 
-**How to register:** socinet.go.kr > Create account > Take placement test (사전평가) > Get assigned to a level and class location
+**How to register:** [socinet.go.kr](https://www.socinet.go.kr/) > Create account > Take placement test (사전평가) > Get assigned to a level and class location
 
 ### Multicultural Family Education Support (다문화가족 교육지원)
 
@@ -332,9 +332,9 @@ All foreign workers, regardless of visa status, are covered by 산재보험 (Ind
 
 | Platform | URL | What You Can Do |
 |----------|-----|-----------------|
-| **정부24 (Government 24)** | gov.kr | Apply for most government benefits, check application status, download certificates |
-| **복지로 (Bokjiro)** | bokjiro.go.kr | Welfare benefit finder tool (복지서비스 모의계산), check eligibility for 30+ programs at once |
-| **NHIS** | nhis.or.kr | Check insurance status, print premium payment certificates, apply for subsidies |
+| **[정부24 (Government 24)](https://www.gov.kr/)** | gov.kr | Apply for most government benefits, check application status, download certificates |
+| **[복지로 (Bokjiro)](https://www.bokjiro.go.kr/)** | bokjiro.go.kr | Welfare benefit finder tool (복지서비스 모의계산), check eligibility for 30+ programs at once |
+| **[NHIS](https://www.nhis.or.kr/)** | nhis.or.kr | Check insurance status, print premium payment certificates, apply for subsidies |
 | **고용보험** | ei.go.kr | Check employment insurance enrollment, apply for unemployment benefits |
 | **Hirekorea** | hirekorea.or.kr | Foreign worker employment services (E-9 focused) |
 | **Danuri** | danuri.liveinkorea.kr | Multicultural family information portal, 13 languages |

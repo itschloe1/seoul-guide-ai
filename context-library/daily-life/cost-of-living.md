@@ -130,7 +130,7 @@ Apartment maintenance fee (관리비) adds 0-150,000 KRW/month depending on hous
 | Pizza (medium) | 18,000-28,000 | 0-3,000 |
 | Chinese (짜장면 set) | 7,000-10,000 | 0-2,000 |
 
-Delivery apps: **Baemin (배달의민족)**, **Coupang Eats**, **Yogiyo**. Minimum order amounts (최소주문금액) typically 10,000-15,000 KRW. Delivery fees have been rising; Coupang Eats Rocket membership (4,990 KRW/month) waives delivery fees on many orders.
+Delivery apps: **Baemin (배달의민족)**, **[Coupang](https://www.coupang.com/) Eats**, **Yogiyo**. Minimum order amounts (최소주문금액) typically 10,000-15,000 KRW. Delivery fees have been rising; Coupang Eats Rocket membership (4,990 KRW/month) waives delivery fees on many orders.
 
 **Monthly food budget estimates:**
 
@@ -150,7 +150,7 @@ Delivery apps: **Baemin (배달의민족)**, **Coupang Eats**, **Yogiyo**. Minim
 | **T-money card** | 2,500 (card purchase) | Rechargeable, buy at convenience stores |
 | **Bus/subway single ride** | 1,400 (card) / 1,500 (cash) | Transfers within 30 min are free |
 | **Monthly transit (commuter)** | 50,000-80,000 | Typical for daily round-trip commute |
-| **Climate Card (기후동행카드)** | 65,000/month | Unlimited Seoul metro + bus (no express bus). 62,000/month without commuter rail zones. |
+| **[Climate Card (기후동행카드)](https://www.t-money.co.kr/)** | 65,000/month | Unlimited Seoul metro + bus (no express bus). 62,000/month without commuter rail zones. |
 | **K-Pass (K-패스)** | 20% cashback | Cashback on transit spending (general); 30% for youth, 53% for low-income |
 | **Taxi (base fare)** | 4,800 | Increased from 4,000 in 2024. Night surcharge (23:00-04:00): 20% |
 | **Taxi (typical short ride, 3-5km)** | 7,000-12,000 | |

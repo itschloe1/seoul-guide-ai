@@ -147,7 +147,7 @@ From Incheon Airport to Seoul:
 **Do this on Day 1-2.** Appointment slots fill up fast, especially during peak periods (March-April, September-October when students arrive). See our [ARC guide](/guides/visa/arc-guide/) for the full application process and required documents.
 
 **How to book:**
-1. Go to [HiKorea](https://www.hikorea.go.kr/Main.pt?locale=en) (available in English)
+1. Go to [HiKorea](https://www.hikorea.go.kr/) (available in English)
 2. Click "Reserve Visit" under "Petition Application"
 3. Select "Visit Reservation Application (Non-member)"
 4. Choose "Identity verification using passport number"
@@ -385,7 +385,7 @@ Now that you have an ARC, bank account, and phone plan, you can sign a proper le
 
 **Registration process:**
 1. Gather documents: ARC, passport, proof of address, employment/income verification
-2. Visit your regional NHIS office (find yours at [nhis.or.kr](https://www.nhis.or.kr/english/))
+2. Visit your regional [NHIS](https://www.nhis.or.kr/) office (find yours at nhis.or.kr)
 3. Complete application forms (available in English, Chinese, Vietnamese)
 4. Receive premium assessment in 7-10 business days
 5. Set up payment (bank auto-debit)
