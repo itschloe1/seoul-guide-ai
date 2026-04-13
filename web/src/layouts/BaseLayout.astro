@@ -43,8 +43,11 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <slot name="head" />
-    <!-- Analytics: replace data-domain with your actual domain when live -->
-    <script defer data-domain="livinginkorea.co" src="https://plausible.io/js/script.js"></script>
+    <!-- Vercel Analytics -->
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </head>
   <body>
     <header>
