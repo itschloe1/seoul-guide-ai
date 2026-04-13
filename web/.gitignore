@@ -1,5 +1,6 @@
 # build output
 dist/
+.vercel/
 
 # generated content (synced from context-library at build time)
 src/content/guides/

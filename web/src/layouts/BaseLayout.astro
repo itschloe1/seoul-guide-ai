@@ -43,11 +43,6 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <slot name="head" />
-    <!-- Vercel Analytics -->
-    <script>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
   </head>
   <body>
     <header>
