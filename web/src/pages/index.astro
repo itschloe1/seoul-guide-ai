@@ -14,56 +14,56 @@ const categories = [
   {
     name: 'Getting Started',
     slug: 'onboarding',
-    description: 'Arrival checklist, departure checklist, and the first 60 days',
-    icon: '1',
+    description: 'Arrival checklist & departure guide',
+    icon: '\u2708\uFE0F',
   },
   {
     name: 'Visa & Immigration',
     slug: 'visa',
-    description: 'ARC registration, visa types, and critical deadlines',
-    icon: '2',
+    description: 'ARC, visa types, address reporting',
+    icon: '\uD83D\uDCCB',
   },
   {
-    name: 'Banking',
+    name: 'Banking & Finance',
     slug: 'banking',
-    description: 'Opening accounts, cards, payments, and money transfers',
-    icon: '3',
+    description: 'Bank accounts, cards, sending money',
+    icon: '\uD83C\uDFE6',
   },
   {
     name: 'Housing',
     slug: 'housing',
-    description: 'Finding apartments, jeonse vs wolse, and avoiding scams',
-    icon: '4',
+    description: 'Apartments, jeonse vs wolse, contracts',
+    icon: '\uD83C\uDFE0',
   },
   {
     name: 'Healthcare',
     slug: 'healthcare',
-    description: 'English-speaking doctors, hospitals, and health insurance',
-    icon: '5',
+    description: 'Hospitals, insurance, pharmacy',
+    icon: '\uD83C\uDFE5',
   },
   {
     name: 'Daily Life',
     slug: 'daily-life',
-    description: 'Transportation, food delivery, utilities, and phone setup',
-    icon: '6',
+    description: 'Transport, delivery, utilities, cost of living',
+    icon: '\uD83D\uDE8C',
   },
   {
     name: 'Workplace',
     slug: 'workplace',
-    description: 'Korean work culture, communication, and your legal rights',
-    icon: '7',
+    description: 'Culture, contracts, your rights',
+    icon: '\uD83D\uDCBC',
   },
   {
     name: 'Entertainment',
     slug: 'entertainment',
-    description: 'K-pop concert tickets, music shows, and fansign events',
-    icon: '8',
+    description: 'K-pop tickets, music shows, fansigns',
+    icon: '\uD83C\uDFB5',
   },
   {
     name: 'Shopping & K-Beauty',
     slug: 'shopping',
-    description: 'Olive Young best sellers and K-beauty shopping guide',
-    icon: '9',
+    description: 'Olive Young best sellers, tax refund tips',
+    icon: '\uD83D\uDECD\uFE0F',
   },
 ];
 ---
@@ -73,64 +73,230 @@ const categories = [
   description="Free, comprehensive guides for foreigners living in Korea. Banking, housing, healthcare, visas, transportation, and more. Plus an AI-powered Telegram bot for instant answers."
 >
   <StructuredData slot="head" data={orgSchema} />
+
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-accent" aria-hidden="true"></div>
     <div class="hero-inner">
-      <h1>Your Korean friend, powered by AI</h1>
-      <p class="hero-subtitle">
-        Free guides and an AI assistant to help foreigners navigate banking, housing,
-        healthcare, visas, and daily life in Korea.
+      <div class="hero-badge">Made by a Korean, for foreigners</div>
+      <h1>Your guide to<br /><span>life in Korea</span></h1>
+      <p class="hero-sub">
+        Free guides, photo translation, and an AI assistant that speaks your language.
+        Everything you need to navigate Korea -- from bank accounts to K-pop tickets.
       </p>
       <div class="hero-actions">
         <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">
-          Get help on Telegram
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          Chat on Telegram
         </a>
         <a href="/guides/" class="btn btn-outline">Browse guides</a>
       </div>
     </div>
   </section>
 
-  <!-- What is this -->
-  <section class="what-section">
-    <div class="what-inner">
-      <h2>What is Living in Korea?</h2>
-      <div class="what-grid">
-        <div class="what-card">
-          <h3>Comprehensive knowledge base</h3>
+  <!-- Demo 1: Chat Preview -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <h2 class="section-title">See it in action</h2>
+      <p class="section-sub">Real answers, not generic advice</p>
+      <div class="demo-grid">
+        <div class="demo-text">
+          <h3>Ask anything about life in Korea</h3>
           <p>
-            16 free guides on this site, plus the bot's AI can answer questions beyond
-            what's written here -- from niche visa cases to reading your specific gas bill.
+            The bot gives you specific, actionable answers with exact steps, Korean phrases
+            you can copy-paste, phone numbers to call, and prices you can expect.
+            Not "check the immigration website" -- actual help.
           </p>
+          <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex">Try it yourself</a>
         </div>
-        <div class="what-card">
-          <h3>AI bot that speaks your language</h3>
+        <div class="chat-window">
+          <div class="chat-header">
+            <div class="chat-avatar">
+              <svg viewBox="0 0 32 32" fill="none" width="20" height="20"><circle cx="16" cy="16" r="15" fill="#003478"/><path d="M16 1A15 15 0 0116 31A7.5 7.5 0 0116 16A7.5 7.5 0 0016 1Z" fill="#C60C30"/></svg>
+            </div>
+            <div>
+              <div class="chat-name">Living in Korea</div>
+              <div class="chat-status">Online</div>
+            </div>
+          </div>
+          <div class="msg msg-user">
+            <div class="msg-bubble">My landlord won't return my deposit. I'm leaving Korea in 2 weeks.</div>
+          </div>
+          <div class="msg msg-bot">
+            <div class="msg-bubble">
+              Don't panic. Here's what to do right now:<br /><br />
+              <strong>1. Send a certified letter</strong> (&#xB0B4;&#xC6A9;&#xC99D;&#xBA85;) via the post office. Cost: 3,000 won. Include your name, contract number, deposit amount, and a 14-day deadline.<br /><br />
+              <strong>2. If no response in 14 days</strong>, file a small claims case (&#xC18C;&#xC561;&#xC0AC;&#xAC74;). Filing fee: ~10,000 won. No lawyer needed.<br /><br />
+              <strong>3. Call 132</strong> (Legal Aid) for free consultation -- they speak English.
+            </div>
+          </div>
+          <div class="msg msg-user">
+            <div class="msg-bubble">What should I write in the certified letter?</div>
+          </div>
+          <div class="msg msg-bot">
+            <div class="msg-bubble">
+              Here's exactly what to include...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo 2: Photo Interpretation -->
+  <section class="demo-section demo-section-cream">
+    <div class="demo-inner">
+      <div class="demo-grid">
+        <div>
+          <div class="photo-demo">
+            <div class="photo-before">
+              <div class="photo-before-icon">&#x1F4C4;</div>
+              <p class="photo-korean-title">&#xD55C;&#xAD6D;&#xC804;&#xB825;&#xACF5;&#xC0AC;</p>
+              <p class="photo-korean-sub">&#xC804;&#xAE30;&#xC694;&#xAE08; &#xACE0;&#xC9C0;&#xC11C;</p>
+              <p class="photo-price">&#x20A9;47,320</p>
+              <p class="photo-due">&#xB0A9;&#xBD80;&#xAE30;&#xD55C;: 2026.04.25</p>
+            </div>
+            <div class="photo-arrow">&#x2193;</div>
+            <div class="photo-after">
+              <div class="photo-after-label">Bot's explanation</div>
+              <p>
+                This is your <strong>electricity bill</strong> from KEPCO for <strong>47,320 won</strong> (~$35).<br /><br />
+                <strong>How to pay:</strong> Scan the barcode at any CU, GS25, or 7-Eleven. Or pay through your bank app under "&#xACF5;&#xACFC;&#xAE08;" (utility bills).<br /><br />
+                <strong>Due date:</strong> April 25th. Late fee is 3% after that.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="demo-text">
+          <h3>Can't read it? Just take a photo.</h3>
           <p>
-            Ask in English, Vietnamese, Chinese, Japanese, Thai, or any language you speak.
-            The bot understands and replies in your language -- no translation needed.
+            Bills, contracts, government letters, restaurant menus, street signs --
+            send a photo and get an instant explanation in your language.
+            Not just translation: the bot tells you <strong>what it means</strong> and <strong>what to do about it</strong>.
           </p>
-        </div>
-        <div class="what-card">
-          <h3>Photo interpretation</h3>
-          <p>
-            Send a photo of any Korean document -- bills, contracts, signs, menus, government
-            letters -- and get an instant explanation of what it says and what to do.
-          </p>
-        </div>
-        <div class="what-card">
-          <h3>Built by a Korean, for foreigners</h3>
-          <p>
-            Not another outdated blog. Verified information from someone who knows the Korean
-            system inside out, because his girlfriend went through it all.
+          <p class="demo-testimonial">
+            "I took a photo of my gas bill and it told me exactly how to pay it in 10 seconds."
           </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Demo 3: Multilingual -->
+  <section class="demo-section">
+    <div class="demo-inner">
+      <div class="demo-grid">
+        <div class="demo-text">
+          <h3>Ask in your language. Get answers in your language.</h3>
+          <p>
+            Not just English. The AI naturally understands and responds in Vietnamese, Chinese,
+            Japanese, Thai, Indonesian, Russian, Spanish -- whatever you speak.
+            No translation app needed.
+          </p>
+        </div>
+        <div class="lang-demo">
+          <div class="lang-tabs">
+            <button class="lang-tab active" data-lang="en">English</button>
+            <button class="lang-tab" data-lang="vi">Ti&#x1EBF;ng Vi&#x1EC7;t</button>
+            <button class="lang-tab" data-lang="zh">&#x4E2D;&#x6587;</button>
+            <button class="lang-tab" data-lang="ja">&#x65E5;&#x672C;&#x8A9E;</button>
+          </div>
+          <div class="lang-panels">
+            <div class="lang-panel active" id="lang-en">
+              <p class="lang-q">"How do I get a Korean phone number without an ARC?"</p>
+              <div class="lang-a">
+                Get a <strong>prepaid SIM</strong> -- no ARC needed. Chingu Mobile (~25,000 won/month) gives you a real Korean number that works for bank verification. Buy at the airport or order online.
+              </div>
+            </div>
+            <div class="lang-panel" id="lang-vi">
+              <p class="lang-q">"L&#xE0;m sao &#x111;&#x1EC3; c&#xF3; s&#x1ED1; &#x111;i&#x1EC7;n tho&#x1EA1;i H&#xE0;n Qu&#x1ED1;c m&#xE0; kh&#xF4;ng c&#x1EA7;n ARC?"</p>
+              <div class="lang-a">
+                Mua <strong>SIM tr&#x1EA3; tr&#x1B0;&#x1EDB;c</strong> -- kh&#xF4;ng c&#x1EA7;n ARC. Chingu Mobile (~25,000 won/th&#xE1;ng) s&#x1EBD; cho b&#x1EA1;n s&#x1ED1; &#x111;i&#x1EC7;n tho&#x1EA1;i H&#xE0;n Qu&#x1ED1;c th&#x1EAD;t, d&#xF9;ng &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EC3; x&#xE1;c minh ng&#xE2;n h&#xE0;ng. Mua &#x1EDF; s&#xE2;n bay ho&#x1EB7;c &#x111;&#x1EB7;t online.
+              </div>
+            </div>
+            <div class="lang-panel" id="lang-zh">
+              <p class="lang-q">"&#x6CA1;&#x6709;ARC&#x600E;&#x4E48;&#x529E;&#x97E9;&#x56FD;&#x624B;&#x673A;&#x53F7;&#xFF1F;"</p>
+              <div class="lang-a">
+                &#x4E70;<strong>&#x9884;&#x4ED8;&#x8D39;SIM&#x5361;</strong> -- &#x4E0D;&#x9700;&#x8981;ARC&#x3002;Chingu Mobile&#xFF08;&#x7EA6;25,000&#x97E9;&#x5143;/&#x6708;&#xFF09;&#x53EF;&#x4EE5;&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x7684;&#x97E9;&#x56FD;&#x624B;&#x673A;&#x53F7;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x94F6;&#x884C;&#x9A8C;&#x8BC1;&#x3002;&#x5728;&#x673A;&#x573A;&#x6216;&#x7F51;&#x4E0A;&#x8D2D;&#x4E70;&#x3002;
+              </div>
+            </div>
+            <div class="lang-panel" id="lang-ja">
+              <p class="lang-q">"ARC&#x306A;&#x3057;&#x3067;&#x97E9;&#x56FD;&#x306E;&#x96FB;&#x8A71;&#x756A;&#x53F7;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306F;&#xFF1F;"</p>
+              <div class="lang-a">
+                <strong>&#x30D7;&#x30EA;&#x30DA;&#x30A4;&#x30C9;SIM</strong>&#x3092;&#x8CFC;&#x5165;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046; -- ARC&#x306F;&#x4E0D;&#x8981;&#x3067;&#x3059;&#x3002;Chingu Mobile&#xFF08;&#x7D04;25,000&#x30A6;&#x30A9;&#x30F3;/&#x6708;&#xFF09;&#x3067;&#x3001;&#x9280;&#x884C;&#x8A8D;&#x8A3C;&#x306B;&#x3082;&#x4F7F;&#x3048;&#x308B;&#x672C;&#x7269;&#x306E;&#x97E9;&#x56FD;&#x306E;&#x96FB;&#x8A71;&#x756A;&#x53F7;&#x304C;&#x3082;&#x3089;&#x3048;&#x307E;&#x3059;&#x3002;&#x7A7A;&#x6E2F;&#x304B;&#x30AA;&#x30F3;&#x30E9;&#x30A4;&#x30F3;&#x3067;&#x8CFC;&#x5165;&#x53EF;&#x80FD;&#x3002;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.lang-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var lang = this.getAttribute('data-lang');
+          document.querySelectorAll('.lang-tab').forEach(function(t) { t.classList.remove('active'); });
+          document.querySelectorAll('.lang-panel').forEach(function(p) { p.classList.remove('active'); });
+          this.classList.add('active');
+          document.getElementById('lang-' + lang).classList.add('active');
+        });
+      });
+    });
+  </script>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="features-inner">
+      <h2 class="section-title">Why foreigners love this</h2>
+      <p class="section-sub">Built from real experience, not generic travel advice</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4DA;</div>
+          <h3>19 in-depth guides</h3>
+          <p>Banking, housing, healthcare, visas, K-pop tickets, Olive Young -- and growing every week.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F30F;</div>
+          <h3>Any language</h3>
+          <p>Ask in Vietnamese, Chinese, Japanese, Thai, or any language. The AI responds naturally in yours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4F7;</div>
+          <h3>Photo translation</h3>
+          <p>Snap a photo of any Korean document, sign, or menu. Get an instant explanation + what to do.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F1F0;&#x1F1F7;</div>
+          <h3>Made by a Korean</h3>
+          <p>Not a tourist blog. Built by someone who knows the system because his girlfriend went through it all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-section">
+    <div class="categories-inner">
+      <h2 class="section-title">Guide Categories</h2>
+      <p class="section-sub">Tap a category to explore</p>
+      <div class="cat-grid">
+        {categories.map((cat) => (
+          <a href={`/guides/#${cat.slug}`} class="cat-card">
+            <div class="cat-icon">{cat.icon}</div>
+            <div class="cat-text">
+              <h3>{cat.name}</h3>
+              <p>{cat.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- SEO body text -->
-  <section class="about-section">
-    <div class="about-inner">
+  <section class="seo-section">
+    <div class="seo-inner">
       <p>
         Moving to Korea as a foreigner means navigating a system designed entirely in Korean
         -- from opening a bank account to understanding your lease contract to figuring out
@@ -150,70 +316,87 @@ const categories = [
     </div>
   </section>
 
-  <!-- Categories -->
-  <section class="categories-section">
-    <div class="categories-inner">
-      <h2>Guide Categories</h2>
-      <p class="categories-sub">Everything you need to navigate life in Korea</p>
-      <div class="categories-grid">
-        {categories.map((cat) => (
-          <a href={`/guides/#${cat.slug}`} class="category-card">
-            <span class="category-num">{cat.icon}</span>
-            <h3>{cat.name}</h3>
-            <p>{cat.description}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bottom-cta">
-    <div class="bottom-cta-inner">
-      <h2>Get personalized help on Telegram</h2>
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <h2>Your situation is unique.<br />The bot gets that.</h2>
       <p>
-        These guides cover the basics. For your specific situation -- visa questions, neighborhood
-        recommendations, step-by-step help with paperwork -- chat with our AI assistant.
+        These guides cover the basics. For your specific visa, your neighborhood,
+        your landlord situation -- chat with the AI. It knows everything here and more.
       </p>
       <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
         Start chatting on Telegram
       </a>
     </div>
   </section>
 
   <style>
+    /* Hero */
     .hero {
       position: relative;
-      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
-      padding: 4rem 1.5rem 3.5rem;
-      text-align: center;
+      padding: 5rem 2rem 4rem;
       overflow: hidden;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
     }
-    .hero-accent {
+    .hero::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #C60C30 0%, #C60C30 50%, #003478 50%, #003478 100%);
-      opacity: 0.85;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(232, 114, 92, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -50px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(108, 92, 231, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
     }
     .hero-inner {
-      position: relative;
-      max-width: 680px;
+      max-width: 800px;
       margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--coral-light);
+      color: var(--coral);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: var(--color-text);
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      color: var(--navy-dark);
     }
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--color-text-light);
-      margin-bottom: 2rem;
-      line-height: 1.6;
+    .hero h1 span {
+      background: var(--gradient-kculture);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
     }
     .hero-actions {
       display: flex;
@@ -222,136 +405,398 @@ const categories = [
       flex-wrap: wrap;
     }
 
-    .about-section {
-      padding: 2rem 1.5rem 0;
+    /* Section titles */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--navy-dark);
     }
-    .about-inner {
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    /* Demo sections */
+    .demo-section {
+      padding: 4rem 2rem;
+      background: var(--white);
+    }
+    .demo-section-cream {
+      background: var(--cream);
+    }
+    .demo-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+    .demo-text h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--navy-dark);
+    }
+    .demo-text p {
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .demo-testimonial {
+      color: var(--coral) !important;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Chat UI */
+    .chat-window {
+      background: #F0F0F0;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+      max-width: 400px;
+    }
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chat-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .chat-status {
+      font-size: 0.75rem;
+      color: var(--sage);
+    }
+    .msg {
+      margin-bottom: 0.8rem;
+      display: flex;
+    }
+    .msg-user {
+      justify-content: flex-end;
+    }
+    .msg-bot {
+      justify-content: flex-start;
+    }
+    .msg-bubble {
+      max-width: 85%;
+      padding: 0.7rem 1rem;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .msg-user .msg-bubble {
+      background: var(--coral);
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+    .msg-bot .msg-bubble {
+      background: white;
+      color: var(--text);
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Photo Demo */
+    .photo-demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .photo-before {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #E8E8E8;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 2px dashed #CCC;
+    }
+    .photo-before-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+    .photo-korean-title { font-size: 1.3rem; color: var(--text); margin-bottom: 0.3rem; }
+    .photo-korean-sub { font-size: 1rem; color: var(--text-light); }
+    .photo-price { margin-top: 0.5rem; font-size: 1.8rem; font-weight: 700; color: var(--text); }
+    .photo-due { font-size: 0.75rem; color: #AAA; margin-top: 0.8rem; }
+    .photo-arrow {
+      font-size: 1.8rem;
+      color: var(--coral);
+      flex-shrink: 0;
+    }
+    .photo-after {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      padding: 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    .photo-after-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--coral);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .photo-after p {
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .photo-after p strong { color: var(--navy); }
+
+    /* Language Tabs */
+    .lang-demo {
+      margin-top: 0;
+    }
+    .lang-tabs {
+      display: flex;
+      gap: 0;
+    }
+    .lang-tab {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      background: #E8E8E8;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-light);
+      transition: all 0.2s;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .lang-tab.active {
+      background: white;
+      color: var(--coral);
+      font-weight: 600;
+    }
+    .lang-panels {
+      background: white;
+      border-radius: 0 14px 14px 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    .lang-panel { display: none; }
+    .lang-panel.active { display: block; }
+    .lang-q {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .lang-a {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0.8rem;
+      background: var(--cream);
+      border-radius: 10px;
+      border-left: 3px solid var(--coral);
+    }
+
+    /* Features */
+    .features {
+      padding: 4rem 2rem;
+      background: var(--cream);
+    }
+    .features-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      padding: 1.8rem;
+      border-radius: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+    .feature-card:nth-child(1) { background: var(--coral-light); }
+    .feature-card:nth-child(2) { background: var(--sage-light); }
+    .feature-card:nth-child(3) { background: #EDE9FE; }
+    .feature-card:nth-child(4) { background: #FEF3C7; }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--navy-dark);
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Categories */
+    .categories-section {
+      padding: 4rem 2rem;
+      background: var(--cream);
+    }
+    .categories-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+    .cat-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .cat-card:hover {
+      border-color: var(--coral);
+      box-shadow: 0 4px 20px rgba(232, 114, 92, 0.1);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .cat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .cat-card:nth-child(1) .cat-icon { background: #DBEAFE; }
+    .cat-card:nth-child(2) .cat-icon { background: #FEE2E2; }
+    .cat-card:nth-child(3) .cat-icon { background: #D1FAE5; }
+    .cat-card:nth-child(4) .cat-icon { background: #FEF3C7; }
+    .cat-card:nth-child(5) .cat-icon { background: #EDE9FE; }
+    .cat-card:nth-child(6) .cat-icon { background: #FCE7F3; }
+    .cat-card:nth-child(7) .cat-icon { background: #E0E7FF; }
+    .cat-card:nth-child(8) .cat-icon { background: #CFFAFE; }
+    .cat-card:nth-child(9) .cat-icon { background: #FED7AA; }
+    .cat-text h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .cat-text p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    /* SEO Section */
+    .seo-section {
+      padding: 2rem 2rem 0;
+    }
+    .seo-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      color: var(--color-text-light);
+      color: var(--text-light);
       font-size: 0.95rem;
       line-height: 1.7;
     }
-    .about-inner p {
+    .seo-inner p {
       margin-bottom: 1rem;
     }
-    .what-section {
-      padding: 3.5rem 1.5rem;
-    }
-    .what-inner {
-      max-width: var(--max-width-wide);
-      margin: 0 auto;
-    }
-    .what-inner h2 {
-      text-align: center;
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-    }
-    .what-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .what-card {
-      background: var(--color-bg-alt);
-      border-radius: 10px;
-      padding: 1.5rem;
-    }
-    .what-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .what-card p {
-      font-size: 0.93rem;
-      color: var(--color-text-light);
-      line-height: 1.6;
-    }
 
-    .categories-section {
-      padding: 3rem 1.5rem;
-      background: var(--color-bg-alt);
+    /* CTA Banner */
+    .cta-banner {
+      padding: 4rem 2rem;
+      background: var(--navy-dark);
+      position: relative;
+      overflow: hidden;
     }
-    .categories-inner {
-      max-width: var(--max-width-wide);
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(232, 114, 92, 0.15) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .cta-inner {
+      max-width: 700px;
       margin: 0 auto;
-    }
-    .categories-inner h2 {
       text-align: center;
-      font-size: 1.6rem;
-      margin-bottom: 0.25rem;
+      position: relative;
+      z-index: 1;
     }
-    .categories-sub {
-      text-align: center;
-      color: var(--color-text-light);
+    .cta-banner h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .cta-banner p {
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 2rem;
-    }
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-    .category-card {
-      display: block;
-      background: var(--color-bg);
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
-      padding: 1.25rem;
-      text-decoration: none;
-      color: var(--color-text);
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .category-card:hover {
-      border-color: var(--color-primary);
-      box-shadow: 0 2px 8px rgba(26, 86, 219, 0.08);
-      text-decoration: none;
-    }
-    .category-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      background: var(--color-primary-light);
-      color: var(--color-primary);
-      border-radius: 6px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-    }
-    .category-card h3 {
       font-size: 1.05rem;
-      margin-bottom: 0.3rem;
+      line-height: 1.7;
     }
-    .category-card p {
-      font-size: 0.88rem;
-      color: var(--color-text-light);
-      line-height: 1.5;
+    .cta-banner .btn-primary {
+      font-size: 1.05rem;
+      padding: 0.9rem 2rem;
     }
 
-    .bottom-cta {
-      padding: 3.5rem 1.5rem;
-      text-align: center;
-    }
-    .bottom-cta-inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .bottom-cta h2 {
-      font-size: 1.6rem;
-      margin-bottom: 0.75rem;
-    }
-    .bottom-cta p {
-      color: var(--color-text-light);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+    @media (max-width: 768px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
     }
 
     @media (max-width: 640px) {
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
       }
-      .categories-grid {
+      .hero-sub {
+        font-size: 1rem;
+      }
+      .cat-grid {
         grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>

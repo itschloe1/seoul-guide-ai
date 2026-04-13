@@ -41,6 +41,7 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>{title}</title>
     <slot name="head" />
     <!-- Vercel Analytics -->
@@ -69,15 +70,7 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-cta">
-          <p>Need personalized help navigating life in Korea?</p>
-          <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener" class="btn btn-primary">Chat with Living in Korea on Telegram</a>
-        </div>
-        <div class="footer-links">
-          <a href="/guides/">Guides</a>
-          <a href="/about/">About</a>
-        </div>
-        <p class="footer-copy">&copy; {new Date().getFullYear()} Living in Korea. Helping foreigners thrive in Korea.</p>
+        <p>&copy; {new Date().getFullYear()} Living in Korea. <a href="/guides/">Guides</a> &middot; <a href="/about/">About</a> &middot; <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener">Telegram Bot</a></p>
       </div>
     </footer>
 
@@ -91,34 +84,50 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
       }
 
       :root {
-        --color-primary: #1a56db;
-        --color-primary-dark: #1444b0;
-        --color-primary-light: #e8f0fe;
-        --color-text: #1f2937;
-        --color-text-light: #6b7280;
-        --color-bg: #ffffff;
-        --color-bg-alt: #f8fafc;
-        --color-border: #e5e7eb;
-        --color-accent: #0ea5e9;
+        --cream: #FFF8F0;
+        --cream-dark: #FFF1E0;
+        --coral: #E8725C;
+        --coral-light: #FDECE8;
+        --sage: #7BA085;
+        --sage-light: #EDF5EF;
+        --navy: #003478;
+        --navy-dark: #0A0E2A;
+        --blue: #1A56DB;
+        --text: #1A1A2E;
+        --text-light: #5A5A7A;
+        --white: #FFFFFF;
+        --gradient-kculture: linear-gradient(135deg, #E8725C 0%, #C060A1 50%, #6C5CE7 100%);
         --max-width: 780px;
         --max-width-wide: 1100px;
+        /* Legacy aliases for components that still reference old variable names */
+        --color-primary: #E8725C;
+        --color-primary-dark: #d45a44;
+        --color-primary-light: #FDECE8;
+        --color-text: #1A1A2E;
+        --color-text-light: #5A5A7A;
+        --color-bg: #FFF8F0;
+        --color-bg-alt: #FFF1E0;
+        --color-border: rgba(0, 0, 0, 0.08);
+        --color-accent: #7BA085;
       }
 
       html {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           'Helvetica Neue', Arial, sans-serif;
         font-size: 17px;
         line-height: 1.7;
-        color: var(--color-text);
-        background: var(--color-bg);
+        color: var(--text);
+        background: var(--cream);
         -webkit-font-smoothing: antialiased;
         scroll-behavior: smooth;
       }
 
       body {
+        font-family: 'Outfit', -apple-system, sans-serif;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        background: var(--cream);
       }
 
       main {
@@ -126,7 +135,7 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
       }
 
       a {
-        color: var(--color-primary);
+        color: var(--coral);
         text-decoration: none;
       }
       a:hover {
@@ -140,116 +149,122 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
 
       /* Header */
       header {
-        border-bottom: 1px solid var(--color-border);
-        background: var(--color-bg);
         position: sticky;
         top: 0;
         z-index: 100;
+        background: rgba(255, 248, 240, 0.9);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 52, 120, 0.08);
       }
       nav {
         max-width: var(--max-width-wide);
         margin: 0 auto;
-        padding: 0 1.5rem;
+        padding: 0 2rem;
       }
       .nav-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 60px;
+        height: 64px;
       }
       .logo {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 10px;
         font-weight: 700;
         font-size: 1.15rem;
-        color: var(--color-primary);
+        color: var(--navy);
         text-decoration: none;
       }
       .nav-links {
         list-style: none;
         display: flex;
-        gap: 1.5rem;
+        gap: 2rem;
         align-items: center;
       }
       .nav-links a {
-        color: var(--color-text);
+        color: var(--text-light);
         font-size: 0.92rem;
         font-weight: 500;
+        transition: color 0.2s;
       }
       .nav-links a:hover {
-        color: var(--color-primary);
+        color: var(--coral);
         text-decoration: none;
       }
       .cta-link {
-        background: var(--color-primary);
+        background: var(--coral) !important;
         color: #fff !important;
-        padding: 0.4rem 1rem;
-        border-radius: 6px;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-weight: 600;
         font-size: 0.88rem !important;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
       .cta-link:hover {
-        background: var(--color-primary-dark);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(232, 114, 92, 0.35);
+        background: var(--coral) !important;
       }
 
       /* Footer */
       footer {
-        background: var(--color-bg-alt);
-        border-top: 1px solid var(--color-border);
-        margin-top: 4rem;
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 2rem;
+        background: var(--cream);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        text-align: center;
+        margin-top: 0;
       }
       .footer-inner {
         max-width: var(--max-width-wide);
         margin: 0 auto;
-        text-align: center;
       }
-      .footer-cta {
-        margin-bottom: 2rem;
+      footer p {
+        color: var(--text-light);
+        font-size: 0.85rem;
       }
-      .footer-cta p {
-        margin-bottom: 0.75rem;
-        color: var(--color-text-light);
+      footer a {
+        color: var(--coral);
+        text-decoration: none;
       }
-      .footer-links {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-      .footer-links a {
-        color: var(--color-text-light);
-        font-size: 0.9rem;
-      }
-      .footer-copy {
-        color: var(--color-text-light);
-        font-size: 0.82rem;
+      footer a:hover {
+        text-decoration: underline;
       }
 
       /* Buttons */
       .btn {
-        display: inline-block;
-        padding: 0.65rem 1.5rem;
-        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 1rem;
         text-decoration: none;
-        transition: background 0.15s;
+        transition: all 0.2s;
+        font-family: inherit;
+        border: none;
+        cursor: pointer;
       }
       .btn-primary {
-        background: var(--color-primary);
+        background: var(--coral);
         color: #fff;
+        box-shadow: 0 4px 15px rgba(232, 114, 92, 0.3);
       }
       .btn-primary:hover {
-        background: var(--color-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(232, 114, 92, 0.4);
         text-decoration: none;
       }
       .btn-outline {
-        border: 2px solid var(--color-primary);
-        color: var(--color-primary);
+        background: white;
+        color: var(--text);
+        border: 1.5px solid rgba(26, 26, 46, 0.15);
       }
       .btn-outline:hover {
-        background: var(--color-primary-light);
+        border-color: var(--coral);
+        color: var(--coral);
         text-decoration: none;
       }
 
@@ -263,18 +278,21 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
         font-size: 2rem;
         line-height: 1.25;
         margin-bottom: 0.5rem;
+        color: var(--navy-dark);
       }
       .article-content h2 {
         font-size: 1.5rem;
         margin-top: 2.5rem;
         margin-bottom: 0.75rem;
         padding-bottom: 0.4rem;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        color: var(--navy-dark);
       }
       .article-content h3 {
         font-size: 1.2rem;
         margin-top: 2rem;
         margin-bottom: 0.5rem;
+        color: var(--navy-dark);
       }
       .article-content h4 {
         font-size: 1.05rem;
@@ -293,10 +311,10 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
         margin-bottom: 0.35rem;
       }
       .article-content blockquote {
-        border-left: 4px solid var(--color-primary);
+        border-left: 4px solid var(--coral);
         padding: 0.75rem 1rem;
         margin: 1.5rem 0;
-        background: var(--color-primary-light);
+        background: var(--coral-light);
         border-radius: 0 6px 6px 0;
         font-style: italic;
       }
@@ -310,16 +328,16 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
       }
       .article-content th,
       .article-content td {
-        border: 1px solid var(--color-border);
+        border: 1px solid rgba(0, 0, 0, 0.08);
         padding: 0.5rem 0.75rem;
         text-align: left;
       }
       .article-content th {
-        background: var(--color-bg-alt);
+        background: var(--cream-dark);
         font-weight: 600;
       }
       .article-content code {
-        background: var(--color-bg-alt);
+        background: var(--cream-dark);
         padding: 0.15rem 0.4rem;
         border-radius: 4px;
         font-size: 0.9em;
@@ -339,7 +357,7 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
       }
       .article-content hr {
         border: none;
-        border-top: 1px solid var(--color-border);
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
         margin: 2rem 0;
       }
       .article-content strong {
@@ -348,23 +366,23 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
 
       /* Guide meta */
       .guide-meta {
-        color: var(--color-text-light);
+        color: var(--text-light);
         font-size: 0.88rem;
         margin-bottom: 1.5rem;
       }
 
       /* Guide CTA */
       .guide-cta {
-        background: var(--color-primary-light);
-        border: 1px solid #bfdbfe;
-        border-radius: 10px;
+        background: var(--coral-light);
+        border: 1px solid rgba(232, 114, 92, 0.2);
+        border-radius: 14px;
         padding: 1.5rem;
         margin-top: 3rem;
         text-align: center;
       }
       .guide-cta p {
         margin-bottom: 0.75rem;
-        color: var(--color-text);
+        color: var(--text);
       }
 
       @media (max-width: 640px) {
@@ -375,14 +393,14 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
           padding: 0 1rem;
         }
         .nav-inner {
-          height: 50px;
+          height: 56px;
         }
         .logo {
           font-size: 0.95rem;
           white-space: nowrap;
         }
         .nav-links {
-          gap: 0.75rem;
+          gap: 1rem;
         }
         .nav-links a {
           font-size: 0.82rem;
