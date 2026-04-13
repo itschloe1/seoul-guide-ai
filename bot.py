@@ -176,6 +176,9 @@ client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 conversations: dict[int, list[dict]] = {}
 MAX_HISTORY = 20
 
+# Per-user profile (stage selection, metadata)
+user_profiles: dict[int, dict] = {}
+
 
 def get_history(user_id: int) -> list[dict]:
     if user_id not in conversations:
