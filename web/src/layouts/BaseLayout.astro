@@ -197,6 +197,7 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
         border-radius: 50px;
         font-weight: 600;
         font-size: 0.88rem !important;
+        white-space: nowrap;
         transition: transform 0.2s, box-shadow 0.2s;
       }
       .cta-link:hover {
@@ -391,19 +392,22 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
         }
         .nav-inner {
           height: 56px;
+          gap: 0.75rem;
         }
         .logo {
           font-size: 0.95rem;
           white-space: nowrap;
+          min-width: 0;
         }
         .nav-links {
           gap: 1rem;
+          flex-shrink: 0;
         }
         .nav-links a {
           font-size: 0.82rem;
         }
         .cta-link {
-          padding: 0.3rem 0.6rem;
+          padding: 0.4rem 0.9rem;
           font-size: 0.78rem !important;
         }
         .article-content h1 {
@@ -411,6 +415,12 @@ const ogImageURL = new URL(ogImage || '/og/default.png', Astro.site);
         }
         .article-content h2 {
           font-size: 1.3rem;
+        }
+      }
+
+      @media (max-width: 440px) {
+        .nav-links li:not(:last-child) {
+          display: none;
         }
       }
     </style>

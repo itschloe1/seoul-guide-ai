@@ -46,5 +46,16 @@ const { size = 28 } = Astro.props;
     font-weight: 700;
     font-size: 1.15rem;
     color: var(--navy, #003478);
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .logo-text {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 440px) {
+    .logo-text {
+      font-size: 0.9rem;
+    }
   }
 </style>
