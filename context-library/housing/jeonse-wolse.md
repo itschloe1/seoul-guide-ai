@@ -261,6 +261,54 @@ Before signing a rental contract (임대차 계약서), verify every item below.
 
 ---
 
+## Deposit Fraud: Real Patterns from 122 Foreigner Interviews
+
+> Source: FOHO (ForeignerHome) April 2026 audience pulse research -- 122 in-depth interviews with foreigners who experienced or narrowly avoided deposit fraud in Korea.
+
+The jeonse scam section above covers large-scale fraud rings. This section focuses on the smaller, more personal fraud patterns that specifically target individual foreigners, based on FOHO's field interviews.
+
+### Common Fraud Patterns Targeting Foreigners
+
+1. **Landlord disappears after collecting deposit.** The most frequent pattern. The "landlord" collects the deposit (often wolse-level, 5-15 million won) and becomes unreachable. In some cases the person was never the actual owner. Of the 122 interviewees, 31 reported this pattern.
+
+2. **Sublet scams (전대 사기).** A current tenant sublets the unit to a foreigner without the landlord's knowledge or consent, collects a deposit, then vanishes. The actual landlord discovers the situation and evicts the foreigner, who has no legal standing and no way to recover the deposit.
+
+3. **Fake 등기부등본 (property registry forgery).** Scammers present forged or outdated registry documents showing a clean title. The actual property may have massive liens or belong to someone else entirely. Several interviewees reported receiving what appeared to be legitimate registry PDFs that were digitally altered.
+
+4. **Renovation deposit demands (수리비 보증금).** The "landlord" claims the unit needs renovation and asks for an additional deposit (often 2-5 million won) to cover repairs before move-in. After payment, either no renovation happens and the person disappears, or the renovation is cosmetic and the deposit is never returned.
+
+### Language Barrier Exploitation
+
+The interviews revealed a consistent pattern of exploiting the Korean-language gap:
+
+- **Contracts only in Korean with no translation offered.** Scammers specifically refuse to provide English translations or summaries, insisting the foreigner "just sign here." Critical clauses (no deposit return under certain conditions, penalty terms) are buried in the Korean text.
+- **Verbal promises not included in the written contract.** Promises like "deposit is fully refundable," "utilities are included," or "you can leave after 6 months" are made verbally in English but intentionally excluded from the Korean contract. When disputes arise, the written contract governs.
+- **Pressure to sign without review time.** Scammers create urgency ("another person is coming to sign tomorrow") to prevent the foreigner from having the contract reviewed by a Korean-speaking friend or lawyer.
+
+### How FOHO and Similar Services Are Addressing This
+
+- **Escrow deposit systems.** FOHO and some newer platforms hold the deposit in escrow until the tenant confirms move-in and verifies the unit matches the listing. The landlord receives the deposit only after confirmation.
+- **AI-powered registry verification.** Automated cross-referencing of 등기부등본 data against known fraud patterns: recently purchased properties, mismatched owner names, excessive liens relative to property value.
+- **Bilingual contract templates.** Standardized Korean-English contracts that prevent hidden clauses. Both language versions are legally binding.
+- **Identity verification of landlords.** Platforms verify the landlord's identity against the property registry before listing, reducing impersonation scams.
+
+### Red Flags Checklist: Foreigner-Specific Deposit Fraud
+
+In addition to the general jeonse red flags above, watch for these patterns that specifically target foreigners:
+
+- [ ] **The person refuses to show ID matching the 등기부등본 owner name** -- always verify identity, not just the document
+- [ ] **No English explanation of any contract term is offered**, and they discourage you from bringing a Korean speaker
+- [ ] **Verbal promises contradict or go beyond the written contract** -- if it is not written, it does not exist
+- [ ] **Deposit must be paid in cash or to a personal account** not matching the contract name
+- [ ] **The unit is being "sublet" by a current tenant** rather than rented by the owner or a licensed agent
+- [ ] **An "extra deposit" is requested** for renovation, cleaning, or furniture beyond the contract deposit
+- [ ] **You found the listing only on English-language Facebook groups or messaging apps** with no presence on Korean platforms (Zigbang, Naver Real Estate)
+- [ ] **The agent is not a licensed 공인중개사** -- ask to see their license (중개사무소등록증) displayed in their office
+- [ ] **You are told you do not need 전입신고 or 확정일자** -- this strips your legal protections and is a major warning sign
+- [ ] **The rent or deposit is dramatically below market rate** for the area -- if the deal seems too good, it probably is
+
+---
+
 ## Foreigner-Specific Issues
 
 ### Discrimination

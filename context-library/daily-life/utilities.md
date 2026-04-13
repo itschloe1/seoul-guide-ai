@@ -371,6 +371,68 @@ Fines are enforced. District offices review CCTV footage and can trace violation
 
 ---
 
+## Clothing Disposal (헌 옷 처리)
+
+Korea's waste sorting rules extend to clothing. You cannot throw clothes in general waste bags (except severely damaged or contaminated items). Here are the proper disposal methods.
+
+### 의류수거함 (Clothing Collection Bins)
+
+Free public clothing collection bins are located throughout residential neighborhoods, usually near apartment complexes, community centers (주민센터), and large supermarkets.
+
+**How to find them:**
+- Look near your apartment's waste disposal area -- most complexes have one
+- Ask your building guard (경비원) or management office
+- Search "의류수거함" + your district name on Naver Maps
+- Your district office (구청) website lists bin locations
+
+**What is accepted:**
+- Wearable clothing in clean, dry condition (shirts, pants, jackets, etc.)
+- Shoes (tied together in pairs)
+- Bags, belts, hats
+- Blankets and bedding in good condition
+- Towels
+
+**What is NOT accepted:**
+- Wet, moldy, or severely stained clothing
+- Underwear and socks (put these in general waste)
+- Torn or damaged items that cannot be reworn
+- Non-fabric items
+
+**How to use:** Place items in a plastic bag and deposit into the bin. Bins are emptied regularly by recycling companies that sort, export, or resell the items.
+
+### 대형폐기물 Sticker System for Large Items
+
+Large textile items that do not fit in collection bins (mattress covers, large curtains, carpets, heavy coats in bulk) fall under the large item disposal (대형폐기물) system:
+
+1. Register the item through your district office website/app or the **Bbaegi (빼기) app**
+2. Pay the disposal fee (typically 1,000-5,000 KRW for textile items)
+3. Attach the sticker and place the item at the designated pickup point
+4. Collection within 1-3 days
+
+### Donation Options
+
+| Organization | What They Accept | How to Donate |
+|---|---|---|
+| **아름다운가게 (Beautiful Store)** | Clean clothing, shoes, bags, accessories | Drop off at any store location or schedule a free pickup for large quantities (call 1577-1113) |
+| **Goodwill Korea** | Clothing, shoes, household items | Drop off at store locations (primarily Seoul/Gyeonggi) |
+| **구세군 (Salvation Army)** | Clothing and household goods | Drop-off at Salvation Army thrift stores |
+
+Donations may be eligible for a tax deduction if you request a donation receipt (기부금 영수증).
+
+### Selling: 당근마켓 (Karrot Market)
+
+For clothing still in good, wearable condition, **당근마켓** is Korea's dominant local secondhand marketplace:
+
+- Download the 당근마켓 app (available in Korean; English-friendly interface in progress)
+- List items with photos and price (free listings)
+- Meet buyers locally for in-person transactions
+- Popular categories: branded items, seasonal outerwear, children's clothing
+- Foreigners can use the app with a Korean phone number
+
+Other selling options: **번개장터** (Bungaejangter, similar to eBay Korea) for higher-value or branded items.
+
+---
+
 ## How to Pay Bills
 
 ### Payment Methods Overview

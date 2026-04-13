@@ -42,6 +42,13 @@ export const GUIDE_META: Record<string, GuideMeta> = {
     categorySlug: 'daily-life',
     order: 3,
   },
+  'daily-life/government-benefits': {
+    title: 'Government Benefits for Foreigners in Korea (2026)',
+    description: 'Financial support programs foreigners can access in Korea: cash subsidies, NHIS premium support, childbirth benefits, housing aid, education grants, and emergency assistance.',
+    category: 'Daily Life',
+    categorySlug: 'daily-life',
+    order: 6,
+  },
   'daily-life/cost-of-living': {
     title: 'Cost of Living in Korea 2026: Monthly Budget Breakdown',
     description: 'How much does it cost to live in Korea? Detailed monthly budget for foreigners: housing, food, transport, utilities. Three budget tiers from 1.2M to 4M KRW. Seoul vs Busan vs smaller cities.',

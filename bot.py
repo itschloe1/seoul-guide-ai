@@ -86,6 +86,8 @@ GUIDE_INDEX: list[tuple[list[str], str]] = [
      "healthcare/insurance.md"),
     (["pharmacy", "medicine", "drug", "약국", "tylenol", "cold medicine", "fever", "pain relief", "상비약", "편의점 약"],
      "healthcare/pharmacy-essentials.md"),
+    (["government", "benefit", "subsidy", "지원금", "cash support", "welfare", "복지", "childbirth", "출산", "emergency aid", "supplement budget"],
+     "daily-life/government-benefits.md"),
     (["apartment", "housing", "rent", "studio", "officetel", "goshiwon", "집", "방", "zigbang", "dabang", "부동산"],
      "housing/find-apartment.md"),
     (["jeonse", "wolse", "전세", "월세", "deposit", "보증금", "lease", "landlord", "contract"],

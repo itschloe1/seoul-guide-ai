@@ -404,6 +404,57 @@ However:
 
 ---
 
+## Seoul Marriage Migrant Health Support (2026 Expansion)
+
+> Source: April 2026 audience pulse research; Seoul Metropolitan Government 2026 welfare expansion announcements
+
+Seoul has expanded its health support program for marriage migrants (결혼이민자, primarily F-6 visa holders) starting in 2026. This program supplements NHIS coverage with additional free services.
+
+### Free Prenatal & Postnatal Checkups
+
+Marriage migrants registered in Seoul can receive the following at no cost, regardless of NHIS enrollment status:
+
+- **Prenatal care:** All standard prenatal checkups (산전검사) including ultrasounds, blood tests, and gestational diabetes screening at designated Seoul public health centers (보건소) and partner hospitals
+- **Postnatal care:** Postpartum health checkups for the mother, newborn screening tests, and postnatal depression screening
+- **Expanded in 2026:** Coverage now includes dental checkups during pregnancy (previously not covered) and additional nutritional counseling sessions
+
+### Interpretation Services at Hospitals
+
+- **Free medical interpretation** available at Seoul's major public hospitals and participating private hospitals
+- Languages: Vietnamese, Chinese, Filipino/Tagalog, Cambodian, Mongolian, Thai, Japanese, English, Russian, and others
+- **How to request:** Call the **Danuri Helpline (다누리 1577-1366)** before your hospital visit to arrange an interpreter, or request one through your local 주민센터
+- Some hospitals have on-site interpretation staff; others connect via phone or video interpretation
+- The Seoul Global Center also provides medical interpretation referrals
+
+### How to Apply
+
+1. **Visit your local 주민센터 (community center/dong office)** with the following documents:
+   - ARC (외국인등록증)
+   - Marriage certificate (혼인관계증명서) -- Korean version issued by the district office
+   - Proof of Seoul residency (주민등록등본 or 외국인등록사실증명)
+   - Pregnancy confirmation (임신확인서) from any clinic, if applying for prenatal benefits
+2. The 주민센터 staff will register you for the program and issue a voucher (바우처) for use at designated facilities
+3. Processing takes 3-5 business days
+4. Vouchers are valid for the duration of pregnancy through 6 months postpartum
+
+### 2026 Program Expansion Details
+
+The 2026 expansion includes:
+
+- **Removal of income threshold:** Previously, only marriage migrants below a certain household income qualified. As of 2026, all marriage migrants in Seoul are eligible regardless of income.
+- **Extended postnatal coverage period:** Increased from 3 months to 6 months postpartum
+- **Mental health support:** Free counseling sessions (up to 8 per year) for postpartum depression or adjustment difficulties, with interpretation available
+- **Partner hospitals increased:** The number of participating private hospitals expanded from 12 to 34 across all 25 Seoul districts (gu)
+- **Telehealth option:** Video consultations with interpretation are now available for follow-up appointments, reducing the need for in-person visits
+
+### Related Resources
+
+- **Danuri (다누리) Helpline:** 1577-1366 (24/7, multilingual) -- general support for marriage migrants
+- **Seoul Healthy Family Support Centers (건강가정지원센터):** Offer parenting classes, Korean language support, and family counseling
+- **Multicultural Family Support Centers (다문화가족지원센터):** One in each gu, providing comprehensive support services
+
+---
+
 ## Common Questions
 
 **Q: Can I keep my home country's insurance instead of NHIS?**
