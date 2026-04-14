@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact | Living in Korea"
+  description="Got a question, suggestion, or correction? Send us a message. We read everything."
+>
+  <article class="article-content">
+    <h1>Contact</h1>
+    <p>
+      Found something wrong in a guide? Have a suggestion for a topic we should cover?
+      Want to share your own experience living in Korea? Drop us a line below.
+    </p>
+    <p>
+      For instant answers to specific questions, try the
+      <a href="https://t.me/livinginkorea_bot" target="_blank" rel="noopener">Telegram bot</a>
+      instead -- it is faster than waiting for a reply.
+    </p>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="field">
+        <label for="name">Name <span class="optional">(optional)</span></label>
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="100" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="optional">(optional, only if you want a reply)</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" maxlength="200" />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required minlength="5" maxlength="4000"></textarea>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <button type="submit" class="btn btn-primary submit-btn">Send message</button>
+
+      <p class="form-status" role="status" aria-live="polite" hidden></p>
+    </form>
+  </article>
+
+  <style>
+    .contact-form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .field label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy-dark);
+    }
+    .optional {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+    .field input,
+    .field textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.7rem 0.85rem;
+      border: 1.5px solid rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(232, 114, 92, 0.15);
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+    .hp {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .submit-btn {
+      align-self: flex-start;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+    .form-status {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+    .form-status.success {
+      background: var(--sage-light);
+      color: #2f5d3f;
+      border: 1px solid rgba(123, 160, 133, 0.4);
+    }
+    .form-status.error {
+      background: var(--coral-light);
+      color: #a23f2a;
+      border: 1px solid rgba(232, 114, 92, 0.4);
+    }
+  </style>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (form) {
+      const statusEl = form.querySelector('.form-status') as HTMLElement;
+      const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
+
+      function showStatus(msg: string, kind: 'success' | 'error') {
+        statusEl.textContent = msg;
+        statusEl.className = `form-status ${kind}`;
+        statusEl.hidden = false;
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.hidden = true;
+        statusEl.className = 'form-status';
+
+        const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value.trim();
+        if (message.length < 5) {
+          showStatus('Please write a message (at least 5 characters).', 'error');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            body: new FormData(form),
+          });
+          const data = await res.json().catch(() => ({ ok: false }));
+
+          if (res.ok && data.ok) {
+            form.reset();
+            showStatus('Thanks! Your message has been sent.', 'success');
+            if (typeof window !== 'undefined' && (window as any).va) {
+              (window as any).va('event', { name: 'ContactFormSubmit' });
+            }
+          } else {
+            showStatus(data.error || 'Something went wrong. Please try again.', 'error');
+          }
+        } catch (err) {
+          showStatus('Network error. Please try again.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+  </script>
+</BaseLayout>
